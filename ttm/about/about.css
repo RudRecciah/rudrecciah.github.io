@@ -240,7 +240,33 @@ line-height: 5.5vh;
   }
 }
 
-/*This is insanity. It's 1 am, I'm sick, yesterday was election day, I'm listening to NCS for the first time in years, and this code is a clusterfuck of navigation bars I've made in the past and some Windows Kernel level patching fuckery to make it barely function. I should really fix this. God damn it this code is so bad. I haven't even made this functional for anything other than Chromium. Fuck.
+/*EXPANDED DESKTOP NAV*/
+.nav-meta-i {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.nav-meta-i:hover {
+  display: block;
+}
+#mbreak {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 2px;
+  background-color: white;
+}
+.mnav-item {
+  width: 80%;
+  margin: auto;
+}
+.mnav-item-clickable:link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 4vh;
+}
+
+/*This is insanity. It's 1 am, I'm sick, I'm listening to NCS for the first time in years, and this code is a clusterfuck of navigation bars I've made in the past and some Windows Kernel level patching fuckery to make it barely function. I should really fix this. God damn it this code is so bad. I haven't even made this functional for anything other than Chromium. Fuck.
 .mobile-nav-container {
   display: none;
   height: 7vh;
