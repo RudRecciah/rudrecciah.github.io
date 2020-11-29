@@ -1,2 +1,2 @@
 # rudrecciah.github.io
-Personal site. Contact: @RudRecciah#5681 (@246080207704817664)
+Site used to host any of my static web projects and store a few other projects. Contact: @RudRecciah#5681 (@246080207704817664)
