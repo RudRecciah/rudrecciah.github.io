@@ -13,6 +13,12 @@
         <title>Templete</title>
         <!-- Halfmoon CSS -->
         <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+        <!--nav styling-->
+        <style type="text/css">
+            .rud-nav-item-color{
+                color: white;
+            }
+        </style>
     </head>
     <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
         <!-- Modals go here -->
@@ -22,8 +28,8 @@
             </div>
             <nav class="navbar">
                 <div class="navbar-content">
-                    <button id="toggle-sidebar-btn" class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
-                        <i class="fa fa-bars" aria-hidden="true">
+                    <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
+                        <i class="fa fa-bars rud-nav-item-color" aria-hidden="true">
                         </i>
                     </button>
                 </div>
