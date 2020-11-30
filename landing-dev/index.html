@@ -11,42 +11,74 @@
         <!-- Favicon and title -->
         <link rel="icon" href="favicon.png">
         <title>RudRecciah - Home</title>
-        <!-- Halfmoon CSS -->
+        <!-- CSS -->
         <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-        <!--Nav styling-->
-        <style type="text/css">
-            .rud-nav-item-color{
-                color: white;
-            }
-        </style>
+        <link href="./style.css" rel="stylesheet" />
     </head>
-    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode rud-nomargin    " data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
         <!-- Modals go here -->
         <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
             <div class="sticky-alerts">
 
             </div>
+
+
+
             <nav class="navbar">
-                <div class="navbar-content">
+                <div class="navbar-content rud-width-fluid rud-height-fluid">
                     <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
-                        <i class="fa fa-bars rud-nav-item-color" aria-hidden="true">
-                        </i>
+                        <i class="fa fa-bars rud-nav-item-color" aria-hidden="true"></i>
                     </button>
+                    <a href="./" class="rud-width-fluid rud-height-fluid">
+                        <div class="rud-width-fluid rud-height-fluid text-center">
+                            <img class="rud-img-height-fluid" src="logo.png">
+                        </div>
+                    </a>
+                    <a href="./contact/">
+                        <button class="btn btn-action btn-link" type="button">
+                            <i class="fas fa-paper-plane rud-nav-item-color" aria-hidden="true"></i>
+                        </button>
+                    </a>
                 </div>
             </nav>
+
+
+
             <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
             <div class="sidebar">
-                <a href="home link here">
-                    <!--logo here-->
-                </a>
+                <div class="content">
+                    <a href="./">
+                        <div class="text-center">
+                            <img class="img-fluid" src="./logo.png" alt="reload site pls">
+                        </div>
+                    </a>
+                </div>
                 <!--navigation here-->
             </div>
-            <div class="content-wrapper">
 
+
+
+            <div class="content-wrapper">
+                <div class="container-fluid">
+                    <img src="landing-bg-img.png" class="img-fluid" alt="image did a not exist sorry :/">
+                </div>
+                <div class="content">
+                    <h2 class="content-title text-center font-size-24">
+                        Hey.
+                    </h1>
+                    <hr>
+                    <p class="text-center">
+                        I'm a <span id="dev-fade-lang" class="font-weight-bolder">%lang%</span> developer who <span id="dev-fade-meta" class="font-weight-bolder">%meta%</span>.
+                    </p>
+                </div>
             </div>
         </div>
         <!-- Halfmoon JS -->
         <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
         <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
+        <script>
+            console.log("Maybe you should be looking somewhere else...")
+            console.log("I heard there's a place where you can see it all.")
+        </script>
     </body>
 </html>
