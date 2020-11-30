@@ -1,3 +1,6 @@
+.rud-img-width-fluid {
+    width: 100%;
+}
 .rud-nav-item-color{
     color: white;
 }
@@ -15,6 +18,18 @@
     margin-left: 50%;
 }
 .rud-spacer-sm {
+    width: 100%;
+    height: 20px;
+}
+.rud-spacer-md {
+    width: 100%;
+    height: 20px;
+}
+.rud-spacer-lg {
+    width: 100%;
+    height: 20px;
+}
+.rud-spacer-xl {
     width: 100%;
     height: 20px;
 }
