@@ -33,4 +33,6 @@
     width: 100%;
     height: 20px;
 }
-/*ADD MORE SPACERS HERE NOW OK COOL FUTURE ME*/
+.rud-card-sub-height {
+    min-height: 200px;
+}
