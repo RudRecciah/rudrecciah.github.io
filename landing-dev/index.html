@@ -29,10 +29,7 @@
                     <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
                         <i class="fa fa-bars rud-nav-item-color" aria-hidden="true"></i>
                     </button>
-                    <a href="./" class="rud-width-fluid rud-height-fluid">
-                        <div class="rud-width-fluid rud-height-fluid text-center">
-                            <img class="rud-img-height-fluid" src="logo.png">
-                        </div>
+                    <a href="./" class="rud-width-fluid btn btn-link"><span class="rud-nav-item-color rud-text-logo font-size-24">&lt;/RudRecciah&gt;</span>
                     </a>
                     <a href="./archives/contact/">
                         <button class="btn btn-action btn-link" type="button">
@@ -46,12 +43,51 @@
 
             <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
             <div class="sidebar">
-                <div class="content">
-                    <a href="./">
-                        <div class="text-center">
-                            <img class="img-fluid" src="./logo.png" alt="reload site pls">
-                        </div>
-                    </a>
+                <div class="sidebar-menu">
+                    <div class="sidebar-brand font-size-24">
+                        <a href="./" class="sidebar-brand rud-text-logo">&lt;/RudRecciah&gt;</a>
+                    </div>
+                    <div class="sidebar-content">
+                        <h1 class="sidebar-title">
+                            Information
+                        </h1>
+                        <div class="sidebar-divider"></div>
+                        <a href="./" class="sidebar-link active">Home</a>
+                        <a href="./archives/about" class="sidebar-link">About</a>
+                        <a href="./archives/contact" class="sidebar-link">Contact</a>
+                        <details class="sidebar-link">
+                            <summary class="rud-no-outline">
+                              Accounts
+                            </summary>
+                            <div class="sidebar-divider"></div>
+                            <div class="sidebar-content mt-0 mb-0 ml-0">
+                                <a target="_blank" href="https://github.com/RudRecciah" class="sidebar-link">GitHub</a>
+                                <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="sidebar-link">Steam</a>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="sidebar-link">Youtube</a>
+                                <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="sidebar-link">Twitch</a>
+                                <a target="_blank" href="https://twitter.com/RRecciah" class="sidebar-link">Twitter</a>
+                                <a target="_blank" href="https://www.reddit.com/user/RudRecciah" class="sidebar-link">Reddit</a>
+                            </div>
+                        </details>
+                        <div class="rud-spacer-sm"></div>
+                        <h1 class="sidebar-title">
+                            Projects
+                        </h1>
+                        <div class="sidebar-divider"></div>
+                        <a href="./archives/projects/endcraft/" class="sidebar-link">EndCraft</a>
+                        <a href="./archives/projects/admintools/" class="sidebar-link">AdminTools</a>
+                        <a href="./archives/projects/freebirdsmp/" class="sidebar-link">Freebird SMP</a>
+                        <a href="./archives/projects/ttm/" class="sidebar-link">TTM Theory Wiki</a>
+                        <a href="#" class="sidebar-link">All</a>
+                        <div class="rud-spacer-sm"></div>
+                        <h1 class="sidebar-title">
+                            Archives
+                        </h1>
+                        <div class="sidebar-divider"></div>
+                        <a href="#" class="sidebar-link">Personal</a>
+                        <a href="#" class="sidebar-link">Third Party</a>
+                        <a href="#" class="sidebar-link">All</a>
+                    </div>
                 </div>
                 <!--navigation here-->
             </div>
@@ -87,14 +123,14 @@
                                     <img src="bg-img.png" class="img-fluid rounded-top" alt="reload page pls">
                                     <div class="content">
                                         <div class="content-title">
-                                            I am a title.
+                                            EndCraft
                                         </div>
                                         <div class="text-muted rud-card-sub-height">
-                                            I am a subtitle. I am the best subtitle of all subtitles. Look at me. I am so Epic. That is an Epic with a capital E because thats just how Epic my Epicness is.
+                                            EndCraft, my longest-running and longest-indev project, is a Minecraft server with fun minigames, survival, and PVP.
                                         </div>
                                         <div class="rud-spacer-sm"></div>
                                         <div class="text-right">
-                                            <a href="#" class="btn btn-primary btn-rounded">Learn more</a>
+                                            <a href="./archives/projects/endcraft" class="btn btn-primary btn-rounded">Learn more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -104,14 +140,14 @@
                                     <img src="bg-img.png" class="img-fluid rounded-top" alt="reload page pls">
                                     <div class="content">
                                         <div class="content-title">
-                                            I am a title.
+                                            AdminTools
                                         </div>
-                                        <div class="text-muted">
-                                            I am a subtitle. I am the best subtitle of all subtitles. Look at me. I am so Epic. That is an Epic with a capital E because thats just how Epic my Epicness is.
+                                        <div class="text-muted rud-card-sub-height">
+                                            AdminTools is a toolset plugin built for Spigot and Paper administrators to keep track of players.
                                         </div>
                                         <div class="rud-spacer-sm"></div>
                                         <div class="text-right">
-                                            <a href="#" class="btn btn-primary btn-rounded">Learn more</a>
+                                            <a href="./archives/projects/admintools" class="btn btn-primary btn-rounded">Learn more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -121,14 +157,14 @@
                                     <img src="bg-img.png" class="img-fluid rounded-top" alt="reload page pls">
                                     <div class="content">
                                         <div class="content-title">
-                                            I am a title.
+                                            Freebird SMP
                                         </div>
-                                        <div class="text-muted">
-                                            I am a subtitle. I am the best subtitle of all subtitles. Look at me. I am so Epic. That is an Epic with a capital E because thats just how Epic my Epicness is.
+                                        <div class="text-muted rud-card-sub-height">
+                                            Freebird SMP is a relatively small, invite-only Minecraft server built and maintained for <a href="https://discord.gg/MDxRZCx">this Discord server</a>.
                                         </div>
                                         <div class="rud-spacer-sm"></div>
                                         <div class="text-right">
-                                            <a href="#" class="btn btn-primary btn-rounded">Learn more</a>
+                                            <a href="./archives/projects/freebirdsmp" class="btn btn-primary btn-rounded">Learn more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -138,14 +174,14 @@
                                     <img src="bg-img.png" class="img-fluid rounded-top" alt="reload page pls">
                                     <div class="content">
                                         <div class="content-title">
-                                            I am a title.
+                                            TTM Theory Wiki
                                         </div>
-                                        <div class="text-muted">
-                                            I am a subtitle. I am the best subtitle of all subtitles. Look at me. I am so Epic. That is an Epic with a capital E because thats just how Epic my Epicness is.
+                                        <div class="text-muted rud-card-sub-height">
+                                            The TTM Theory Wiki is a collection of theories, lore, and headcanon about the <a href="https://store.steampowered.com/app/206440/To_the_Moon/?curator_clanid=2750327">To The Moon</a> series.
                                         </div>
                                         <div class="rud-spacer-sm"></div>
                                         <div class="text-right">
-                                            <a href="#" class="btn btn-primary btn-rounded">Learn more</a>
+                                            <a href="./archives/projects/ttm/" class="btn btn-primary btn-rounded">Learn more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -190,12 +226,12 @@
                     </p>
                     <div class="text-center">
                         <div class="btn-group" role="group" aria-label="Accounts">
-                            <a target="_blank" href="https://github.com/RudRecciah" class="btn btn-primary btn-rounded">GitHub</a>
-                            <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="btn btn-primary">Steam</a>
-                            <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="btn btn-primary">Youtube</a>
-                            <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="btn btn-primary">Twitch</a>
-                            <a target="_blank" href="https://twitter.com/RRecciah" class="btn btn-primary">Twitter</a>
-                            <a target="_blank" href="https://www.reddit.com/user/RudRecciah" class="btn btn-primary btn-rounded">Reddit</a>
+                            <a target="_blank" href="https://github.com/RudRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-github"></i></a>
+                            <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="btn btn-primary"><i class="fab fa-steam"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="btn btn-primary"><i class="fab fa-youtube"></i></a>
+                            <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="btn btn-primary"><i class="fab fa-twitch"></i></a>
+                            <a target="_blank" href="https://twitter.com/RRecciah" class="btn btn-primary"><i class="fab fa-twitter"></i></a>
+                            <a target="_blank" href="https://www.reddit.com/user/RudRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-reddit"></i></a>
                         </div>
                     </div>
                 </div>
