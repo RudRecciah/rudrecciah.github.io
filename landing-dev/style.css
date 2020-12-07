@@ -58,3 +58,12 @@
 .rud-no-outline {
     outline: none;
 }
+.rud-archive-inline-flex {
+    display: inline-flex;
+    flex-direction: row;
+}
+@media (max-width: 576px) {
+    .rud-archive-inline-flex {
+        display: block;
+    }
+}
