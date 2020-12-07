@@ -37,7 +37,7 @@
     height: 100px;
 }
 .rud-card-sub-height {
-    min-height: 200px;
+    height: 270px;
 }
 .rud-vert-middle {
     display: inline-flex;
