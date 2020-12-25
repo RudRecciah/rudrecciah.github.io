@@ -33,16 +33,20 @@
                 if(key == 13) {
                     var input = document.getElementById("bug");
                     var feedback = input.value;
-                    input.value = "";
-                    var request = new XMLHttpRequest();
-                    request.open("POST", "https://discord.com/api/webhooks/791082804670103552/67Yodr-bdBIP-oeOP0mdwK2dN0dq8pZiWgAQPJYclGxn-_Y0TYIl4fN1N4nYnutsic5L");
-                    request.setRequestHeader('Content-type', 'application/json');
-                    var params = {
-                        username: "New Bug",
-                        avatar_url: "https://rudrecciah.dev/bugs/ico.png",
-                        content: feedback
-                    }
+                    if(feedback.length > 2000) {
+                        alert("Sorry, but there's a 2000 character limit. Please try again.");
+                    }else{
+                        input.value = "";
+                        var request = new XMLHttpRequest();
+                        request.open("POST", "https://discord.com/api/webhooks/791082804670103552/67Yodr-bdBIP-oeOP0mdwK2dN0dq8pZiWgAQPJYclGxn-_Y0TYIl4fN1N4nYnutsic5L");
+                        request.setRequestHeader('Content-type', 'application/json');
+                        var params = {
+                            username: "New Bug",
+                            avatar_url: "https://rudrecciah.dev/bugs/ico.png",
+                            content: feedback
+                        }
                     request.send(JSON.stringify(params));
+                    }
                 }
             }
         </script>
