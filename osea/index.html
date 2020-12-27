@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+        <meta name="keywords" content="keywords here" />
+        <meta name="description" content="description here" />
+        <meta name="author" content="RudRecciah" />
+        <!-- Favicon and title -->
+        <link rel="icon" href="favi.png">
+        <title>Open Source EndCraft Archives</title>
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars light-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+        <!-- Modals go here -->
+        <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
+            <div class="sticky-alerts">
+
+            </div>
+            <nav class="navbar nav-img-bg">
+                <div class="navbar-content w-full">
+                    <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
+                        <i class="fa fa-bars no-outline" aria-hidden="true"></i>
+                    </button>
+                    <a href="../endcraft/" class="navbar-brand">
+                        <img src="logo-b.png" alt="site did a die, reload pls">
+                        <span class="navbar-text text-monospace text-pink">OSEA</span>
+                    </a>
+                    <ul class="navbar-nav d-none d-md-flex ml-auto mr-5">
+                        <div class="nav-item">
+                            <b>
+                                <a href="../endcraft/archive/" class="nav-link font-size-16">PMMP Archive</a>
+                            </b>
+                        </div>
+                        <div class="nav-item">
+                            <b>
+                                <a href="./" class="nav-link font-size-16">Files</a>
+                            </b>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+            <div class="sidebar sidebar-img-bg">
+                <div class="sidebar-menu">
+                    <div class="sidebar-brand ml-5 font-size-24">
+                        <a href="../endcraft/" class="sidebar-brand rud-text-logo">
+                            <img src="logo-b.png" alt="site did a die, reload pls">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar-content ml-5">
+                    <h1 class="sidebar-title">
+                        Information
+                    </h1>
+                    <div class="sidebar-divider"></div>
+                    <a href="../endcraft/" class="sidebar-link">Home</a>
+                    <a href="../endcraft/archive/" class="sidebar-link">PMMP Archive</a>
+                    <a href="./" class="sidebar-link">Files</a>
+                    <div class="rud-spacer-sm"></div>
+                    <h1 class="sidebar-title">
+                        Other
+                    </h1>
+                    <div class="sidebar-divider"></div>
+                    <a href="../" class="sidebar-link">Back</a>
+                    <a href="../bugs/" class="sidebar-link">Report A Bug</a>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="content">
+                    <h1 class="content-title text-center font-size-24 text-pink">
+                        <b>Open Source EndCraft Archive</b>
+                    </h1>
+                    <p class="text-center">
+                        Looking for one of EndCraft's open source files? Find it here!
+                    </p>
+                    <!-- TODO: ACTUALLY ADD CONTENT -->
+                    <!-- CONTENT TEMPLETE 
+                        <h1 class="content-title text-center font-size-24 text-pink">
+                            <b>Title</b>
+                        </h1>
+                        <p class="text-center">
+                            Text
+                        </p>
+                        <div class="text-center">
+                            <a href="./about/" class="btn btn-rounded text-white">Bo'tum Geah</a>
+                        </div>
+                        <div class="rud-spacer-sm"></div>
+                        <hr>
+                    -->
+                </div>
+            </div>
+        </div>
+        <!-- Halfmoon JS -->
+        <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+        <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
+        <script>
+            var time = Date();
+            var timeSplit = time.split(" ");
+            var timeYear = timeSplit[3];
+            var timeWasted = timeYear - 2013;
+            document.getElementById("year").innerHTML = timeWasted;
+        </script>
+    </body>
+</html>
