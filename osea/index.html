@@ -15,84 +15,109 @@
         <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
         <link href="./style.css" rel="stylesheet" />
     </head>
-    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars light-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
         <!-- Modals go here -->
         <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
             <div class="sticky-alerts">
 
             </div>
             <nav class="navbar nav-img-bg">
-                <div class="navbar-content w-full">
-                    <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
-                        <i class="fa fa-bars no-outline" aria-hidden="true"></i>
-                    </button>
-                    <a href="../endcraft/" class="navbar-brand">
-                        <img src="logo-b.png" alt="site did a die, reload pls">
-                        <span class="navbar-text text-monospace text-pink">OSEA</span>
+                <div class="navbar-content m-auto">
+                    <a href="./" class="navbar-brand">
+                        <span class="navbar-text text-pink"><b>Open Source EndCraft Archive</b></span>
                     </a>
-                    <ul class="navbar-nav d-none d-md-flex ml-auto mr-5">
-                        <div class="nav-item">
-                            <b>
-                                <a href="../endcraft/archive/" class="nav-link font-size-16">PMMP Archive</a>
-                            </b>
-                        </div>
-                        <div class="nav-item">
-                            <b>
-                                <a href="./" class="nav-link font-size-16">Files</a>
-                            </b>
-                        </div>
-                    </ul>
                 </div>
             </nav>
-            <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
-            <div class="sidebar sidebar-img-bg">
-                <div class="sidebar-menu">
-                    <div class="sidebar-brand ml-5 font-size-24">
-                        <a href="../endcraft/" class="sidebar-brand rud-text-logo">
-                            <img src="logo-b.png" alt="site did a die, reload pls">
-                        </a>
-                    </div>
-                </div>
-                <div class="sidebar-content ml-5">
-                    <h1 class="sidebar-title">
-                        Information
-                    </h1>
-                    <div class="sidebar-divider"></div>
-                    <a href="../endcraft/" class="sidebar-link">Home</a>
-                    <a href="../endcraft/archive/" class="sidebar-link">PMMP Archive</a>
-                    <a href="./" class="sidebar-link">Files</a>
-                    <div class="rud-spacer-sm"></div>
-                    <h1 class="sidebar-title">
-                        Other
-                    </h1>
-                    <div class="sidebar-divider"></div>
-                    <a href="../" class="sidebar-link">Back</a>
-                    <a href="../bugs/" class="sidebar-link">Report A Bug</a>
-                </div>
-            </div>
             <div class="content-wrapper">
                 <div class="content">
-                    <h1 class="content-title text-center font-size-24 text-pink">
-                        <b>Open Source EndCraft Archive</b>
-                    </h1>
-                    <p class="text-center">
-                        Looking for one of EndCraft's open source files? Find it here!
-                    </p>
-                    <!-- TODO: ACTUALLY ADD CONTENT -->
-                    <!-- e -->
-                    <!-- CONTENT TEMPLETE 
-                        <h1 class="content-title text-center font-size-24 text-pink">
-                            <b>Title</b>
+                    <div class="card text-center">
+                        <h1 class="card-title">
+                            Open Source EndCraft Archive
                         </h1>
-                        <p class="text-center">
-                            Text
+                        <p>
+                            Open source files from EndCraft builds.
                         </p>
-                        <div class="text-center">
-                            <a href="./about/" class="btn btn-rounded text-white">Bo'tum Geah</a>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card">
+                                <details class="collapse-panel">
+                                    <summary class="collapse-header">
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <span class="text-truncate d-block">
+                                                    <b>
+                                                        Title
+                                                    </b>
+                                                </span>
+                                                <span class="text-muted d-block text-truncate">
+                                                    Type of file
+                                                </span>
+                                            </div>
+                                            <div class="col-2">
+                                                <img class="img-fluid rounded d-block h-42 ml-auto" src="#">
+                                            </div>
+                                        </div>
+                                    </summary>
+                                    <summary class="collapse-content">
+                                        <span class="text-muted d-block text-wrap">
+                                            Description of file
+                                        </span>
+                                        <br>
+                                        <a href="#.zip" class="btn btn-primary btn-rounded text-white">Download</a>
+                                    </summary>
+                                </details>
+                            </div>
                         </div>
-                        <div class="rud-spacer-sm"></div>
-                        <hr>
-                    -->
+                        <!-- file code 
+                        <div class="col-6">
+                            <div class="card">
+                                <details class="collapse-panel">
+                                    <summary class="collapse-header">
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <span class="text-truncate d-block">
+                                                    <b>
+                                                        Title
+                                                    </b>
+                                                </span>
+                                                <span class="text-muted d-block text-truncate">
+                                                    Type of file
+                                                </span>
+                                            </div>
+                                            <div class="col-2">
+                                                <img class="img-fluid rounded d-block h-42 ml-auto" src="#">
+                                            </div>
+                                        </div>
+                                    </summary>
+                                    <summary class="collapse-content">
+                                        <span class="text-muted d-block text-wrap">
+                                            Description of file
+                                        </span>
+                                        <br>
+                                        <a href="#.zip" class="btn btn-primary btn-rounded text-white">Download</a>
+                                    </summary>
+                                </details>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                    <hr>
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <a href="../" class="btn btn-primary btn-rounded text-white w-200 ">Back</a>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <a href="../bugs/" class="btn btn-primary btn-rounded w-200 text-white">Report A Bug</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -26,21 +26,28 @@
                     <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
                         <i class="fa fa-bars no-outline" aria-hidden="true"></i>
                     </button>
-                    <a href="./" class="navbar-brand">
-                        <img src="logo-b.png" alt="site did a die, reload pls">
-                    </a>
-                    <ul class="navbar-nav d-none d-md-flex ml-auto mr-5">
-                        <div class="nav-item">
-                            <b>
-                                <a href="./archive/" class="nav-link font-size-16">PMMP Archive</a>
-                            </b>
-                        </div>
-                        <div class="nav-item">
-                            <b>
-                                <a href="../osa/" class="nav-link font-size-16">Files</a>
-                            </b>
-                        </div>
-                    </ul>
+                    <div class="d-none d-md-flex w-full">
+                        <a href="./" class="navbar-brand">
+                            <img src="logo-b.png" alt="site did a die, reload pls">
+                        </a>
+                        <ul class="navbar-nav ml-auto mr-5">
+                            <div class="nav-item">
+                                <b>
+                                    <a href="./archive/" class="nav-link font-size-16">PMMP Archive</a>
+                                </b>
+                            </div>
+                            <div class="nav-item">
+                                <b>
+                                    <a href="../osea/" class="nav-link font-size-16">Files</a>
+                                </b>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="d-flex d-md-none m-auto">
+                        <a href="./" class="navbar-brand">
+                            <img src="logo-b.png" alt="site did a die, reload pls">
+                        </a>
+                    </div>
                 </div>
             </nav>
             <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
