@@ -26,7 +26,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col text-center">
-                                <img src="fl.png" class="img-fluid h-500" alt="shits fucked pls reload">
+                                <img src="fl.png" class="img-fluid rh-500" alt="shits fucked pls reload">
                             </div>
                         </div>
                         <div class="aespacer"></div>
@@ -104,5 +104,87 @@
         <!-- Halfmoon JS -->
         <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
         <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
+        <!-- JS EXAMPLE FOR CQS 
+        chehk eit awt moate https://rudrecciah.dev/customquerystats/
+        -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script>
+            var dataObj = {};
+            getStats();
+
+            function getStats() {
+                //queries server using mc server stats api
+                $.getJSON('https://api.mcsrvstat.us/2/freebird.endcraft.org', function(query) {
+                    //parses data
+                    parseData(query);
+                });
+            }
+
+            function parseData(workingQuery) {
+                //gets motd from output (in this case, mc server status outputs as a JSON)
+                var motd = workingQuery.motd.clean;
+                //gets data from motd (plugin adds data on a line 2 lines down from the last line of the motd, in my case the 4th line)
+                var data = motd[3];
+
+                //removes motd wrapper and gets time/stats from motd
+                var dataSplit = data.split("%q%");
+                var infoSplit = dataSplit[1].split("%w%");
+                var date = infoSplit[0];
+                var stats = infoSplit[1];
+
+                //removes stats wrapper and gets each player's stats
+                var statsSplit = stats.split("%e%");
+                var playerName = statsSplit[0];
+                var playerSplit = statsSplit[1].split("%r%");
+
+                //processes data 
+                playerSplit.forEach(processData);
+
+                //handles data after processing
+                handleData(dataObj);
+            }
+
+            function processData(playeritem, playerindex) {
+
+                //because stats are wrapped, there's 2 variables between each stat which means every other item in the array will be blank, so items that are blank are filtered out
+                if(playeritem.length > 0) {
+
+                    //splits playerdata into name/statistics, creates array to store translated data inside of
+                    var itemSplit = playeritem.split("%t%");
+                    var itemName = itemSplit[0];
+                    var statObjArr = [];
+                    var itemStats = itemSplit[1];
+
+                    //splits statistics into each specific individual statistic and filters out blank items in the array for the same reason as above, then processes the individual statistics
+                    var itemStatsSplit = itemStats.split("%y%");
+                    itemStatsSplit.forEach(element => {
+                        if(element.length > 0) {
+
+                            //splits statistics into identifier/value
+                            var elementSplit = element.split("%u%");
+                            var statKey = elementSplit[0];
+                            var statValue = elementSplit[1];
+
+                            //stores raw statistic data in an object, translating it
+                            var statObjArrObj = {key:statKey, statValue:statValue}
+
+                            //stores object in array containing all translated statistics
+                            statObjArr.push(statObjArrObj);
+                        }
+                    });
+                }
+
+                //stores name of player and translated value array in an object (this is the object to use when handling and using the data)
+                dataObj[itemName] = statObjArr;
+
+                //removes any undefined properties in the object
+                delete dataObj.undefined;
+            }
+
+            function handleData() {
+                //handle data here
+            }
+        </script>
+        <!-- END OF JS EXAMPLE FOR CQS -->
     </body>
 </html>

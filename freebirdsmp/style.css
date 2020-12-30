@@ -4,3 +4,6 @@
 .sespacer {
     height: 10px;
 }
+.rh-500 {
+    max-height: 500px;
+}
