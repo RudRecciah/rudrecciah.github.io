@@ -17,6 +17,24 @@
     </head>
     <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
         <!-- Modals go here -->
+        <!-- TODO: modal-->
+        <div class="modal ie-scroll-fix" id="modal-1" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content overflow-y-scroll h-600">
+                    <a href="#" class="close" role="button" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </a>
+                    <h5 class="modal-title">Modal title</h5>
+                    <p>
+                        This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. 
+                    </p>
+                    <div class="text-right mt-20"> <!-- text-right = text-align: right, mt-20 = margin-top: 2rem (20px) -->
+                        <a href="#" class="btn mr-5" role="button">Close</a>
+                        <a href="#" class="btn btn-primary" role="button">I understand</a>
+                    </div>
+                </div>
+                </div>
+            </div>
         <div class="page-wrapper">
             <div class="sticky-alerts">
                 <!-- Toasts go here -->
@@ -49,19 +67,22 @@
                                     <h1 class="card-title text-center">
                                         Players
                                     </h1>
-                                    <!-- TODO: Set up info page -->
-                                    <!-- Player Card (name, head, extended info button) -->
+                                    <!-- TODO: different layout for mobile-->
+                                    <div id="pc">
+
+                                    </div>
+                                    <!--
                                     <div class="card bg-primary text-white">
                                         <div class="row">
                                             <div class="col-8">
                                                 <div class="row">
                                                     <p class="text-truncate m-10">
-                                                        xXxNoobSlayer42069GamerPro360noscopexXx
+                                                        Title
                                                     </p>
                                                 </div>
                                                 <div class="row w-full">
                                                     <div class="w-full">
-                                                        <a href="#" class="btn btn-primary bg-white text-primary w-full">
+                                                        <a href="#modal-1" class="btn btn-primary bg-white text-primary w-full" onclick="loadFullCard()">
                                                             Player info
                                                         </a>
                                                     </div>
@@ -74,6 +95,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
@@ -117,85 +139,93 @@
         <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
         <!-- JS EXAMPLE FOR CQS 
         chehk eit awt moate https://rudrecciah.dev/customquerystats/
+        dis un aint have no cawwmnts suh bettah luhk der
+
+        yes those 2 lines include 4 different butchered accents
         -->
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script>
+            //beginning of example
+            //get motd, parse motd, read motd, process motd, "returns" dataObj
             var dataObj = {};
             getStats();
 
             function getStats() {
-                //queries server using mc server stats api
                 $.getJSON('https://api.mcsrvstat.us/2/freebird.endcraft.org', function(query) {
-                    //parses data
                     parseData(query);
                 });
             }
 
             function parseData(workingQuery) {
-                //gets motd from output (in this case, mc server status outputs as a JSON)
                 var motd = workingQuery.motd.clean;
-                //gets data from motd (plugin adds data on a line 2 lines down from the last line of the motd, in my case the 4th line)
                 var data = motd[3];
-
-                //removes motd wrapper and gets time/stats from motd
                 var dataSplit = data.split("%q%");
                 var infoSplit = dataSplit[1].split("%w%");
                 var date = infoSplit[0];
                 var stats = infoSplit[1];
-
-                //removes stats wrapper and gets each player's stats
                 var statsSplit = stats.split("%e%");
                 var playerName = statsSplit[0];
                 var playerSplit = statsSplit[1].split("%r%");
-
-                //processes data 
                 playerSplit.forEach(processData);
-
-                //handles data after processing
                 handleData(dataObj);
             }
 
             function processData(playeritem, playerindex) {
-
-                //because stats are wrapped, there's 2 variables between each stat which means every other item in the array will be blank, so items that are blank are filtered out
                 if(playeritem.length > 0) {
-
-                    //splits playerdata into name/statistics, creates array to store translated data inside of
                     var itemSplit = playeritem.split("%t%");
                     var itemName = itemSplit[0];
                     var statObjArr = [];
                     var itemStats = itemSplit[1];
-
-                    //splits statistics into each specific individual statistic and filters out blank items in the array for the same reason as above, then processes the individual statistics
                     var itemStatsSplit = itemStats.split("%y%");
                     itemStatsSplit.forEach(element => {
                         if(element.length > 0) {
-
-                            //splits statistics into identifier/value
                             var elementSplit = element.split("%u%");
                             var statKey = elementSplit[0];
                             var statValue = elementSplit[1];
-
-                            //stores raw statistic data in an object, translating it
-                            var statObjArrObj = {key:statKey, statValue:statValue}
-
-                            //stores object in array containing all translated statistics
+                            var statObjArrObj = ["key=" + statKey, "statValue=" + statValue];
                             statObjArr.push(statObjArrObj);
                         }
                     });
                 }
-
-                //stores name of player and translated value array in an object (this is the object to use when handling and using the data)
                 dataObj[itemName] = statObjArr;
-
-                //removes any undefined properties in the object
                 delete dataObj.undefined;
             }
+            //end of example
 
+            //inject data into html
             function handleData(dataToHandle) {
-                //handle data here
+                var builtCard = [];
+                Object.keys(dataToHandle).forEach(key => {
+                    var cardName = key;
+                    var cardStats = dataToHandle[key];
+                    var cardStatPackage = "-1%csp%";
+                    var finalDataTag = [""];
+                    cardStats.forEach(cardStat => {
+                        var currentPackage = cardStatPackage;
+                        var currentStatSplit = currentPackage.split("%csp%");
+                        var currentStatIndex = parseInt(currentStatSplit[0]);
+                        var currentRawStats = currentStatSplit[1];
+                        var newStatIndex = currentStatIndex + 1;
+                        cardStatPackage = newStatIndex.toString() + "%csp%";
+                        var packageAddition = currentRawStats + " " + "data-stats-" + newStatIndex + "\=\"" + cardStat;
+                        cardStatPackage = newStatIndex + "%csp%" + packageAddition;
+                        var currentRawData = cardStatPackage.split("%csp%")[1];
+                        finalDataTag = [currentRawData];
+                    });
+                    var cardImg = "https://mc-heads.net/head/" + cardName.toLowerCase() + "/left"
+                    var cardBuilder = "\<div id\=\"" + cardName + "\""
+                    var cardBuilder1 = finalDataTag[0];
+                    //TODO: mobile design (image on top, name/button on bottom (use reverse direction))
+                    var cardBuilder2 = "\" " + "class\=\"card bg-primary text-white\"\>\<div class\=\"row\"\>\<div class\=\"col-8\"\>\<div class\=\"row\"\>\<\p class\=\"text-truncate m-10\"\>" + cardName + "\<\p\>\<\/div\>\<div class\=\"row w-full\"\>\<div class\=\"w-full\"\>\<a href\=\"#modal-1\" class\=\"btn btn-primary bg-white text-primary w-full\" onclick\=\"loadFullCard(" + cardName + ")\"\>Player info\<\/a\>\<\/div\>\<\/div\>\<\/div\>\<div class\=\"col-4\"\>\<div class\=\"text-right\"\>\<img src\=\"" + cardImg + "\" class\=\"img-fluid rounded rud-100\" alt\=\"shits fucked pls reload\"\>\<\/div\>\<\/div\>\<\/div\>\<\/div\>";
+                    var currentCard = builtCard[0];
+                    var builtCardString = cardBuilder + cardBuilder1 + cardBuilder2;
+                    var newCard = currentCard + builtCardString
+                    builtCard = [newCard];
+                });
+                var currentFinalCard = builtCard[0];
+                var finalCard = currentFinalCard.replace("undefined", "")
+                document.getElementById("pc").innerHTML = finalCard;
             }
         </script>
-        <!-- END OF JS EXAMPLE FOR CQS -->
     </body>
 </html>
