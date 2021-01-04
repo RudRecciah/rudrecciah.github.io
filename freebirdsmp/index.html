@@ -15,23 +15,374 @@
         <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
         <link href="./style.css" rel="stylesheet" />
     </head>
-    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars light-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
         <!-- Modals go here -->
-        <!-- TODO: modal-->
         <div class="modal ie-scroll-fix" id="modal-1" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
-                <div class="modal-content overflow-y-scroll h-600">
+                <div class="modal-content bg-white text-primary h-600 w-600 overflow-y-scroll">
                     <a href="#" class="close" role="button" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true" class="rud-nlh"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg></span>
                     </a>
-                    <h5 class="modal-title">Modal title</h5>
-                    <p>
-                        This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. This is the modal content. Almost any type of content can be presented to the user here. 
-                    </p>
-                    <div class="text-right mt-20"> <!-- text-right = text-align: right, mt-20 = margin-top: 2rem (20px) -->
-                        <a href="#" class="btn mr-5" role="button">Close</a>
-                        <a href="#" class="btn btn-primary" role="button">I understand</a>
+                    <div class=" d-sm-none text-center">
+                        <img src="https://minotar.net/avatar/rudrecciah/50.png" class="img-fluid rounded rud-50" alt="shits fucked pls reload">
                     </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-8">
+                            <div class="modal-title text-center text-sm-left">
+                                <span id="modalTitle"><b>Player Name</b></span>
+                                <br>
+                                <span id="gamesPlayed" class="text-truncate font-size-12 d-inline-block text-primary">
+                                    Sessions Grinded
+                                </span>
+                                <span class="text-truncate font-size-12 d-inline-block text-primary">
+                                    |
+                                </span>
+                                <span id="timePlayed" class="text-truncate font-size-12 d-inline-block text-primary">
+                                    Time Wasted
+                                </span>
+                                <span class="text-truncate font-size-12 d-inline-block text-primary">
+                                    |
+                                </span>
+                                <span id="timeAlive" class="text-truncate font-size-12 d-inline-block text-primary">
+                                    Time Since Last Death
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-4 d-none d-sm-block text-right">
+                            <img src="https://minotar.net/avatar/rudrecciah/50.png" class="img-fluid rounded rud-50" alt="shits fucked pls reload">
+                        </div>
+                    </div>
+                    <div class="collapse-group">
+                        <details class="collapse-panel">
+                            <summary class="collapse-header">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <span id="totalDistance" class="text-truncate d-block text-primary">
+                                            <b>
+                                                A Big Number
+                                            </b>
+                                        </span>
+                                        <span class="d-block text-truncate text-primary">
+                                            Distance Traveled
+                                        </span>
+                                    </div>
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded d-block h-42 ml-auto" src="#">
+                                    </div>
+                                </div>
+                            </summary>
+                            <summary class="collapse-content">
+                                <div class="text-primary">
+                                    <table class="table w-full table-inner-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Distance Flown
+                                                </td>
+                                                <td id="1" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Boated
+                                                </td>
+                                                <td id="4" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Climbed
+                                                </td>
+                                                <td id="9" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Sneaked
+                                                </td>
+                                                <td id="11" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Fallen
+                                                </td>
+                                                <td id="22" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Rode on a Horse
+                                                </td>
+                                                <td id="26" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Rode in a Minecart
+                                                </td>
+                                                <td id="40" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Rode on a Pig
+                                                </td>
+                                                <td id="43" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Sprinted
+                                                </td>
+                                                <td id="51" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Distance Walked
+                                                </td>
+                                                <td id="57" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- TODO: finish statistic tables, need to finish death, block interaction, mob interaction
+                                    <table class="table w-full table-inner-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    
+                                                </td>
+                                                <td id="" class="text-right">
+                                                    Statistic Value
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    key:
+movement:
+elytra 1
+boat 4
+climb 9
+crouch 11
+fall 22
+horse 26
+minecart 40
+pig 43
+sprint 51
+walked 57
+
+death:
+damage asorbed 12
+damage blocked 13
+damage resisted 17
+damage taken 18
+deaths 19
+mob kills 41
+player kills 45
+damage dealt 14
+damage dealt asorbed 15
+damage dealt resisted 16
+
+interactions with blocks:
+beacon 2
+drugs 55
+cauldron filled/used (witch drugs) 6, 7
+chest 8
+craft 10
+echest 21
+furnace 25
+anvil 27
+blast furnace 28
+campfire 29
+cartography table 30
+grindstone 31
+lectern 32
+loom 33
+smithing table 34
+smoker 35
+stonecutter 36
+barrel 42
+shulker 48
+bell 3
+enchants 37
+
+interactions with mobs:
+trades 56
+breeds 0
+fish 23
+                                    -->
+                                </div>
+                            </summary>
+                        </details>
+                        <details class="collapse-panel">
+                            <summary class="collapse-header">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <span id="totalKD" class="text-truncate d-block text-primary">
+                                            <b>
+                                                A Big Number
+                                            </b>
+                                        </span>
+                                        <span class="d-block text-truncate text-primary">
+                                            K/D
+                                        </span>
+                                    </div>
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded d-block h-42 ml-auto" src="#">
+                                    </div>
+                                </div>
+                            </summary>
+                            <summary class="collapse-content">
+                                <div>
+                                    <span class="d-block text-wrap text-primary">
+                                        <b>
+                                            A Big Number
+                                        </b>
+                                    </span>
+                                    <span class=" d-block text-wrap text-primary">
+                                        Specific Statistic
+                                    </span>
+                                </div>
+                            </summary>
+                        </details>
+                        <details class="collapse-panel">
+                            <summary class="collapse-header">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <span class="text-truncate d-block text-primary">
+                                            <b>
+                                                A Big Number
+                                            </b>
+                                        </span>
+                                        <span class="d-block text-truncate text-primary">
+                                            Interactions With Blocks
+                                        </span>
+                                    </div>
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded d-block h-42 ml-auto" src="#">
+                                    </div>
+                                </div>
+                            </summary>
+                            <summary class="collapse-content">
+                                <div>
+                                    <span class="d-block text-wrap text-primary">
+                                        <b>
+                                            A Big Number
+                                        </b>
+                                    </span>
+                                    <span class=" d-block text-wrap text-primary">
+                                        Specific Statistic
+                                    </span>
+                                </div>
+                            </summary>
+                        </details>
+                        <details class="collapse-panel">
+                            <summary class="collapse-header">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <span class="text-truncate d-block text-primary">
+                                            <b>
+                                                A Big Number
+                                            </b>
+                                        </span>
+                                        <span class="d-block text-truncate text-primary">
+                                            Interactions With Mobs
+                                        </span>
+                                    </div>
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded d-block h-42 ml-auto" src="#">
+                                    </div>
+                                </div>
+                            </summary>
+                            <summary class="collapse-content">
+                                <div>
+                                    <span class="d-block text-wrap text-primary">
+                                        <b>
+                                            A Big Number
+                                        </b>
+                                    </span>
+                                    <span class=" d-block text-wrap text-primary">
+                                        Specific Statistic
+                                    </span>
+                                </div>
+                            </summary>
+                        </details>
+                    </div>
+                    <!-- stats: 
+meta:
+name
+img
+games played
+time played
+time since death
+
+movement:
+elytra
+boat
+climb
+crouch
+fall
+horse
+minecart
+pig
+sprint
+walked
+
+death:
+damage asorbed
+damage blocked
+damage resisted
+damage taken
+deaths
+mob kills
+player kills
+damage dealt
+damage dealt asorbed
+damage dealt resisted
+
+interactions with blocks:
+beacon
+drugs
+cauldron filled/used (witch drugs)
+chest
+craft
+echest
+furnace
+anvil
+blast furnace
+campfire
+cartography table
+grindstone
+lectern
+loom
+smithing table
+smoker
+stonecutter
+barrel
+shulker
+bell
+enchants
+
+interactions with mobs:
+trades
+breeds
+fish
+                    -->
                 </div>
                 </div>
             </div>
@@ -62,12 +413,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-xl-6 col-md-12">
                                 <div class="card bg-white text-primary">
                                     <h1 class="card-title text-center">
                                         Players
                                     </h1>
-                                    <!-- TODO: different layout for mobile-->
                                     <div id="pc">
 
                                     </div>
@@ -98,7 +448,8 @@
                                     -->
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
+                            <!-- TODO: SERVER WIDE STATISTICS -->
+                            <div class="col-xl-6 col-md-12">
                                 <div class="card bg-white text-primary">
                                     <h1 class="card-title text-center">
                                         Statistics
@@ -207,24 +558,29 @@
                         var currentRawStats = currentStatSplit[1];
                         var newStatIndex = currentStatIndex + 1;
                         cardStatPackage = newStatIndex.toString() + "%csp%";
-                        var packageAddition = currentRawStats + " " + "data-stats-" + newStatIndex + "\=\"" + cardStat;
+                        var packageAddition = currentRawStats + " " + "data-stats-" + newStatIndex + "\=\"" + cardStat + "\"";
                         cardStatPackage = newStatIndex + "%csp%" + packageAddition;
                         var currentRawData = cardStatPackage.split("%csp%")[1];
                         finalDataTag = [currentRawData];
                     });
                     var cardImg = "https://mc-heads.net/head/" + cardName.toLowerCase() + "/left"
                     var cardBuilder = "\<div id\=\"" + cardName + "\""
-                    var cardBuilder1 = finalDataTag[0];
-                    //TODO: mobile design (image on top, name/button on bottom (use reverse direction))
-                    var cardBuilder2 = "\" " + "class\=\"card bg-primary text-white\"\>\<div class\=\"row\"\>\<div class\=\"col-8\"\>\<div class\=\"row\"\>\<\p class\=\"text-truncate m-10\"\>" + cardName + "\<\p\>\<\/div\>\<div class\=\"row w-full\"\>\<div class\=\"w-full\"\>\<a href\=\"#modal-1\" class\=\"btn btn-primary bg-white text-primary w-full\" onclick\=\"loadFullCard(" + cardName + ")\"\>Player info\<\/a\>\<\/div\>\<\/div\>\<\/div\>\<div class\=\"col-4\"\>\<div class\=\"text-right\"\>\<img src\=\"" + cardImg + "\" class\=\"img-fluid rounded rud-100\" alt\=\"shits fucked pls reload\"\>\<\/div\>\<\/div\>\<\/div\>\<\/div\>";
+                    var cardBuilder0 = finalDataTag[0];
+                    var cardBuilder1 = "\" " + "class\=\"card bg-primary text-white\"\>"
+                    var cardBuilder2 = "\<div class\=\"row d-md-none\"\>\<div class\=\"col\"\>\<div class\=\"text-center\"\>\<img src\=\"" + cardImg + "\" class\=\"img-fluid rounded rud-100\" alt\=\"shits fucked pls reload\"\>\<\/div\>\<\/div\>\</div\>";
+                    var cardBuilder3 = "\<div class\=\"row\"\>\<div class\=\"col-md-8 col-12\"\>\<div class\=\"row\"\>\<\p class\=\"text-truncate m-md-10 w-full text-center text-md-left\"\>" + cardName + "\<\p\>\<\/div\>\<div class\=\"row w-full\"\>\<div class\=\"w-full\"\>\<a href\=\"#modal-1\" class\=\"btn btn-primary bg-white text-primary w-full\" onclick\=\"loadFullCard(" + cardName + ")\"\>Player info\<\/a\>\<\/div\>\<\/div\>\<\/div\>\<div class\=\"col-4 d-none d-md-block\"\>\<div class\=\"text-right\"\>\<img src\=\"" + cardImg + "\" class\=\"img-fluid rounded rud-100\" alt\=\"shits fucked pls reload\"\>\<\/div\>\<\/div\>\<\/div\>\<\/div\>";
                     var currentCard = builtCard[0];
-                    var builtCardString = cardBuilder + cardBuilder1 + cardBuilder2;
+                    var builtCardString = cardBuilder + cardBuilder0 + cardBuilder1 + cardBuilder2 + cardBuilder3;
                     var newCard = currentCard + builtCardString
                     builtCard = [newCard];
                 });
                 var currentFinalCard = builtCard[0];
                 var finalCard = currentFinalCard.replace("undefined", "")
                 document.getElementById("pc").innerHTML = finalCard;
+            }
+
+            function loadFullCard(modalTitle) {
+
             }
         </script>
     </body>
