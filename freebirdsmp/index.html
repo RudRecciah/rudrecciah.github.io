@@ -42,12 +42,6 @@
                                 <span id="timePlayed" class="text-truncate font-size-12 d-inline-block text-primary">
                                     Time Wasted
                                 </span>
-                                <span class="text-truncate font-size-12 d-inline-block text-primary">
-                                    |
-                                </span>
-                                <span id="timeAlive" class="text-truncate font-size-12 d-inline-block text-primary">
-                                    Time Since Last Death
-                                </span>
                             </div>
                         </div>
                         <div class="col-4 d-none d-sm-block text-right">
@@ -75,103 +69,21 @@
                             </summary>
                             <summary class="collapse-content">
                                 <div class="text-primary">
-                                    <table class="table w-full table-inner-bordered">
-                                        <tbody>
+                                    <table class="table table-inner-bordered">
+                                        <tbody id="distanceTable">
                                             <tr>
-                                                <td>
-                                                    Distance Flown
-                                                </td>
-                                                <td id="1" class="text-right">
-                                                    Statistic Value
+                                                <td class="text-center">
+                                                    Data
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>
-                                                    Distance Boated
-                                                </td>
-                                                <td id="4" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Climbed
-                                                </td>
-                                                <td id="9" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Sneaked
-                                                </td>
-                                                <td id="11" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Fallen
-                                                </td>
-                                                <td id="22" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Rode on a Horse
-                                                </td>
-                                                <td id="26" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Rode in a Minecart
-                                                </td>
-                                                <td id="40" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Rode on a Pig
-                                                </td>
-                                                <td id="43" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Sprinted
-                                                </td>
-                                                <td id="51" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Distance Walked
-                                                </td>
-                                                <td id="57" class="text-right">
-                                                    Statistic Value
+                                                <td class="text-center">
+                                                    Data
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <!-- TODO: finish statistic tables, need to finish death, block interaction, mob interaction
-                                    <table class="table w-full table-inner-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    
-                                                </td>
-                                                <td id="" class="text-right">
-                                                    Statistic Value
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
 
                                     key:
 movement:
@@ -200,7 +112,7 @@ damage dealt resisted 16
 
 interactions with blocks:
 beacon 2
-drugs 55
+drugs 5
 cauldron filled/used (witch drugs) 6, 7
 chest 8
 craft 10
@@ -248,15 +160,8 @@ fish 23
                                 </div>
                             </summary>
                             <summary class="collapse-content">
-                                <div>
-                                    <span class="d-block text-wrap text-primary">
-                                        <b>
-                                            A Big Number
-                                        </b>
-                                    </span>
-                                    <span class=" d-block text-wrap text-primary">
-                                        Specific Statistic
-                                    </span>
+                                <div class="text-primary">
+
                                 </div>
                             </summary>
                         </details>
@@ -504,6 +409,7 @@ fish
             function getStats() {
                 $.getJSON('https://api.mcsrvstat.us/2/freebird.endcraft.org', function(query) {
                     parseData(query);
+                    console.log(query);
                 });
             }
 
@@ -557,8 +463,9 @@ fish
                         var currentStatIndex = parseInt(currentStatSplit[0]);
                         var currentRawStats = currentStatSplit[1];
                         var newStatIndex = currentStatIndex + 1;
+                        var usableIndex = cardStat[0].split("=")[1];
                         cardStatPackage = newStatIndex.toString() + "%csp%";
-                        var packageAddition = currentRawStats + " " + "data-stats-" + newStatIndex + "\=\"" + cardStat + "\"";
+                        var packageAddition = currentRawStats + " " + "data-stats-" + usableIndex + "\=\"" + cardStat + "\"";
                         cardStatPackage = newStatIndex + "%csp%" + packageAddition;
                         var currentRawData = cardStatPackage.split("%csp%")[1];
                         finalDataTag = [currentRawData];
@@ -580,8 +487,78 @@ fish
             }
 
             function loadFullCard(modalTitle) {
-
+                var lang = ["animals bred", "piloted", "beacons interacted with", "bells rung", "boated", "drugs made", "cauldrons filled", "cauldrons emptied", "chests opened", "climbed", "times crafted", "crouched", "hearts of damage asorbed", "hearts of damage blocked", "hearts of damage dealt", "hearts of damage asorbed dealt", "hearts of damage resisted dealt", "hearts of damage resisted", "hearts of damage taken", "deaths", "items dropped", "enderchests opened", "fallen", "fish caught", "flown", "times smelted", "traveled on a horse", "times forged", "times smelted metals quickly", "times cooked", "times used a cartography table", "times grinded", "times used a lectern", "times sewn", "times smithed", "times cooked quickly", "times cut stone", "items enchanted", "jumps", "driven", "mobs killed", "barrels opened", "rode on a pig", "played", "players killed", "raids triggered", "raids won", "shulker boxes opened", "rests", "sneaked", "sprinted", "rode on a strider", "swum", "since last death", "since last rest", "trades with villagers", "walked"];
+                console.log(modalTitle);
+                
             }
+
+
+
+
+            // function loadFullCard(modalTitle) {
+            //     var lang = ["animals bred", "piloted", "beacons interacted with", "bells rung", "boated", "drugs made", "cauldrons filled", "cauldrons emptied", "chests opened", "climbed", "times crafted", "crouched", "hearts of damage asorbed", "hearts of damage blocked", "hearts of damage dealt", "hearts of damage asorbed dealt", "hearts of damage resisted dealt", "hearts of damage resisted", "hearts of damage taken", "deaths", "items dropped", "enderchests opened", "fallen", "fish caught", "flown", "times smelted", "traveled on a horse", "times forged", "times smelted metals quickly", "times cooked", "times used a cartography table", "times grinded", "times used a lectern", "times sewn", "times smithed", "times cooked quickly", "times cut stone", "items enchanted", "jumps", "driven", "mobs killed", "barrels opened", "rode on a pig", "played", "players killed", "raids triggered", "raids won", "shulker boxes opened", "rests", "sneaked", "sprinted", "rode on a strider", "swum", "since last death", "since last rest", "trades with villagers", "walked"];
+            //     console.log(modalTitle);
+            //     for(i = 0; i < 58; i++) {
+            //         try {
+            //             var modalInformation = modalTitle.getAttribute("data-stats-" + i).split(",");
+            //             console.log("data-stats-" + i);
+            //             console.log(modalInformation);
+            //             var tableBuilder0 = "\<tr\>\<td class\=\"text-center\"\>";
+            //             var tableBuilder1 = sortModalInfo(lang, modalInformation, 1);
+            //             console.log("return: " + tableBuilder1);
+            //             var tableBuilder2 = "\<\/td\>\<\/tr>"
+            //             //TODO: build table and add to correct category
+            //             var distTable = document.getElementById("distTable");
+            //             var dieTable = document.getElementById("dieTable");
+            //             var interactBlockTable = document.getElementById("interactBlockTable");
+            //             var interactMobTable = document.getElementById("interactMobTable");
+            //         } catch (error) {
+            //             console.log("err: " + error)
+            //             console.log("data-stats-" + i);
+            //             console.log("noexisto");
+            //         }
+            //     }
+            // }
+
+            // function sortModalInfo(types, modalData, status) {
+            //     var output = []
+            //     console.log(modalData)
+            //     console.log(modalData[0])
+            //     var modalinfo = modalData[0].split("=")[1];
+            //     var modalstat = modalData[1].split("=")[1];
+            //     var translatedModalStat = [];
+            //     if(status = 0) {
+
+            //     }else if(status = 1) {
+            //         if(modalinfo == 1 || modalinfo == 4 || modalinfo == 9 || modalinfo == 11 || modalinfo == 22 || modalinfo == 26 || modalinfo == 40 || modalinfo == 43 || modalinfo == 51 || modalinfo == 57) {
+            //             translatedModalStat.push(Math.round(parseInt(modalstat) / 100).toString() + " blocks " + types[parseInt(modalinfo - 1)]);
+            //         }else if(modalinfo == 12 || modalinfo == 13 || modalinfo == 17 || modalinfo == 18 || modalinfo == 14  || modalinfo ==  15 || modalinfo == 16) {
+            //             translatedModalStat.push(parseInt(modalstat) / 2).toString() + " " + types[modalinfo - 1];
+            //         }else if(modalinfo == 39 || modalinfo == 44 || modalinfo == 54) {
+            //             //main stats, does nothing
+            //         }else{
+            //             translatedModalStat.push(parseInt(modalstat).toString() + " " + types[parseInt(modalinfo - 1)]);
+            //         }
+            //         if(modalinfo == 1 || modalinfo == 4 || modalinfo == 9 || modalinfo == 11 || modalinfo == 22 || modalinfo == 26 || modalinfo == 40 || modalinfo == 43 || modalinfo == 51 || modalinfo == 57) {
+            //             output.push(translatedModalStat.toString())
+            //             output.push("distTable");
+            //         }else if(modalinfo == 12 || modalinfo == 13 || modalinfo == 17 || modalinfo == 18 || modalinfo == 14  || modalinfo ==  15 || modalinfo == 16 || modalinfo == 19 || modalinfo == 41 || modalinfo == 45) {
+            //             output.push(translatedModalStat.toString())
+            //             output.push("dieTable");
+            //         }else if(modalinfo == 25 || modalinfo == 28 || modalinfo == 2 || modalinfo == 5 || modalinfo == 6 || modalinfo == 7 || modalinfo == 8 || modalinfo == 10 || modalinfo == 21 || modalinfo == 27 || modalinfo == 29 || modalinfo == 30 || modalinfo == 31 || modalinfo == 32 || modalinfo == 33 || modalinfo == 34 || modalinfo == 35 || modalinfo == 36 || modalinfo == 42 || modalinfo == 48 || modalinfo == 3 || modalinfo == 37) {
+            //             output.push(translatedModalStat.toString())
+            //             output.push("interactBlockTable");
+            //         }else if(modalinfo == 39 || modalinfo == 44 || modalinfo == 54) {
+            //             //main stats, does nothing
+            //         }else if(modalinfo == 56 || modalinfo == 0 || modalinfo == 23) {
+            //             output.push(translatedModalStat.toString())
+            //             output.push("interactMobTable");
+            //         }
+            //     }
+            //     //TODO: add translatedModalStat to array that has statistic and category to place it in (category is one of the tables (distTable, dieTable, interactBlockTable, interactMobTable)) and return that array
+            //     console.log(output);
+            //     return output;
+            // }
         </script>
     </body>
 </html>
