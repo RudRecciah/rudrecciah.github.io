@@ -13,19 +13,14 @@
         <title>RudRecciah</title>
         <!-- CSS -->
         <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.4.0/dist/animxyz.min.css">
         <link href="./style.css" rel="stylesheet" />
     </head>
     <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode rud-nomargin    " data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
         <!-- Modals go here -->
         <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
-            <div class="sticky-alerts">
-
-            </div>
-
-
-
-            <nav class="navbar">
-                <div class="navbar-content rud-width-fluid rud-height-fluid">
+            <nav class="navbar" xyz="fade big">
+                <div class="navbar-content rud-width-fluid rud-height-fluid xyz-in">
                     <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
                         <i class="fa fa-bars rud-nav-item-color" aria-hidden="true"></i>
                     </button>
@@ -48,7 +43,7 @@
                         <a href="./" class="sidebar-brand rud-text-logo">&lt;/RudRecciah&gt;</a>
                     </div>
                     <div class="sidebar-content ml-5">
-                        <h1 class="sidebar-title">
+                        <h1 id="sidebar-title-data" class="sidebar-title">
                             Information
                         </h1>
                         <div class="sidebar-divider"></div>
@@ -66,7 +61,6 @@
                                 <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="sidebar-link">Youtube</a>
                                 <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="sidebar-link">Twitch</a>
                                 <a target="_blank" href="https://twitter.com/RRecciah" class="sidebar-link">Twitter</a>
-                                <a target="_blank" href="https://www.reddit.com/user/RudRecciah" class="sidebar-link">Reddit</a>
                             </div>
                         </details>
                         <div class="rud-spacer-sm"></div>
@@ -88,36 +82,39 @@
                         <a href="./bugs" class="sidebar-link">Report A Bug</a>
                     </div>
                 </div>
-                <!--navigation here-->
             </div>
 
 
 
-            <div class="content-wrapper">
-                <div class="container-fluid">
-                    <img src="landing-bg-img.png" class="img-fluid rud-img-width-fluid" alt="image did a not exist sorry :/">
+            <div id="wrapper" class="content-wrapper">
+                <div class="container-fluid" xyz="fade big">
+                    <img src="landing-bg-img.png" class="img-fluid rud-img-width-fluid xyz-in" alt="image did a not exist sorry :/">
                 </div>
                 <div class="content">
-                    <h1 class="content-title text-center font-size-24">
-                        Hey
-                    </h1>
-                    <p class="text-center">
-                        I'm a developer who does things.
-                    </p>
-                    <div class="text-center">
-                        <a href="./about/" class="btn btn-primary btn-rounded">All The Info</a>
+                    <div xyz="fade small stagger ease-out-back">
+                        <h1 id="about-title" class="content-title text-center font-size-24">
+                            Hey
+                        </h1>
                     </div>
-                    <div class="rud-spacer-sm"></div>
+                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+                        <p id="about" class="text-center">
+                            I'm a developer who does things.
+                        </p>
+                    </div>
                     <hr>
-                    <h1 class="content-title text-center font-size-24">
-                        Projects
-                    </h1>
-                    <p class="text-center">
-                        Looking for some of my projects? Here are my favorites.
-                    </p>
-                    <div class="container-lg">
-                        <div class="row">
-                            <div class="col-sm">
+                    <div xyz="fade small stagger ease-out-back">
+                        <h1 id="project-title" class="content-title text-center font-size-24">
+                            Projects
+                        </h1>
+                    </div>
+                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+                        <p id="project" class="text-center">
+                            Looking for some of my projects? Here are my favorites.
+                        </p>
+                    </div>
+                    <div id="projects" class="container-lg">
+                        <div class="row" xyz="fade-100% back big-25% perspective duration-4 ease stagger-0.5">
+                            <div id="proj1" class="col-sm">
                                 <div class="card p-0">
                                     <img src="ecl.png" class="img-fluid rounded-top" alt="reload page pls">
                                     <div class="content">
@@ -130,13 +127,13 @@
                                             </div>
                                             <div class="rud-spacer-sm"></div>
                                         </div>
-                                        <div class="text-right">
+                                        <div id="proj1-button" class="text-right" xyz="left-50% fade ease">
                                             <a href="./endcraft/" class="btn btn-primary btn-rounded">Learn more</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <div id="proj2" class="col-sm">
                                 <div class="card p-0">
                                     <img src="fbl.png" class="img-fluid rounded-top" alt="reload page pls">
                                     <div class="content">
@@ -149,13 +146,13 @@
                                             </div>
                                             <div class="rud-spacer-sm"></div>
                                         </div>
-                                        <div class="text-right">
+                                        <div id="proj2-button" class="text-right" xyz="left-50% fade ease">
                                             <a href="./freebirdsmp/" class="btn btn-primary btn-rounded">Learn more</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <div id="proj3" class="col-sm">
                                 <div class="card p-0">
                                     <img src="ttmtwl.png" class="img-fluid rounded-top" alt="reload page pls">
                                     <div class="content">
@@ -168,7 +165,7 @@
                                             </div>
                                             <div class="rud-spacer-sm"></div>
                                         </div>
-                                        <div class="text-right">
+                                        <div id="proj3-button" class="text-right" xyz="left-50% fade ease">
                                             <a href="./ttm/" class="btn btn-primary btn-rounded">Learn more</a>
                                         </div>
                                     </div>
@@ -176,44 +173,52 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center">
-                        Looking for another project? Find it here.
-                    </p>
-                    <div class="text-center">
-                        <button type="button" onclick="halfmoon.toggleSidebar()" class="btn btn-primary btn-rounded">All Projects</button>
+                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+                        <p id="project-more" class="text-center">
+                            Looking for another project? Find it here.
+                        </p>
+                    </div>
+                    <div class="text-center" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+                        <button id="project-more-button" type="button" onclick="halfmoon.toggleSidebar()" class="btn btn-primary btn-rounded">All Projects</button>
                     </div>
                     <div class="rud-spacer-sm"></div>
                     <hr>
-                    <h1 class="content-title text-center font-size-24">
-                        Contact
-                    </h1>
-                    <p class="text-center">
-                        If you need to get in touch, you can find everything you need to know here.
-                    </p>
-                    <div class="text-center">
-                        <a href="./contact/" class="btn btn-primary btn-rounded">Contact Me</a>
+                    <div xyz="fade small stagger ease-out-back">
+                        <h1 id="contact-title" class="content-title text-center font-size-24">
+                            Contact
+                        </h1>
+                    </div>
+                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+                        <p id="contact" class="text-center">
+                            If you need to get in touch, send me a friend request on Discord, <span class="text-monospace">@RudRecciah#5681 (id=246080207704817664)</span>.
+                        </p>
                     </div>
                     <div class="rud-spacer-sm"></div>
                     <hr>
-                    <h1 class="content-title text-center font-size-24">
-                        Accounts
-                    </h1>
-                    <p class="text-center">
-                        Looking for my GitHub, Steam, or social media accounts? Find them here.
-                    </p>
-                    <div class="text-center">
-                        <div class="btn-group" role="group" aria-label="Accounts">
-                            <a target="_blank" href="https://github.com/RudRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-github"></i></a>
-                            <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="btn btn-primary"><i class="fab fa-steam"></i></a>
-                            <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="btn btn-primary"><i class="fab fa-youtube"></i></a>
-                            <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="btn btn-primary"><i class="fab fa-twitch"></i></a>
-                            <a target="_blank" href="https://twitter.com/RRecciah" class="btn btn-primary"><i class="fab fa-twitter"></i></a>
-                            <a target="_blank" href="https://www.reddit.com/user/RudRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-reddit"></i></a>
+                    <div xyz="fade small stagger ease-out-back">
+                        <h1 id="account-title" class="content-title text-center font-size-24">
+                            Accounts
+                        </h1>
+                    </div>
+                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+                        <p id="account" class="text-center">
+                            Looking for my GitHub, Steam, or social media accounts? Find them here.
+                        </p>
+                    </div>
+                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+                        <div id="account-links" class="text-center">
+                            <div class="btn-group" role="group" aria-label="Accounts">
+                                <a target="_blank" href="https://github.com/RudRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-github"></i></a>
+                                <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="btn btn-primary"><i class="fab fa-steam"></i></a>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="btn btn-primary"><i class="fab fa-youtube"></i></a>
+                                <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="btn btn-primary"><i class="fab fa-twitch"></i></a>
+                                <a target="_blank" href="https://twitter.com/RRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-twitter"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="navbar navbar-static-bottom">
-                    <span class="navbar-text m-auto">
+                <div class="navbar navbar-static-bottom" xyz="fade big">
+                    <span id="footer" class="navbar-text m-auto">
                         Made by RudRecciah at 4:23 AM
                     </span>
                 </div>
@@ -225,6 +230,37 @@
         <script>
             console.log("Maybe you should be looking somewhere else...")
             console.log("I heard there's a place where you can see it all.")
+        </script>
+        <script>
+            window.onload = animate();
+
+            document.getElementById("wrapper").addEventListener("scroll", function() {
+                animate();
+            });
+
+            function animate() {
+                var elements = [document.getElementById("about-title"), document.getElementById("about"), document.getElementById("project-title"), document.getElementById("project"), document.getElementById("projects"), document.getElementById("proj1-button"), document.getElementById("proj2-button"), document.getElementById("proj3-button"), document.getElementById("project-more"), document.getElementById("project-more-button"), document.getElementById("contact-title"), document.getElementById("contact"), document.getElementById("account-title"), document.getElementById("account"), document.getElementById("account-links"), document.getElementById("footer")];
+                elements.forEach(element => {
+                    var distance = element.getBoundingClientRect();
+                    if(distance.top <= (window.innerHeight || document.documentElement.clientHeight)) {
+                        if(element.getAttribute("id") == "projects") {
+                            if(!(document.getElementById("proj1").classList.contains("xyz-in"))) {
+                                document.getElementById("proj1").classList.add("xyz-in");
+                            }
+                            if(!(document.getElementById("proj2").classList.contains("xyz-in"))) {
+                                document.getElementById("proj2").classList.add("xyz-in");
+                            }
+                            if(!(document.getElementById("proj3").classList.contains("xyz-in"))) {
+                                document.getElementById("proj3").classList.add("xyz-in");
+                            }
+                        }else{
+                            if(!(document.getElementById(element.getAttribute("id")).classList.contains("xyz-in"))) {
+                                document.getElementById(element.getAttribute("id")).classList.add("xyz-in");
+                            }
+                        }
+                    }
+                });
+            }
         </script>
     </body>
 </html>

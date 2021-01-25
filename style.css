@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+body {
+    overflow-x: hidden;
+}
 .rud-img-width-fluid {
     width: 100%;
 }
