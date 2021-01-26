@@ -47,9 +47,9 @@
                             Information
                         </h1>
                         <div class="sidebar-divider"></div>
-                        <a href="./" class="sidebar-link active">Home</a>
-                        <a href="./about" class="sidebar-link">About</a>
-                        <a href="./contact" class="sidebar-link">Contact</a>
+                        <a id="sidebar-home" href="./" class="sidebar-link active">Home</a>
+                        <a id="sidebar-about" href="#about-title" onclick="sidebar('about')" class="sidebar-link">About</a>
+                        <a id="sidebar-contact" href="#contact-title" onclick="sidebar('contact')" class="sidebar-link">Contact</a>
                         <details class="sidebar-link">
                             <summary class="rud-no-outline">
                               Accounts
@@ -71,6 +71,9 @@
                         <a href="./endcraft/" class="sidebar-link">EndCraft</a>
                         <a href="./freebirdsmp/" class="sidebar-link">Freebird SMP</a>
                         <a href="./ttm/" class="sidebar-link">TTM Theory Wiki</a>
+                        <a href="./osea/" class="sidebar-link">EndCraft Archive</a>
+                        <a href="./cqs/" class="sidebar-link">Custom Query Stats</a>
+                        <a href="./arena/" class="sidebar-link">The Arena</a>
                         <!-- PROJECT SIDEBAR LINK 
                         <a href="./ttm/" class="sidebar-link">TTM Theory Wiki</a>
                         -->
@@ -260,6 +263,14 @@
                         }
                     }
                 });
+            }
+
+            function sidebar(div) {
+                document.getElementById("sidebar-home").classList.remove("active");
+                document.getElementById("sidebar-about").classList.remove("active");
+                document.getElementById("sidebar-contact").classList.remove("active");
+                document.getElementById("sidebar-" + div).classList.add("active");
+                halfmoon.toggleSidebar();
             }
         </script>
     </body>
