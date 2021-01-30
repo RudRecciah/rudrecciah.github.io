@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Meta tags -->
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-        <meta name="keywords" content="rudrecciah, endcraft, freebird games, rud recciah, rud, recciah" />
-        <meta name="description" content="Home of the squacky boi." />
-        <meta name="author" content="RudRecciah" />
-        <!-- Favicon and title -->
-        <link rel="icon" href="favicon.png">
-        <title>RudRecciah - Report A Bug</title>
-        <!-- CSS -->
-        <link href="./style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <h1>
-            Report A Bug
-        </h1>
-        <p>
-            Notice a bug with one of my projects or think something might be an error? Report it here. Many of my projects use dependencies that I have no control over making bugs more likely to appear over time.
-        </p>
-        <input type="text" id="bug" onkeyup="sendBug(event)" placeholder="Press enter to submit." title="Report A Bug">
-        <br>
-        <br>
-        <hr>
-        <br>
-        <a href="../">Back</a>
-        <script>
-            function sendBug(e) {
-                var key = e.keyCode
-                if(key == 13) {
-                    var input = document.getElementById("bug");
-                    var feedback = input.value;
-                    if(feedback.length > 2000) {
-                        alert("Sorry, but there's a 2000 character limit. Please try again.");
-                    }else{
-                        input.value = "";
-                        var request = new XMLHttpRequest();
-                        request.open("POST", "https://discord.com/api/webhooks/791082804670103552/67Yodr-bdBIP-oeOP0mdwK2dN0dq8pZiWgAQPJYclGxn-_Y0TYIl4fN1N4nYnutsic5L");
-                        request.setRequestHeader('Content-type', 'application/json');
-                        var params = {
-                            username: "New Bug",
-                            avatar_url: "https://rudrecciah.dev/bugs/ico.png",
-                            content: feedback
-                        }
-                    request.send(JSON.stringify(params));
-                    }
-                }
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="rudrecciah, endcraft, freebird games, rud recciah, rud, recciah" />
+    <meta name="description" content="Home of the squacky boi." />
+    <meta name="author" content="RudRecciah" />
+    <!-- Favicon and title -->
+    <link rel="icon" href="favicon.png">
+    <title>RudRecciah - Report A Bug</title>
+    <!-- CSS -->
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>
+      Report A Bug
+    </h1>
+    <p>
+      Notice a bug with one of my projects or think something might be an error? Report it here. Many of my projects use dependencies that I have no control over making bugs more likely to appear over time.
+    </p>
+    <input type="text" id="bug" onkeyup="sendBug(event)" placeholder="Press enter to submit." title="Report A Bug">
+    <br>
+    <br>
+    <hr>
+    <br>
+    <a href="../">Back</a>
+    <script>
+      function sendBug(e) {
+        var key = e.keyCode
+        if(key == 13) {
+          var input = document.getElementById("bug");
+          var feedback = input.value;
+          if(feedback.length > 2000) {
+            alert("Sorry, but there's a 2000 character limit. Please try again.");
+          }else{
+            input.value = "";
+            var request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/791082804670103552/67Yodr-bdBIP-oeOP0mdwK2dN0dq8pZiWgAQPJYclGxn-_Y0TYIl4fN1N4nYnutsic5L");
+            request.setRequestHeader('Content-type', 'application/json');
+            var params = {
+              username: "New Bug",
+              avatar_url: "https://rudrecciah.dev/bugs/ico.png",
+              content: feedback
             }
-        </script>
-        <!-- haha brutalist bug page go brr -->
-    </body>
+          request.send(JSON.stringify(params));
+          }
+        }
+      }
+    </script>
+    <!-- haha brutalist bug page go brr -->
+  </body>
 </html>

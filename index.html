@@ -1,278 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Meta tags -->
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-        <meta name="keywords" content="rudrecciah, endcraft, freebird games, rud recciah, rud, recciah, developer, to the moon wiki, to the moon, finding paradise, theory, theory wiki, to the moon theory wiki, ttm theory wiki, ttm wiki, freebird arena, custom query stats, spigotmc, spigot, killed kan gao in among us" />
-        <meta name="description" content="Home of the squacky boi." />
-        <meta name="author" content="RudRecciah" />
-        <!-- Favicon and title -->
-        <link rel="icon" href="favicon.png">
-        <title>RudRecciah</title>
-        <!-- CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.4.0/dist/animxyz.min.css">
-        <link href="./style.css" rel="stylesheet" />
-    </head>
-    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode rud-nomargin    " data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
-        <!-- Modals -->
-        <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
-            <!-- Navigation -->
-            <nav class="navbar" xyz="fade big">
-                <div class="navbar-content rud-width-fluid rud-height-fluid xyz-in">
-                    <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
-                        <i class="fa fa-bars rud-nav-item-color" aria-hidden="true"></i>
-                    </button>
-                    <a href="./" class="rud-width-fluid btn btn-link"><span class="rud-nav-item-color rud-text-logo font-size-24">&lt;/RudRecciah&gt;</span>
-                    </a>
-                    <a href="./contact/">
-                        <button class="btn btn-action btn-link" type="button">
-                            <i class="fas fa-paper-plane rud-nav-item-color" aria-hidden="true"></i>
-                        </button>
-                    </a>
-                </div>
-            </nav>
-            <!-- Sidebar -->
-            <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
-            <div class="sidebar">
-                <div class="sidebar-menu">
-                    <div class="sidebar-brand ml-5 font-size-24">
-                        <a href="./" class="sidebar-brand rud-text-logo">&lt;/RudRecciah&gt;</a>
-                    </div>
-                    <div class="sidebar-content ml-5">
-                        <h1 id="sidebar-title-data" class="sidebar-title">
-                            Information
-                        </h1>
-                        <div class="sidebar-divider"></div>
-                        <a id="sidebar-home" href="./" class="sidebar-link active">Home</a>
-                        <a id="sidebar-about" href="#about-title" onclick="sidebar('about')" class="sidebar-link">About</a>
-                        <a id="sidebar-contact" href="#contact-title" onclick="sidebar('contact')" class="sidebar-link">Contact</a>
-                        <details class="sidebar-link">
-                            <summary class="rud-no-outline">
-                              Accounts
-                            </summary>
-                            <div class="sidebar-divider"></div>
-                            <div class="sidebar-content mt-0 mb-0 ml-0">
-                                <a target="_blank" href="https://github.com/RudRecciah" class="sidebar-link">GitHub</a>
-                                <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="sidebar-link">Steam</a>
-                                <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="sidebar-link">Youtube</a>
-                                <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="sidebar-link">Twitch</a>
-                                <a target="_blank" href="https://twitter.com/RRecciah" class="sidebar-link">Twitter</a>
-                            </div>
-                        </details>
-                        <div class="rud-spacer-sm"></div>
-                        <h1 class="sidebar-title">
-                            Projects
-                        </h1>
-                        <div class="sidebar-divider"></div>
-                        <a href="./endcraft/" class="sidebar-link">EndCraft</a>
-                        <a href="./freebirdsmp/" class="sidebar-link">Freebird SMP</a>
-                        <a href="./ttm/" class="sidebar-link">TTM Theory Wiki</a>
-                        <a href="./osea/" class="sidebar-link">EndCraft Archive</a>
-                        <a href="./cqs/" class="sidebar-link">Custom Query Stats</a>
-                        <a href="./arena/" class="sidebar-link">The Arena</a>
-                        <!-- PROJECT SIDEBAR LINK 
-                        <a href="./ttm/" class="sidebar-link">TTM Theory Wiki</a>
-                        -->
-                        <div class="rud-spacer-sm"></div>
-                        <h1 class="sidebar-title">
-                            Bugs
-                        </h1>
-                        <div class="sidebar-divider"></div>
-                        <a href="./bugs" class="sidebar-link">Report A Bug</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Content -->
-            <div id="wrapper" class="content-wrapper">
-                <div class="container-fluid" xyz="fade big">
-                    <video autoplay loop muted class="w-full">
-                        <source src="lofi.mp4" type="video/mp4">
-                    </video>
-                    <!-- <img src="landing-bg-img.png" class="img-fluid rud-img-width-fluid xyz-in" alt="image did a not exist sorry :/"> -->
-                </video>
-                <div class="rud-spacer-md"></div>
-                <div class="content content-main">
-                    <div xyz="fade small stagger ease-out-back">
-                        <h1 id="about-title" class="content-title text-center font-size-24">
-                            Hey
-                        </h1>
-                    </div>
-                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-                        <p id="about" class="text-center">
-                            I'm a developer who does things.
-                        </p>
-                    </div>
-                    <hr>
-                    <div xyz="fade small stagger ease-out-back">
-                        <h1 id="project-title" class="content-title text-center font-size-24">
-                            Projects
-                        </h1>
-                    </div>
-                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-                        <p id="project" class="text-center">
-                            Looking for some of my projects? Here are my favorites.
-                        </p>
-                    </div>
-                    <div id="projects" class="container-lg">
-                        <div class="row" xyz="fade-100% back big-25% perspective duration-4 ease stagger-0.5">
-                            <div id="proj1" class="col-sm">
-                                <div class="card p-0">
-                                    <img src="ecl.png" class="img-fluid rounded-top" alt="reload page pls">
-                                    <div class="content">
-                                        <div class="rud-card-sub-height">
-                                            <div class="content-title">
-                                                EndCraft
-                                            </div>
-                                            <div class="text-muted">
-                                                EndCraft, my longest-running and longest-indev project, is a Minecraft server with fun minigames, survival, and PVP.
-                                            </div>
-                                            <div class="rud-spacer-sm"></div>
-                                        </div>
-                                        <div id="proj1-button" class="text-right" xyz="left-50% fade ease">
-                                            <a href="./endcraft/" class="btn btn-primary btn-rounded">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="proj2" class="col-sm">
-                                <div class="card p-0">
-                                    <img src="fbl.png" class="img-fluid rounded-top" alt="reload page pls">
-                                    <div class="content">
-                                        <div class="rud-card-sub-height">
-                                            <div class="content-title">
-                                                Freebird SMP
-                                            </div>
-                                            <div class="text-muted">
-                                                A small, invite-only RP Minecraft server made for <a href="https://discord.com/invite/MDxRZCx">this Discord server</a>.
-                                            </div>
-                                            <div class="rud-spacer-sm"></div>
-                                        </div>
-                                        <div id="proj2-button" class="text-right" xyz="left-50% fade ease">
-                                            <a href="./freebirdsmp/" class="btn btn-primary btn-rounded">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="proj3" class="col-sm">
-                                <div class="card p-0">
-                                    <img src="ttmtwl.png" class="img-fluid rounded-top" alt="reload page pls">
-                                    <div class="content">
-                                        <div class="rud-card-sub-height">
-                                            <div class="content-title">
-                                                TTM Theory Wiki
-                                            </div>
-                                            <div class="text-muted">
-                                                The officially unofficial place to find lore, theories, and headcanon about games made by <a href="https://freebirdgames.com/">this indie studio</a>.
-                                            </div>
-                                            <div class="rud-spacer-sm"></div>
-                                        </div>
-                                        <div id="proj3-button" class="text-right" xyz="left-50% fade ease">
-                                            <a href="./ttm/" class="btn btn-primary btn-rounded">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-                        <p id="project-more" class="text-center">
-                            Looking for another project? Find it here.
-                        </p>
-                    </div>
-                    <div class="text-center" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-                        <button id="project-more-button" type="button" onclick="halfmoon.toggleSidebar()" class="btn btn-primary btn-rounded">All Projects</button>
-                    </div>
-                    <div class="rud-spacer-sm"></div>
-                    <hr>
-                    <div xyz="fade small stagger ease-out-back">
-                        <h1 id="contact-title" class="content-title text-center font-size-24">
-                            Contact
-                        </h1>
-                    </div>
-                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-                        <p id="contact" class="text-center">
-                            If you need to get in touch, send me a friend request on Discord, <span class="text-monospace">@RudRecciah#5681 (id=246080207704817664)</span>.
-                        </p>
-                    </div>
-                    <div class="rud-spacer-sm"></div>
-                    <hr>
-                    <div xyz="fade small stagger ease-out-back">
-                        <h1 id="account-title" class="content-title text-center font-size-24">
-                            Accounts
-                        </h1>
-                    </div>
-                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-                        <p id="account" class="text-center">
-                            Looking for my GitHub, Steam, or social media accounts? Find them here.
-                        </p>
-                    </div>
-                    <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-                        <div id="account-links" class="text-center">
-                            <div class="btn-group" role="group" aria-label="Accounts">
-                                <a target="_blank" href="https://github.com/RudRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-github"></i></a>
-                                <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="btn btn-primary"><i class="fab fa-steam"></i></a>
-                                <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="btn btn-primary"><i class="fab fa-youtube"></i></a>
-                                <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="btn btn-primary"><i class="fab fa-twitch"></i></a>
-                                <a target="_blank" href="https://twitter.com/RRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="navbar navbar-static-bottom" xyz="fade big">
-                    <span id="footer" class="navbar-text m-auto">
-                        Made by RudRecciah at 4:23 AM
-                    </span>
-                </div>
-            </div>
+<html id="htmll" lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="rudrecciah, endcraft, freebird games, rud recciah, rud, recciah, developer, to the moon wiki, to the moon, finding paradise, theory, theory wiki, to the moon theory wiki, ttm theory wiki, ttm wiki, freebird arena, custom query stats, spigotmc, spigot, killed kan gao in among us" />
+    <meta name="description" content="Home of the squacky boi." />
+    <meta name="author" content="RudRecciah" />
+    <!-- Favicon and title -->
+    <link rel="icon" href="favicon.png">
+    <title>RudRecciah</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.4.0/dist/animxyz.min.css">
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode rud-nomargin" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+    <!-- Modals -->
+    <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
+      <!-- Navigation -->
+      <nav class="navbar" xyz="fade big">
+        <div class="navbar-content rud-width-fluid rud-height-fluid xyz-in">
+          <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
+            <i class="fa fa-bars rud-nav-item-color" aria-hidden="true"></i>
+          </button>
+          <a href="./" class="rud-width-fluid btn btn-link"><span class="rud-nav-item-color rud-text-logo font-size-24">&lt;/RudRecciah&gt;</span>
+          </a>
+          <a href="./contact/">
+            <button class="btn btn-action btn-link" type="button">
+              <i class="fas fa-paper-plane rud-nav-item-color" aria-hidden="true"></i>
+            </button>
+          </a>
         </div>
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
-        <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
-        <script>
-            console.log("Maybe you should be looking somewhere else...")
-            console.log("I heard there's a place where you can see it all.")
-        </script>
-        <script>
-            window.onload = animate();
+      </nav>
+      <!-- Sidebar -->
+      <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <div class="sidebar-brand ml-5 font-size-24">
+            <a href="./" class="sidebar-brand rud-text-logo">&lt;/RudRecciah&gt;</a>
+          </div>
+          <div class="sidebar-content ml-5">
+            <h1 id="sidebar-title-data" class="sidebar-title">
+              Information
+            </h1>
+            <div class="sidebar-divider"></div>
+            <a id="sidebar-home" href="./" class="sidebar-link active">Home</a>
+            <a id="sidebar-about" href="#about-title" onclick="sidebar('about')" class="sidebar-link">About</a>
+            <a id="sidebar-contact" href="#contact-title" onclick="sidebar('contact')" class="sidebar-link">Contact</a>
+            <details class="sidebar-link">
+              <summary class="rud-no-outline">
+                Accounts
+              </summary>
+              <div class="sidebar-divider"></div>
+              <div class="sidebar-content mt-0 mb-0 ml-0">
+                <a target="_blank" href="https://github.com/RudRecciah" class="sidebar-link">GitHub</a>
+                <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="sidebar-link">Steam</a>
+                <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="sidebar-link">Youtube</a>
+                <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="sidebar-link">Twitch</a>
+                <a target="_blank" href="https://twitter.com/RRecciah" class="sidebar-link">Twitter</a>
+              </div>
+            </details>
+            <div class="rud-spacer-sm"></div>
+            <h1 class="sidebar-title">
+              Projects
+            </h1>
+            <div class="sidebar-divider"></div>
+            <a href="./endcraft/" class="sidebar-link">EndCraft</a>
+            <a href="./freebirdsmp/" class="sidebar-link">Freebird SMP</a>
+            <a href="./ttm/" class="sidebar-link">TTM Theory Wiki</a>
+            <a href="./osea/" class="sidebar-link">EndCraft Archive</a>
+            <a href="./cqs/" class="sidebar-link">Custom Query Stats</a>
+            <a href="./arena/" class="sidebar-link">The Arena</a>
+            <!-- PROJECT SIDEBAR LINK 
+            <a href="./ttm/" class="sidebar-link">TTM Theory Wiki</a>
+            -->
+            <div class="rud-spacer-sm"></div>
+            <h1 class="sidebar-title">
+              Bugs
+            </h1>
+            <div class="sidebar-divider"></div>
+            <a href="./bugs" class="sidebar-link">Report A Bug</a>
+          </div>
+        </div>
+      </div>
+      <!-- Content -->
+      <div id="wrapper" class="content-wrapper">
+        <div class="container-fluid" xyz="fade big">
+          <video autoplay loop muted class="w-full">
+            <source src="lofi.mp4" type="video/mp4">
+          </video>
+          <!-- <img src="landing-bg-img.png" class="img-fluid rud-img-width-fluid xyz-in" alt="image did a not exist sorry :/"> -->
+        </video>
+        <div class="rud-spacer-md"></div>
+        <div class="content content-main">
+          <div xyz="fade small stagger ease-out-back">
+            <h1 id="about-title" class="content-title text-center font-size-24">
+              Hey
+            </h1>
+          </div>
+          <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+            <p id="about" class="text-center">
+              I'm a developer who does things.
+            </p>
+          </div>
+          <hr>
+          <div xyz="fade small stagger ease-out-back">
+            <h1 id="project-title" class="content-title text-center font-size-24">
+              Projects
+            </h1>
+          </div>
+          <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+            <p id="project" class="text-center">
+              Looking for some of my projects? Here are my favorites.
+            </p>
+          </div>
+          <div id="projects" class="container-lg">
+            <div class="row" xyz="fade-100% back big-25% perspective duration-4 ease stagger-0.5">
+              <div id="proj1" class="col-sm">
+                <div class="card p-0">
+                  <img src="ecl.png" class="img-fluid rounded-top" alt="reload page pls">
+                  <div class="content">
+                    <div class="rud-card-sub-height">
+                      <div class="content-title">
+                        EndCraft
+                      </div>
+                      <div class="text-muted">
+                        EndCraft, my longest-running and longest-indev project, is a Minecraft server with fun minigames, survival, and PVP.
+                      </div>
+                      <div class="rud-spacer-sm"></div>
+                    </div>
+                    <div id="proj1-button" class="text-right" xyz="left-50% fade ease">
+                      <a href="./endcraft/" class="btn btn-primary btn-rounded">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="proj2" class="col-sm">
+                <div class="card p-0">
+                  <img src="fbl.png" class="img-fluid rounded-top" alt="reload page pls">
+                  <div class="content">
+                    <div class="rud-card-sub-height">
+                      <div class="content-title">
+                        Freebird SMP
+                      </div>
+                      <div class="text-muted">
+                        A small, invite-only RP Minecraft server made for <a href="https://discord.com/invite/MDxRZCx">this Discord server</a>.
+                      </div>
+                      <div class="rud-spacer-sm"></div>
+                    </div>
+                    <div id="proj2-button" class="text-right" xyz="left-50% fade ease">
+                      <a href="./freebirdsmp/" class="btn btn-primary btn-rounded">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="proj3" class="col-sm">
+                <div class="card p-0">
+                  <img src="ttmtwl.png" class="img-fluid rounded-top" alt="reload page pls">
+                  <div class="content">
+                    <div class="rud-card-sub-height">
+                      <div class="content-title">
+                        TTM Theory Wiki
+                      </div>
+                      <div class="text-muted">
+                        The officially unofficial place to find lore, theories, and headcanon about games made by <a href="https://freebirdgames.com/">this indie studio</a>.
+                      </div>
+                      <div class="rud-spacer-sm"></div>
+                    </div>
+                    <div id="proj3-button" class="text-right" xyz="left-50% fade ease">
+                      <a href="./ttm/" class="btn btn-primary btn-rounded">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+            <p id="project-more" class="text-center">
+              Looking for another project? Find it here.
+            </p>
+          </div>
+          <div class="text-center" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+            <button id="project-more-button" type="button" onclick="halfmoon.toggleSidebar()" class="btn btn-primary btn-rounded">All Projects</button>
+          </div>
+          <div class="rud-spacer-sm"></div>
+          <hr>
+          <div xyz="fade small stagger ease-out-back">
+            <h1 id="contact-title" class="content-title text-center font-size-24">
+              Contact
+            </h1>
+          </div>
+          <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+            <p id="contact" class="text-center">
+              If you need to get in touch, send me a friend request on Discord, <span class="text-monospace">@RudRecciah#5681 (id=246080207704817664)</span>.
+            </p>
+          </div>
+          <div class="rud-spacer-sm"></div>
+          <hr>
+          <div xyz="fade small stagger ease-out-back">
+            <h1 id="account-title" class="content-title text-center font-size-24">
+              Accounts
+            </h1>
+          </div>
+          <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+            <p id="account" class="text-center">
+              Looking for my GitHub, Steam, or social media accounts? Find them here.
+            </p>
+          </div>
+          <div xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+            <div id="account-links" class="text-center">
+              <div class="btn-group" role="group" aria-label="Accounts">
+                <a target="_blank" href="https://github.com/RudRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-github"></i></a>
+                <a target="_blank" href="https://steamcommunity.com/id/rudrecciah/" class="btn btn-primary"><i class="fab fa-steam"></i></a>
+                <a target="_blank" href="https://www.youtube.com/channel/UCi8agiUPQKPmcx1lU_QzG0Q" class="btn btn-primary"><i class="fab fa-youtube"></i></a>
+                <a target="_blank" href="https://www.twitch.tv/rudrecciah" class="btn btn-primary"><i class="fab fa-twitch"></i></a>
+                <a target="_blank" href="https://twitter.com/RRecciah" class="btn btn-primary btn-rounded"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-static-bottom" xyz="fade big">
+          <span id="footer" class="navbar-text m-auto">
+            Made by RudRecciah at 4:23 AM
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+    <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
+    <script>
+      console.log("Maybe you should be looking somewhere else...")
+      console.log("I heard there's a place where you can see it all.")
+    </script>
+    <script>
+      window.onload = animate();
 
-            document.getElementById("wrapper").addEventListener("scroll", function() {
-                animate();
-            });
+      document.getElementById("wrapper").addEventListener("scroll", function() {
+        animate();
+      });
 
-            function animate() {
-                var elements = [document.getElementById("about-title"), document.getElementById("about"), document.getElementById("project-title"), document.getElementById("project"), document.getElementById("projects"), document.getElementById("proj1-button"), document.getElementById("proj2-button"), document.getElementById("proj3-button"), document.getElementById("project-more"), document.getElementById("project-more-button"), document.getElementById("contact-title"), document.getElementById("contact"), document.getElementById("account-title"), document.getElementById("account"), document.getElementById("account-links"), document.getElementById("footer")];
-                elements.forEach(element => {
-                    var distance = element.getBoundingClientRect();
-                    if(distance.top <= (window.innerHeight || document.documentElement.clientHeight)) {
-                        if(element.getAttribute("id") == "projects") {
-                            if(!(document.getElementById("proj1").classList.contains("xyz-in"))) {
-                                document.getElementById("proj1").classList.add("xyz-in");
-                            }
-                            if(!(document.getElementById("proj2").classList.contains("xyz-in"))) {
-                                document.getElementById("proj2").classList.add("xyz-in");
-                            }
-                            if(!(document.getElementById("proj3").classList.contains("xyz-in"))) {
-                                document.getElementById("proj3").classList.add("xyz-in");
-                            }
-                        }else{
-                            if(!(document.getElementById(element.getAttribute("id")).classList.contains("xyz-in"))) {
-                                document.getElementById(element.getAttribute("id")).classList.add("xyz-in");
-                            }
-                        }
-                    }
-                });
+      function animate() {
+        var elements = [document.getElementById("about-title"), document.getElementById("about"), document.getElementById("project-title"), document.getElementById("project"), document.getElementById("projects"), document.getElementById("proj1-button"), document.getElementById("proj2-button"), document.getElementById("proj3-button"), document.getElementById("project-more"), document.getElementById("project-more-button"), document.getElementById("contact-title"), document.getElementById("contact"), document.getElementById("account-title"), document.getElementById("account"), document.getElementById("account-links"), document.getElementById("footer")];
+        elements.forEach(element => {
+          var distance = element.getBoundingClientRect();
+          if(distance.top <= (window.innerHeight || document.documentElement.clientHeight)) {
+            if(element.getAttribute("id") == "projects") {
+              if(!(document.getElementById("proj1").classList.contains("xyz-in"))) {
+                document.getElementById("proj1").classList.add("xyz-in");
+              }
+              if(!(document.getElementById("proj2").classList.contains("xyz-in"))) {
+                document.getElementById("proj2").classList.add("xyz-in");
+              }
+              if(!(document.getElementById("proj3").classList.contains("xyz-in"))) {
+                document.getElementById("proj3").classList.add("xyz-in");
+              }
+            }else{
+              if(!(document.getElementById(element.getAttribute("id")).classList.contains("xyz-in"))) {
+                document.getElementById(element.getAttribute("id")).classList.add("xyz-in");
+              }
             }
+          }
+        });
+      }
 
-            function sidebar(div) {
-                document.getElementById("sidebar-home").classList.remove("active");
-                document.getElementById("sidebar-about").classList.remove("active");
-                document.getElementById("sidebar-contact").classList.remove("active");
-                document.getElementById("sidebar-" + div).classList.add("active");
-                halfmoon.toggleSidebar();
-            }
-        </script>
-    </body>
+      function sidebar(div) {
+        document.getElementById("sidebar-home").classList.remove("active");
+        document.getElementById("sidebar-about").classList.remove("active");
+        document.getElementById("sidebar-contact").classList.remove("active");
+        document.getElementById("sidebar-" + div).classList.add("active");
+        halfmoon.toggleSidebar();
+      }
+
+      function convertTabs() {
+        var doc1 = document.getElementById("htmll").innerHTML;
+        console.log(doc1);
+      }
+    </script>
+  </body>
 </html>
