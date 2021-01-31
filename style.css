@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 .content-wrapper {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 body {
     overflow-x: hidden;
@@ -78,4 +79,7 @@ body {
 }
 .rud-image-card-fit {
     object-fit: cover;
+}
+.w-1000 {
+    width: 1000px;
 }
