@@ -49,3 +49,10 @@
 .text-pink {
     color: #D061C7;
 }
+.h-100vh {
+    height: 100vh;
+}
+.content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
