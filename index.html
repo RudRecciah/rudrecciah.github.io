@@ -19,6 +19,9 @@
   <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode rud-nomargin" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
     <!-- Modals -->
     <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
+      <div class="sticky-alerts">
+        
+      </div>
       <!-- Navigation -->
       <nav class="navbar" xyz="fade big">
         <div class="navbar-content rud-width-fluid rud-height-fluid xyz-in">
@@ -87,8 +90,8 @@
       </div>
       <!-- Content -->
       <div id="wrapper" class="content-wrapper">
-        <div class="container-fluid" xyz="fade big">
-          <video autoplay loop muted class="w-full">
+        <div class="container-fluid" xyz="fade big delay-1">
+          <video autoplay loop muted class="w-full xyz-in">
             <source src="lofi.mp4" type="video/mp4">
           </video>
           <!-- <img src="landing-bg-img.png" class="img-fluid rud-img-width-fluid xyz-in" alt="image did a not exist sorry :/"> -->
@@ -272,11 +275,6 @@
         document.getElementById("sidebar-contact").classList.remove("active");
         document.getElementById("sidebar-" + div).classList.add("active");
         halfmoon.toggleSidebar();
-      }
-
-      function convertTabs() {
-        var doc1 = document.getElementById("htmll").innerHTML;
-        console.log(doc1);
       }
     </script>
   </body>
