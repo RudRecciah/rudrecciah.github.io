@@ -16,7 +16,66 @@
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars light-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
-    <div class="page-wrapper" data-sidebar-type="overlayed-all">
+    <!-- Modals go here -->
+    <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
+      <div class="sticky-alerts">
+
+      </div>
+      <nav class="navbar nav-img-bg">
+        <div class="navbar-content w-full">
+          <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
+            <i class="fa fa-bars no-outline" aria-hidden="true"></i>
+          </button>
+          <div class="d-none d-md-flex w-full">
+            <a href="./" class="navbar-brand">
+              <img src="logo-b.png" alt="site did a die, reload pls">
+            </a>
+            <ul class="navbar-nav ml-auto mr-5">
+              <div class="nav-item">
+                <b>
+                  <a href="./archive/" class="nav-link font-size-16">PMMP Archive</a>
+                </b>
+              </div>
+              <div class="nav-item">
+                <b>
+                  <a href="../osea/" class="nav-link font-size-16">Files</a>
+                </b>
+              </div>
+            </ul>
+          </div>
+          <div class="d-flex d-md-none m-auto">
+            <a href="./" class="navbar-brand">
+              <img src="logo-b.png" alt="site did a die, reload pls">
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+      <div class="sidebar sidebar-img-bg">
+        <div class="sidebar-menu">
+          <div class="sidebar-brand ml-5 font-size-24">
+            <a href="./" class="sidebar-brand rud-text-logo">
+              <img src="logo-b.png" alt="site did a die, reload pls">
+            </a>
+          </div>
+        </div>
+        <div class="sidebar-content ml-5">
+          <h1 class="sidebar-title">
+            Information
+          </h1>
+          <div class="sidebar-divider"></div>
+          <a href="./" class="sidebar-link">Home</a>
+          <a href="./archive/" class="sidebar-link">PMMP Archive</a>
+          <a href="../osea/" class="sidebar-link">Files</a>
+          <div class="rud-spacer-sm"></div>
+          <h1 class="sidebar-title">
+            Other
+          </h1>
+          <div class="sidebar-divider"></div>
+          <a href="../" class="sidebar-link">Back</a>
+          <a href="../bugs/" class="sidebar-link">Report A Bug</a>
+        </div>
+      </div>
       <div class="content-wrapper">
         <div class="container-fluid">
           <img src="nmlf.png" class="img-fluid" alt="image did a not exist sorry :/">
