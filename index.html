@@ -228,7 +228,7 @@
           </div>
           <div class="navbar navbar-static-bottom" xyz="fade big">
             <span id="footer" class="navbar-text m-auto">
-              Made by RudRecciah at 4:23 AM
+              Copyright &#169;
             </span>
           </div>
         </div>
@@ -242,6 +242,7 @@
       console.log("I heard there's a place where you can see it all.")
     </script>
     <script>
+      copyright();
       window.onload = animate();
 
       document.getElementById("wrapper").addEventListener("scroll", function() {
@@ -278,6 +279,17 @@
         document.getElementById("sidebar-contact").classList.remove("active");
         document.getElementById("sidebar-" + div).classList.add("active");
         halfmoon.toggleSidebar();
+      }
+
+      function copyright() {
+        var time = Date();
+        console.log(time);
+        var year = time.split(" ")[3];
+        if(!(year == "2021")) {
+          document.getElementById("footer").innerText = document.getElementById("footer").innerText + " 2021-" + year + ", RudRecciah";
+        }else{
+          document.getElementById("footer").innerText = document.getElementById("footer").innerText + " 2021, RudRecciah";
+        }
       }
     </script>
   </body>
