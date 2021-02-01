@@ -26,12 +26,12 @@
   </head>
   <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
     <!-- Modals -->
-    <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
+    <div id="wrapper" class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
       <!-- Toasts -->
       <div class="sticky-alerts"></div>
       <!-- Navigation -->
-      <nav class="navbar">
-        <div class="navbar-content" xyz="fade big">
+      <nav class="navbar" xyz="fade big">
+        <div class="navbar-content xyz-in">
           <button class="xyz-in btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
             <i class="fa fa-bars text-white" aria-hidden="true">
             </i>
@@ -57,9 +57,10 @@
       });
 
       function animate() {
-        var elements = [/*array of elements to animate found by their id*/];
+        var elements = document.querySelectorAll("[data-animated]");
         elements.forEach(element => {
-          var distance = element.getBoundingClientRect();
+          var actualElement = document.getElementById(element.getAttribute("id"));
+          var distance = actualElement.getBoundingClientRect();
           if(distance.top <= (window.innerHeight || document.documentElement.clientHeight)) {
             if(!(document.getElementById(element.getAttribute("id")).classList.contains("xyz-in"))) {
               document.getElementById(element.getAttribute("id")).classList.add("xyz-in");
@@ -70,6 +71,7 @@
     </script>
   </body>
   <!--
+    To animate a div, parent div needs an xyz attribute and div needs id and data-animated attributes. Data-animated doesn't need a value.
     Animations:
       Landing Image/Content, Footer:
         xyz="fade big delay-1"
