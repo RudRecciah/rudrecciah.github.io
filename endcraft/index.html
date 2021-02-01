@@ -16,42 +16,70 @@
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars light-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
-    <div class="page-wrapper" data-sidebar-type="overlayed-all">
-      <div class="content-wrapper">
+    <div class="page-wrapper with-navbar-fixed-bottom" data-sidebar-type="overlayed-all">
+      <div class="content-wrapper overflow-y-lg-hidden">
+        <div class="ec-bg"></div>
         <div class="container-fluid">
           <div class="content">
-            <div class="row h-100vh">
-              <div class="col-6 h-full">
-                <img class="img-fluid align-middle d-inline" src="logo.png" alt="err">
+            <div class="row h-100vh overflow-y-lg-hidden">
+              <div class="col-lg-6 col-12 h-lg-full vert-align-middle overflow-y-lg-hidden">
+                <div class="w-full">
+                  <div class="row">
+                    <div class="col text-center">
+                      <img class="img-fluid d-inline" src="logo.png" alt="err">
+                    </div>
+                  </div>
+                  <div class="rud-spacer-sm-lmdh"></div>
+                  <div class="rud-spacer-sm-lmdh"></div>
+                  <hr>
+                  <div class="rud-spacer-sm-lmdh"></div>
+                  <div class="rud-spacer-sm-lmdh"></div>
+                  <div class="rud-spacer-sm-lmdh"></div>
+                  <div class="row">
+                    <div class="col-6 text-center">
+                      <a class="btn btn-rounded text-white text-center" href="./archive/" >PMMP Archive</a>
+                    </div>
+                    <div class="col-6 text-center">
+                      <a class="btn btn-rounded text-white text-center" href="../osea/">Java Archive</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-6 h-full">
-
+              <div class="col-lg-6 col-12 h-lg-full vert-align-middle overflow-y-lg-hidden">
+                <div class="w-full">
+                  <div class="rud-spacer-sm-mdh"></div>
+                  <div class="rud-spacer-sm-mdh"></div>
+                  <h1 class="content-title text-center font-size-24 text-pink">
+                    What is EndCraft?
+                  </h1>
+                  <p class="text-center text-white m-auto">
+                    EndCraft is a Minecraft server I've owned with some friends for about <span id="year">#</span> years. I've been working on and off developing and running the server over that time, which really doesn't yeild results. So, I decided to create this website; a place to leave public files and archives of EndCraft to help people with more drive than me develop other servers. Check out the PMMP Archive for MC:BE and Helios information and the Java Archive for open-source files for Spigot servers.
+                  </p>
+                  <div class="rud-spacer-sm"></div>
+                  <h1 class="content-title text-center font-size-24 text-pink">
+                    Past Development
+                  </h1>
+                  <p class="text-center text-white m-auto">
+                    EndCraft was originally developed for MC:PE in 2013 using PMMP. The server moved to being vanilla-based in 2017, coming back to PMMP in 2019. EndCraft also was ported to Java in 2019 using Paper. In early August 2020 I shut down Java for the last time as of writing and left the team maintaining MC:BE. A name change and few months later MC:BE EndCraft, known as Helios Practice, <a href="https://eerie.ml/projects/index.html#helios">closed on Febuary 1st, 2021</a>.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="container-fluid">
-          <div class="content">
-            <div class="row h-100vh">
-              <div class="col">
-
+        <div class="rud-spacer-sm-mdh"></div>
+        </div>
+        <div class="navbar navbar-fixed-bottom nav-bg">
+          <div class="navbar-content w-full">
+            <div class="row w-full">
+              <div class="col-6 text-center">
+                <a class="navbar-link" href="../">Back</a>
+              </div>
+              <div class="col-6 text-center">
+                <a class="navbar-link" href="../bugs/">Report A Bug</a>
               </div>
             </div>
           </div>
-        </div> -->
-          <!-- CONTENT TEMPLETE 
-            <h1 class="content-title text-center font-size-24 text-pink">
-              <b>Title</b>
-            </h1>
-            <p class="text-center">
-              Text
-            </p>
-            <div class="text-center">
-              <a href="./about/" class="btn btn-rounded text-white">Bo'tum Geah</a>
-            </div>
-            <div class="rud-spacer-sm"></div>
-            <hr>
-          -->
         </div>
       </div>
     </div>
