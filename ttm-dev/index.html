@@ -26,7 +26,7 @@
   </head>
   <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
     <!-- Modals -->
-    <div id="wrapper" class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-all">
+    <div id="wrapper" class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
       <!-- Toasts -->
       <div class="sticky-alerts"></div>
       <!-- Navigation -->
@@ -40,7 +40,33 @@
       </nav>
       <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
       <div class="sidebar">
-        <!-- Sidebar -->
+        <div class="sidebar-menu">
+          <!-- Sidebar brand -->
+          <a href="#" class="sidebar-brand">
+            <img src="logo.png" alt="Error">
+          </a>
+          <!-- Sidebar content with the search box -->
+          <div class="sidebar-content">
+            <input type="text" class="form-control" placeholder="Search">
+            <div class="mt-10 font-size-12"> <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
+              Press <kbd>/</kbd> to focus
+            </div>
+          </div>
+          <!-- Sidebar links and titles -->
+          <h5 class="sidebar-title">Information</h5>
+          <div class="sidebar-divider"></div>
+          <a id="sidebar-home" href="#home" onclick="sidebar('home')" data-sidebarlink class="sidebar-link active">Home</a>
+          <a id="sidebar-about" href="#about" onclick="sidebar('about')" data-sidebarlink class="sidebar-link">About</a>
+          <br />
+          <h5 class="sidebar-title">Theories</h5>
+          <div class="sidebar-divider"></div>
+          <a id="sidebar-theory1" href="#theory1" onclick="sidebar('theory1')" data-sidebarlink class="sidebar-link">Theory 1</a>
+          <a id="sidebar-theory2" href="#theory2" onclick="sidebar('theory2')" data-sidebarlink class="sidebar-link">Theory 2</a>
+          <a id="sidebar-theory3" href="#theory3" onclick="sidebar('theory3')" data-sidebarlink class="sidebar-link">Theory 3</a>
+          <a id="sidebar-theory4" href="#theory4" onclick="sidebar('theory4')" data-sidebarlink class="sidebar-link">Theory 4</a>
+          <a id="sidebar-theory5" href="#theory5" onclick="sidebar('theory5')" data-sidebarlink class="sidebar-link">Theory 5</a>
+        </div>
+        </div>
       </div>
       <div class="content-wrapper">
 
@@ -67,6 +93,28 @@
             }
           }
         });
+      }
+
+      function sidebar(div) {
+        var active = getActive();
+        document.getElementById(active).classList.remove("active");
+        document.getElementById("sidebar-" + div).classList.add("active");
+      }
+
+      function getActive() {
+        var elementsByData = document.querySelectorAll("[data-sidebarlink]");
+        var elementsById = [];
+        elementsByData.forEach(element => {
+          elementsById.push(element.getAttribute("id"));
+        });
+        activeLink = [];
+        elementsById.forEach(elementById => {
+          var activeElement;
+          if(document.getElementById(elementById).classList.contains("active")) {
+            activeLink.push(elementById);
+          }
+        });
+        return activeLink.toString();
       }
     </script>
   </body>
