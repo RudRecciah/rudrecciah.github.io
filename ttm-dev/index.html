@@ -29,35 +29,32 @@
     <div id="wrapper" class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
       <!-- Toasts -->
       <div class="sticky-alerts"></div>
-      <!-- Navigation -->
-      <nav class="navbar" xyz="fade big">
-        <div class="navbar-content xyz-in">
-          <button class="xyz-in btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
-            <i class="fa fa-bars text-white" aria-hidden="true">
-            </i>
-          </button>
-        </div>
+      <nav class="navbar justify-content-between" xyz="fade big">
+          <div class="navbar-content xyz-in">
+            <button class="xyz-in btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
+              <i class="fa fa-bars text-white" aria-hidden="true">
+              </i>
+            </button>
+          </div>
+          <a href="./" class="navbar-brand xyz-in">
+            <img src="./img/brand.png" alt="To The Moon Theory Wiki">
+          </a>
+          <a class="btn btn-link xyz-in text-white" href="../bugs/">Report A Bug</a>
       </nav>
       <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
       <div class="sidebar">
         <div class="sidebar-menu">
-          <!-- Sidebar brand -->
-          <a href="#" class="sidebar-brand">
-            <img src="logo.png" alt="Error">
+          <a href="./" class="sidebar-brand">
+            <img src="./img/brand.png" alt="Error">
           </a>
-          <!-- Sidebar content with the search box -->
-          <div class="sidebar-content">
-            <input type="text" class="form-control" placeholder="Search">
-            <div class="mt-10 font-size-12"> <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
-              Press <kbd>/</kbd> to focus
-            </div>
-          </div>
-          <!-- Sidebar links and titles -->
+          <div class="spacer-md"></div>
           <h5 class="sidebar-title">Information</h5>
           <div class="sidebar-divider"></div>
           <a id="sidebar-home" href="#home" onclick="sidebar('home')" data-sidebarlink class="sidebar-link active">Home</a>
           <a id="sidebar-about" href="#about" onclick="sidebar('about')" data-sidebarlink class="sidebar-link">About</a>
-          <br />
+          <a id="sidebar-wikipedia" href="https://en.wikipedia.org/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Wikipedia</a>
+          <a id="sidebar-fandom" href="https://tothemoon.fandom.com/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Fandom</a>
+          <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="submit()">Add Theory</a>
           <h5 class="sidebar-title">Theories</h5>
           <div class="sidebar-divider"></div>
           <a id="sidebar-theory1" href="#theory1" onclick="sidebar('theory1')" data-sidebarlink class="sidebar-link">Theory 1</a>
@@ -65,11 +62,138 @@
           <a id="sidebar-theory3" href="#theory3" onclick="sidebar('theory3')" data-sidebarlink class="sidebar-link">Theory 3</a>
           <a id="sidebar-theory4" href="#theory4" onclick="sidebar('theory4')" data-sidebarlink class="sidebar-link">Theory 4</a>
           <a id="sidebar-theory5" href="#theory5" onclick="sidebar('theory5')" data-sidebarlink class="sidebar-link">Theory 5</a>
-        </div>
+          <div class="spacer-md"></div>
+          <h5 class="sidebar-title">Other</h5>
+          <div class="sidebar-divider"></div>
+          <div class="sidebar-content mt-10">
+            <div class="custom-switch">
+              <input type="checkbox" id="raxusMode" value="" onclick="raxusMode()">
+              <label for="raxusMode">Raxus Mode</label>
+            </div>
+          </div>
         </div>
       </div>
       <div class="content-wrapper">
-
+        <div class="container-fluid">
+          <div class="content">
+            <div class="card">
+              <h1 class="card-title">Welcome!</h1>
+              <hr>
+              <p>jams you sodding tic tac this is indev moate come back later with the 2004 chevy highlander</p>
+            </div>
+            <div class="card">
+              <h1 class="card-title">About</h1>
+              <hr>
+              <p>Text here</p>
+            </div>
+            <div class="card">
+              <h1 class="card-title">Theories</h1>
+              <hr>
+              <p>Text here</p>
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <div class="card">
+                    <h1 id="theory-title" class="card-title mb-0 d-inline">Theory Title</h1>
+                    <div id="theory-meta">
+                      <span>Written by </span>
+                      <span id="theory-meta-author">Author Name</span>
+                    </div>
+                    <div id="theory-games">
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          Quintessence: The Blighted Venom
+                        </span>
+                        <span class="d-sm-none">
+                          Quintessence
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          The Mirror Lied
+                        </span>
+                        <span class="d-sm-none">
+                          TML
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          Do You Remember My Lullaby?
+                        </span>
+                        <span class="d-sm-none">
+                          DYRML
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          Quintessence: The Blighted Venom's Lost Chapter
+                        </span>
+                        <span class="d-sm-none">
+                          Lost Chapter
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          To The Moon
+                        </span>
+                        <span class="d-sm-none">
+                          TTM
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          Sigmund Minisode 1
+                        </span>
+                        <span class="d-sm-none">
+                          Minisode 1
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          Sigmund Minisode 2
+                        </span>
+                        <span class="d-sm-none">
+                          Minisode 2
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          A Bird Story
+                        </span>
+                        <span class="d-sm-none">
+                          ABS
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          Finding Paradise
+                        </span>
+                        <span class="d-sm-none">
+                          FP
+                        </span>
+                      </span>
+                      <span class="badge badge-primary">
+                        <span class="d-none d-sm-inline-block">
+                          Impostor Factory
+                        </span>
+                        <span class="d-sm-none">
+                          IF
+                        </span>
+                      </span>
+                    </div>
+                    <div id="theory-content-trn">
+                      <p class="text-truncate mt-0">This is a cool theory. It is so amazing and correct and the writer is so smart. Kan Gao lives in fear of this writer and their works daily.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-static-bottom">
+          <a href="../" class="navbar-link text-muted m-auto">
+            Made with &hearts; by RudRecciah
+          </a>
+        </div>
       </div>
     </div>
     <!-- Scripts -->
@@ -115,6 +239,23 @@
           }
         });
         return activeLink.toString();
+      }
+
+      function raxusMode() {
+        if(document.getElementById("raxusMode").checked) {
+          document.getElementById("wrapper").classList.add("raxus");
+          var alertContent = "This color palette was endorsed by a professional designer at 12 AM on an October night.";
+          halfmoon.initStickyAlert({
+            content: alertContent,
+            title: "Before you go blind",
+            alertType: "",
+            fillType: "",
+            hasDismissButton: true,
+            timeShown: 5000
+          })
+        }else{
+          document.getElementById("wrapper").classList.remove("raxus");
+        }
       }
     </script>
   </body>
