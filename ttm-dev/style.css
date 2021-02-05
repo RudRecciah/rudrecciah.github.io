@@ -13,8 +13,8 @@
   --dm-base-text-color: rgba(207, 198, 171, 0.85);
   --dm-base-text-color-light: rgba(192, 181, 147, 0.7);
   --dm-navbar-border-color: rgba(207, 198, 171, 0.45);
-  --dm-sidebar-border-color:  rgba(207, 198, 171, 0.45);
-  --dm-card-border-color:  rgba(207, 198, 171, 0.45);
+  --dm-sidebar-border-color: rgba(207, 198, 171, 0.45);
+  --dm-card-border-color: rgba(207, 198, 171, 0.45);
   --dm-modal-overlay-bg-color: rgb(63, 55, 44);
   --yellow-color: rgba(207, 198, 171, 0.85);
   --yellow-color-light:#45485e;
@@ -39,32 +39,32 @@
 .spacer-lg {
   height: 30px;
 }
-.raxus {
-  --dark-color: #3F372C;
-  --dark-color-light: #45485e;
-  --dark-color-dark: #3F372C;
-  --dm-muted-text-color: rgba(255, 255, 255, 0.6);
-  --blue-color: #5C617F;
-  --blue-color-light:#7b80a1;
-  --blue-color-very-light: #9fa4c5;
-  --blue-color-dark: #323547;
-  --blue-color-very-dark: #172636;
-  --blue-box-shadow-color: rgba(92, 97, 127, 0.3);
-  --blue-box-shadow-color-darker: rgba(50, 53, 71, 0.6);
-  --dm-base-text-color: rgba(207, 198, 171, 0.85);
-  --dm-base-text-color-light: rgba(192, 181, 147, 0.7);
-  --dm-navbar-border-color: rgba(207, 198, 171, 0.45);
-  --dm-sidebar-border-color:  rgba(207, 198, 171, 0.45);
-  --dm-card-border-color:  rgba(207, 198, 171, 0.45);
-  --dm-modal-overlay-bg-color: rgb(63, 55, 44);
-  --yellow-color: rgba(207, 198, 171, 0.85);
-  --yellow-color-light:#45485e;
-  --yellow-color-very-light: #676a83;
-  --yellow-color-dark: #332c23;
-  --yellow-color-very-dark: #352e23;
-  --yellow-box-shadow-color: rgba(63, 55, 44, 0.3);
-  --yellow-box-shadow-color-darker: rgba(51, 44, 35, 0.6);
-}
+/* .raxus {
+  --dark-color: coral;
+  --dark-color-light: black;
+  --dark-color-dark: gray;
+  --dm-muted-text-color: green;
+  --blue-color: brown;
+  --blue-color-light: skyblue;
+  --blue-color-very-light: olive;
+  --blue-color-dark: red;
+  --blue-color-very-dark: white;
+  --blue-box-shadow-color: lightsalmon;
+  --blue-box-shadow-color-darker: lime;
+  --dm-base-text-color: seagreen;
+  --dm-base-text-color-light: goldenrod;
+  --dm-navbar-border-color: darkblue;
+  --dm-sidebar-border-color: white;
+  --dm-card-border-color: green;
+  --dm-modal-overlay-bg-color: gray;
+  --yellow-color: brown;
+  --yellow-color-light: coral;
+  --yellow-color-very-light: olive;
+  --yellow-color-dark: lightsalmon;
+  --yellow-color-very-dark: blue;
+  --yellow-box-shadow-color: red;
+  --yellow-box-shadow-color-darker: khaki;
+} */
 .cursor-link {
   cursor: pointer;
 }
