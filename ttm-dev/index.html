@@ -13,7 +13,6 @@
     <title>To The Moon Theory Wiki</title>
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.4.0/dist/animxyz.min.css">
     <link href="./style.css" rel="stylesheet" />
     <style id="style">
       .page-wrapper {
@@ -188,17 +187,17 @@
     <div id="wrapper" class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
       <!-- Toasts -->
       <div class="sticky-alerts"></div>
-      <nav class="navbar justify-content-between" xyz="fade big">
-          <div class="navbar-content xyz-in">
-            <button class="xyz-in btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
+      <nav class="navbar justify-content-between">
+          <div class="navbar-content">
+            <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
               <i class="fa fa-bars text-secondary" aria-hidden="true">
               </i>
             </button>
           </div>
-          <a href="./" class="navbar-brand xyz-in">
+          <a href="./" class="navbar-brand">
             <img src="./img/brand.png" alt="To The Moon Theory Wiki">
           </a>
-          <a class="btn btn-link xyz-in text-secondary" href="../bugs/">Report A Bug</a>
+          <a class="btn btn-link text-secondary" href="../bugs/">Report A Bug</a>
       </nav>
       <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
       <div class="sidebar">
@@ -360,24 +359,10 @@
     <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
     <script>
       logConnection();
-      window.onload = animate();
 
       document.getElementById("wrapper").addEventListener("scroll", function() {
         animate();
       });
-
-      function animate() {
-        var elements = document.querySelectorAll("[data-animated]");
-        elements.forEach(element => {
-          var actualElement = document.getElementById(element.getAttribute("id"));
-          var distance = actualElement.getBoundingClientRect();
-          if(distance.top <= (window.innerHeight || document.documentElement.clientHeight)) {
-            if(!(document.getElementById(element.getAttribute("id")).classList.contains("xyz-in"))) {
-              document.getElementById(element.getAttribute("id")).classList.add("xyz-in");
-            }
-          }
-        });
-      }
 
       function sidebar(div) {
         var active = getActive();
@@ -500,22 +485,4 @@
       }
     </script>
   </body>
-  <!--
-    To animate a div, parent div needs an xyz attribute and div needs id and data-animated attributes. Data-animated doesn't need a value.
-    Animations:
-      Landing Image/Content, Footer:
-        xyz="fade big delay-1"
-      Headers:
-        xyz="fade small stagger ease-out-back"
-      Content:
-        xyz="fade flip-down stagger duration-10 delay-2 ease-out-back"
-      Images, Buttons, Other Containers:
-        xyz="fade flip-down stagger duration-10 delay-2 ease-out-back"
-      Card Groups:
-        xyz="fade-100% back big-25% perspective duration-4 ease stagger-0.5"
-      Singe Cards:
-        xyz="fade-100% back big-25% perspective duration-4 ease"
-      Card Buttons:
-        xyz="left-50% fade ease"
-  -->
 </html>
