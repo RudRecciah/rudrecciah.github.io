@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+Developer Guidelines
+(the community guidelines v2, only for the 3 people looking through my code)
+
+Any attempt to misuse or repurpose this code in a way which leaves a lasting dentrimental impact to more than soley your browser session and/or computer is not allowed and any and all action possible will be taken to negate and/or prevent a future action from occouring. If you do not know what I am talking about, you probably do not have to worry about this.
+-->
 <html lang="en">
   <head>
     <!-- Meta tags -->
@@ -444,40 +450,41 @@
       }
 
       function logConnection() {
-        var connection = localStorage.getItem("connection");
-        var currentDate = Date();
-        var splitTime = currentDate.split(" ");
-        var splitTimeHours = splitTime[4].split(":");
-        var lastTimeConnected = splitTime[1] + splitTime[2] + splitTime[3] + splitTimeHours[0] + splitTimeHours[1];
-        console.log("LastTime:" + connection);
-        console.log(lastTimeConnected);
-        if(connection == "" || connection == null) {
-          localStorage.setItem("connection", lastTimeConnected);
-          console.log("new");
-          var request = new XMLHttpRequest();
-          request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
-          request.setRequestHeader('Content-type', 'application/json');
-          var params = {
-            username: "New Connection",
-            avatar_url: "https://rudrecciah.dev/img/connect.jpg",
-            content: "Someone connected to the theory wiki"
-          }
-          request.send(JSON.stringify(params));
-        }else{
-          if(!(connection == lastTimeConnected)) {
-            localStorage.setItem("connection", lastTimeConnected);
-            console.log("old");
-            var request = new XMLHttpRequest();
-            request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
-            request.setRequestHeader('Content-type', 'application/json');
-            var params = {
-              username: "New Connection",
-              avatar_url: "https://rudrecciah.dev/img/connect.jpg",
-              content: "Someone connected to the theory wiki"
-            }
-            request.send(JSON.stringify(params));
-          }
-        }
+        console.log("hey, if you see this it means i fucked up, tell me pls thanks");
+        // var connection = localStorage.getItem("connection");
+        // var currentDate = Date();
+        // var splitTime = currentDate.split(" ");
+        // var splitTimeHours = splitTime[4].split(":");
+        // var lastTimeConnected = splitTime[1] + splitTime[2] + splitTime[3] + splitTimeHours[0] + splitTimeHours[1];
+        // console.log("LastTime:" + connection);
+        // console.log(lastTimeConnected);
+        // if(connection == "" || connection == null) {
+        //   localStorage.setItem("connection", lastTimeConnected);
+        //   console.log("new");
+        //   var request = new XMLHttpRequest();
+        //   request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
+        //   request.setRequestHeader('Content-type', 'application/json');
+        //   var params = {
+        //     username: "New Connection",
+        //     avatar_url: "https://rudrecciah.dev/img/connect.jpg",
+        //     content: "Someone connected to the theory wiki"
+        //   }
+        //   request.send(JSON.stringify(params));
+        // }else{
+        //   if(!(connection == lastTimeConnected)) {
+        //     localStorage.setItem("connection", lastTimeConnected);
+        //     console.log("old");
+        //     var request = new XMLHttpRequest();
+        //     request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
+        //     request.setRequestHeader('Content-type', 'application/json');
+        //     var params = {
+        //       username: "New Connection",
+        //       avatar_url: "https://rudrecciah.dev/img/connect.jpg",
+        //       content: "Someone connected to the theory wiki"
+        //     }
+        //     request.send(JSON.stringify(params));
+        //   }
+        // }
       }
 
       function debugLS() {
