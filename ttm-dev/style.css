@@ -39,32 +39,6 @@
 .spacer-lg {
   height: 30px;
 }
-/* .raxus {
-  --dark-color: coral;
-  --dark-color-light: black;
-  --dark-color-dark: gray;
-  --dm-muted-text-color: green;
-  --blue-color: brown;
-  --blue-color-light: skyblue;
-  --blue-color-very-light: olive;
-  --blue-color-dark: red;
-  --blue-color-very-dark: white;
-  --blue-box-shadow-color: lightsalmon;
-  --blue-box-shadow-color-darker: lime;
-  --dm-base-text-color: seagreen;
-  --dm-base-text-color-light: goldenrod;
-  --dm-navbar-border-color: darkblue;
-  --dm-sidebar-border-color: white;
-  --dm-card-border-color: green;
-  --dm-modal-overlay-bg-color: gray;
-  --yellow-color: brown;
-  --yellow-color-light: coral;
-  --yellow-color-very-light: olive;
-  --yellow-color-dark: lightsalmon;
-  --yellow-color-very-dark: blue;
-  --yellow-box-shadow-color: red;
-  --yellow-box-shadow-color-darker: khaki;
-} */
 .cursor-link {
   cursor: pointer;
 }
@@ -74,3 +48,32 @@
 .minh {
   min-height: 100vh;
 }
+.content-wrapper {
+  scroll-behavior: smooth;
+}
+/*
+--dark-color: coral;
+--dark-color-light: black;
+--dark-color-dark: gray;
+--dm-muted-text-color: green;
+--blue-color: brown;
+--blue-color-light: skyblue;
+--blue-color-very-light: olive;
+--blue-color-dark: red;
+--blue-color-very-dark: white;
+--blue-box-shadow-color: lightsalmon;
+--blue-box-shadow-color-darker: lime;
+--dm-base-text-color: seagreen;
+--dm-base-text-color-light: goldenrod;
+--dm-navbar-border-color: darkblue;
+--dm-sidebar-border-color: white;
+--dm-card-border-color: green;
+--dm-modal-overlay-bg-color: gray;
+--yellow-color: brown;
+--yellow-color-light: coral;
+--yellow-color-very-light: olive;
+--yellow-color-dark: lightsalmon;
+--yellow-color-very-dark: blue;
+--yellow-box-shadow-color: red;
+--yellow-box-shadow-color-darker: khaki;
+*/
