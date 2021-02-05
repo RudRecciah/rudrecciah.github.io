@@ -25,7 +25,120 @@
     </style>
   </head>
   <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
-    <!-- Modals -->
+    <div class="modal ie-scroll-fix modal-full" id="modal-theory" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content minh">
+          <a href="#" class="close" role="button" aria-label="Close" onclick="halfmoon.toggleModal('modal-theory')">
+            <span aria-hidden="true" class="lh-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg></span>
+          </a>
+          <div class="container">
+            <div id="modal-theory-info" data-theoryCode="0">
+              <div class="spacer-lg"></div>
+              <div class="w-full d-inline-flex">
+                <h5 id="modal-theory-title" class="modal-title mb-0 flex-grow-1">Theory Title</h5>
+                <span>
+                  <button class="btn btn-primary cursor-link" onclick="reportTheory()">
+                    Report Theory
+                  </button>
+                </span>
+              </div>
+              <hr>
+              <div id="modal-theory-meta">
+                <span>Written by </span>
+                <span id="theory-meta-author">Author Name</span>
+              </div>
+              <div id="modal-theory-games">
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Quintessence: The Blighted Venom
+                  </span>
+                  <span class="d-sm-none">
+                    Quintessence
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    The Mirror Lied
+                  </span>
+                  <span class="d-sm-none">
+                    TML
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Do You Remember My Lullaby?
+                  </span>
+                  <span class="d-sm-none">
+                    DYRML
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Quintessence: The Blighted Venom's Lost Chapter
+                  </span>
+                  <span class="d-sm-none">
+                    Lost Chapter
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    To The Moon
+                  </span>
+                  <span class="d-sm-none">
+                    TTM
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Sigmund Minisode 1
+                  </span>
+                  <span class="d-sm-none">
+                    Minisode 1
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Sigmund Minisode 2
+                  </span>
+                  <span class="d-sm-none">
+                    Minisode 2
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    A Bird Story
+                  </span>
+                  <span class="d-sm-none">
+                    ABS
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Finding Paradise
+                  </span>
+                  <span class="d-sm-none">
+                    FP
+                  </span>
+                </span>
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Impostor Factory
+                  </span>
+                  <span class="d-sm-none">
+                    IF
+                  </span>
+                </span>
+              </div>
+              <div id="modal-theory-content">
+                <p>This is a cool theory. It is so amazing and correct and the writer is so smart. Kan Gao lives in fear of this writer and their works daily.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="wrapper" class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
       <!-- Toasts -->
       <div class="sticky-alerts"></div>
@@ -92,7 +205,7 @@
               <p>Text here</p>
               <div class="row">
                 <div class="col-lg-6 col-12">
-                  <div class="card">
+                  <div class="card cursor-link" onclick="loadTheory()">
                     <h1 id="theory-title" class="card-title mb-0 d-inline">Theory Title</h1>
                     <div id="theory-meta">
                       <span>Written by </span>
@@ -251,10 +364,43 @@
             alertType: "",
             fillType: "",
             hasDismissButton: true,
-            timeShown: 5000
-          })
+            timeShown: 10000
+          });
         }else{
           document.getElementById("wrapper").classList.remove("raxus");
+        }
+      }
+
+      function loadTheory() {
+        halfmoon.toggleModal("modal-theory");
+      }
+
+      function loadModal(modal) {
+        halfmoon.toggleModal(modal);
+      }
+
+      function reportTheory() {
+        var code = document.getElementById("modal-theory-info").getAttribute("data-theoryCode");
+        if(!(code == "" || code == null)) {
+          var report = "Theory #" + code + " has been reported. Check this and delete if necessary.";
+          var request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/807073004973981716/5nMdVhXjC4t5YxIolH6RXtRvSWOCGl6CpiajMQZxfbyCyMftjrKflr7XGAVwy_7zGAdK");
+          request.setRequestHeader('Content-type', 'application/json');
+          var params = {
+            username: "New Report",
+            avatar_url: "https://rudrecciah.dev/files/mod.png",
+            content: report
+          }
+          request.send(JSON.stringify(params));
+          var alertContent = "If this theory violates our <a onclick=\"loadModal\(\"modal-guidelines\"\)\">Community Guidelines</a>, our moderation team will remove it.";
+          halfmoon.initStickyAlert({
+            content: alertContent,
+            title: "Theory reported",
+            alertType: "",
+            fillType: "",
+            hasDismissButton: true,
+            timeShown: 10000
+          });
         }
       }
     </script>
