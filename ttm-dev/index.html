@@ -24,7 +24,47 @@
       }
     </style>
   </head>
-  <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+  <body class=" with-custom-css-scrollbars css-scrollbar-transparent-track dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+    <div class="modal ie-scroll-fix modal-full" id="modal-submit" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content minh">
+          <a href="#" class="close" role="button" aria-label="Close" onclick="halfmoon.toggleModal('modal-submit')">
+            <span aria-hidden="true" class="lh-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg></span>
+          </a>
+          <div class="container">
+            <div class="spacer-lg"></div>
+            <div class="w-full">
+              <h5 class="modal-title mb-0">Add Theory</h5>
+              <hr>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal ie-scroll-fix modal-full" id="modal-guidelines" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content minh">
+          <a href="#" class="close" role="button" aria-label="Close" onclick="halfmoon.toggleModal('modal-guidelines')">
+            <span aria-hidden="true" class="lh-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg></span>
+          </a>
+          <div class="container">
+            <div class="spacer-lg"></div>
+            <div class="w-full">
+              <h5 class="modal-title mb-0">Community Guidelines</h5>
+              <hr>
+              <p>
+                Insert community guidelines here
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="modal ie-scroll-fix modal-full" id="modal-theory" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content minh">
@@ -145,14 +185,14 @@
       <nav class="navbar justify-content-between" xyz="fade big">
           <div class="navbar-content xyz-in">
             <button class="xyz-in btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
-              <i class="fa fa-bars text-white" aria-hidden="true">
+              <i class="fa fa-bars text-secondary" aria-hidden="true">
               </i>
             </button>
           </div>
           <a href="./" class="navbar-brand xyz-in">
             <img src="./img/brand.png" alt="To The Moon Theory Wiki">
           </a>
-          <a class="btn btn-link xyz-in text-white" href="../bugs/">Report A Bug</a>
+          <a class="btn btn-link xyz-in text-secondary" href="../bugs/">Report A Bug</a>
       </nav>
       <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
       <div class="sidebar">
@@ -166,7 +206,7 @@
           <a id="sidebar-home" href="#home" onclick="sidebar('home')" data-sidebarlink class="sidebar-link active">Home</a>
           <a id="sidebar-about" href="#about" onclick="sidebar('about')" data-sidebarlink class="sidebar-link">About</a>
           <a id="sidebar-wikipedia" href="https://en.wikipedia.org/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Wikipedia</a>
-          <a id="sidebar-fandom" href="https://tothemoon.fandom.com/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Fandom</a>
+          <a id="sidebar-fandom" href="https://tothemoon.fandom.com/wiki/To_the_Moon_Wiki" data-sidebarlink class="sidebar-link">Fandom</a>
           <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="submit()">Add Theory</a>
           <h5 class="sidebar-title">Theories</h5>
           <div class="sidebar-divider"></div>
@@ -192,7 +232,7 @@
             <div class="card">
               <h1 class="card-title">Welcome!</h1>
               <hr>
-              <p>jams you sodding tic tac this is indev moate come back later with the 2004 chevy highlander</p>
+              <p>jams you sodding tic tac this is indev moate come back later with the roight properh 2004 chevy highlander</p>
             </div>
             <div class="card">
               <h1 class="card-title">About</h1>
@@ -375,8 +415,13 @@
         halfmoon.toggleModal("modal-theory");
       }
 
-      function loadModal(modal) {
-        halfmoon.toggleModal(modal);
+      function loadGuidelines() {
+        if(document.getElementById("modal-theory").classList.contains("show")) {
+          halfmoon.toggleModal("modal-theory");
+        }
+        if(!(document.getElementById("modal-guidelines").classList.contains("show"))) {
+          halfmoon.toggleModal("modal-guidelines");
+        }
       }
 
       function reportTheory() {
@@ -392,7 +437,7 @@
             content: report
           }
           request.send(JSON.stringify(params));
-          var alertContent = "If this theory violates our <a onclick=\"loadModal\(\"modal-guidelines\"\)\">Community Guidelines</a>, our moderation team will remove it.";
+          var alertContent = "If this theory violates our <a class=\"cursor-link\" onclick=\"loadGuidelines\(\)\">Community Guidelines</a>, our moderation team will remove it.";
           halfmoon.initStickyAlert({
             content: alertContent,
             title: "Theory reported",
