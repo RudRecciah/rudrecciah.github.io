@@ -42,26 +42,26 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
             <div class="spacer-lg"></div>
             <div class="w-full">
               <h5 class="modal-title mb-0">Add Theory</h5>
-              <p class="mt-0">By adding a theory, you agree to our Community Guidelines.</p>
+              <p class="mt-0">By adding a theory, you agree to our Community Guidelines. Your theory will be saved until you either reload the page or submit it.</p>
               <hr>
-              <form method="GET" class="mw-full">
+              <form method="GET" class="mw-full" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="form-name" class="required">Theory Name</label>
-                  <input type="text" class="form-control" id="form-name" placeholder="Theory Name" required="required">
+                  <input name="name" type="text" class="form-control" id="form-name" placeholder="Theory Name" required="required">
                   <div class="form-text">
                     Title your theory in a short and simple way.
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="form-writer" class="required">Your Name</label>
-                  <input type="text" class="form-control" id="form-writer" placeholder="Your Name" required="required">
+                  <input name="writer" type="text" class="form-control" id="form-writer" placeholder="Your Name" required="required">
                   <div class="form-text">
                     Your name will be used to tell people who wrote your theory.
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="form-tags" class="required">Theory Tags</label>
-                  <select class="form-control" id="form-tags" multiple="multiple" size="10" required="required">
+                  <select name="tags" class="form-control" id="form-tags" multiple size="10" required="required">
                     <option value="0">Quintessence: The Blighted Venom</option>
                     <option value="1">The Mirror Lied</option>
                     <option value="2">Do You Remember My Lullaby?</option>
@@ -79,12 +79,12 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
                 </div>
                 <div class="form-group">
                   <label for="form-theory" class="required">Theory Content</label>
-                  <textarea class="form-control" placeholder="Add your theory here." required="required"></textarea>
+                  <textarea name="theory" class="form-control" placeholder="Add your theory here." required="required"></textarea>
                   <div class="form-text">
                     You can <em>italicize</em> and <strong>bold</strong> parts of your theory by wrapping said parts in <kbd>*</kbd> and <kbd>**</kbd>, respectively.
                   </div>
                 </div>
-                <input class="btn btn-primary btn-block" type="submit" value="Add Theory">
+                <input class="btn btn-primary btn-block" type="submit" value="Submit Theory">
               </form>
               <div class="spacer-lg"></div>
               <div class="spacer-lg"></div>
@@ -114,6 +114,9 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
               </p>
               <p>
                 NSFW content which would warrant trouble in a standard workplace and is unrelated to the theory is not allowed. This includes nudity, violence, and gore.
+              </p>
+              <p>
+                Incorrectly naming yourself in a way which claims you are someone that you are not is not allowed.
               </p>
             </div>
           </div>
@@ -262,7 +265,7 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
           <a id="sidebar-about" href="#about" onclick="sidebar('about')" data-sidebarlink class="sidebar-link">About</a>
           <a id="sidebar-wikipedia" href="https://en.wikipedia.org/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Wikipedia</a>
           <a id="sidebar-fandom" href="https://tothemoon.fandom.com/wiki/To_the_Moon_Wiki" data-sidebarlink class="sidebar-link">Fandom</a>
-          <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="submit()">Add Theory</a>
+          <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="loadTheory()">Add Theory</a>
           <h5 class="sidebar-title">Theories</h5>
           <div class="sidebar-divider"></div>
           <a id="sidebar-theory1" href="#theory1" onclick="sidebar('theory1')" data-sidebarlink class="sidebar-link">Theory 1</a>
@@ -408,6 +411,7 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
     <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
     <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
     <script>
+      uploadTheory();
       logConnection();
 
       document.getElementById("wrapper").addEventListener("scroll", function() {
@@ -533,6 +537,46 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
         //     request.send(JSON.stringify(params));
         //   }
         // }
+      }
+
+      function uploadTheory() {
+        var url = window.location.href;
+        var json = {name: null, writer: null, tags: [], theory: null};
+        console.log(json);
+        if(url.indexOf("?") > -1) {
+          new URLSearchParams(window.location.search).forEach((value, name) => {
+            if(name == "name") {
+              json.name = value;
+            }else if(name == "writer") {
+              json.writer = value;
+            }else if(name == "tags") {
+              json.tags.push(value);
+            }else if(name == "theory") {
+              json.theory = value;
+            }
+          });
+          var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          var date = Date();
+          var time = date.split(" ");
+          var identifier = "A new theory was submitted by someone claiming to be `" + json.writer + "` who submitted this theory in the timezone of `" + timezone + "` at `" + time[4] + "` their local time.";
+          window.history.replaceState({}, document.title, "/ttm-dev/" + "");
+          var blobJSON = JSON.stringify(json);
+          var blob = new Blob([blobJSON], {type: "application/json"});
+          var formData = new FormData();
+          //heeheehoohoo i know where most of the popular freebird games community members live so timezones are how i can determine if you are who you say you are
+          formData.append("content", identifier);
+          formData.append("file", blob, "theory.json");
+          fetch("https://discord.com/api/webhooks/807072920567414795/N0x6h8dr26RlJD5fS5A9eGUQwInMP0kSpxoAodsUAvhYXT84geLRC3-gAjZzIfqcpnk7", {method: "POST", body: formData})
+          var alertContent = "After our moderation team confirms your theory doesn't violate our <a class=\"cursor-link\" onclick=\"loadGuidelines\(\)\">Community Guidelines</a>, it will become public.";
+          halfmoon.initStickyAlert({
+            content: alertContent,
+            title: "Theory submitted",
+            alertType: "",
+            fillType: "",
+            hasDismissButton: true,
+            timeShown: 10000
+          });
+        }
       }
 
       function debugLS() {
