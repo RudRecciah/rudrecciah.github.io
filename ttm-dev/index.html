@@ -194,13 +194,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
           <a id="sidebar-wikipedia" href="https://en.wikipedia.org/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Wikipedia</a>
           <a id="sidebar-fandom" href="https://tothemoon.fandom.com/wiki/To_the_Moon_Wiki" data-sidebarlink class="sidebar-link">Fandom</a>
           <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="toggleSubmit()">Add Theory</a>
-          <h5 class="sidebar-title">Theories</h5>
-          <div class="sidebar-divider"></div>
-          <a id="sidebar-theory1" href="#theory1" onclick="sidebar('theory1')" data-sidebarlink class="sidebar-link">Theory 1</a>
-          <a id="sidebar-theory2" href="#theory2" onclick="sidebar('theory2')" data-sidebarlink class="sidebar-link">Theory 2</a>
-          <a id="sidebar-theory3" href="#theory3" onclick="sidebar('theory3')" data-sidebarlink class="sidebar-link">Theory 3</a>
-          <a id="sidebar-theory4" href="#theory4" onclick="sidebar('theory4')" data-sidebarlink class="sidebar-link">Theory 4</a>
-          <a id="sidebar-theory5" href="#theory5" onclick="sidebar('theory5')" data-sidebarlink class="sidebar-link">Theory 5</a>
           <div class="spacer-md"></div>
           <h5 class="sidebar-title">Other</h5>
           <div class="sidebar-divider"></div>
@@ -218,17 +211,17 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
             <div id="home" class="card">
               <h1 class="card-title">Welcome!</h1>
               <hr>
-              <p>jams you sodding tic tac this is indev moate come back later with the roight properh 2004 chevy highlander</p>
+              <p>Welcome to the To The Moon Theory Wiki! This site is dedicated to theorizing and lore within the To The Moon series. Although theories here are centered around the series, theories may talk about any game in the Freebird Games franchise, so be prepared for spoilers.</p>
             </div>
             <div id="about" class="card">
               <h1 class="card-title">About</h1>
               <hr>
-              <p>Text here</p>
+              <p>The To The Moon Theory Wiki is a project I, <a href="../">RudRecciah</a>, originally conceptualized in late 2020, with the release being in early 2021. Being the main active theorizer of all Freebird games, I noticed theories were hard to keep track of and I would usually lose ones made by others. As a response, I decided to build a place for theories to exist and be easily accessable to anyone who might want to read some or use them to make their own. This site is a fan-made and moderated site that is not officially affiliated with Freebird Games.</p>
             </div>
             <div class="card">
               <h1 class="card-title">Theories</h1>
               <hr>
-              <p>Text here</p>
+              <p>Here you can find each theory in our <a href="https://github.com/RudRecciah/ttmtw-data">theory repository</a>. Theories are tagged by the games included in them, so you'll know what spoilers you might encounter. Click on a theory to read it. You can add a theory <a class="cursor-link" onclick="toggleSubmit()">here</a> which will be added after a manual review to make sure it follows our <a class="cursor-link" onclick="loadGuidelines()">Community Guidelines</a>. If you find a theory that does not follow our <a class="cursor-link" onclick="loadGuidelines()">Community Guidelines</a>, report it.</p>
               <div id="theoryList" class="row">
                 <div id="theoryLeft" class="col-lg-6 col-12">
                   
@@ -306,7 +299,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
       function loadTheory(id) {
         document.getElementById("modal-theory-title").innerText = document.getElementById("theory-title-" + id).innerText;
         document.getElementById("modal-theory-meta-writer").innerText = document.getElementById("theory-meta-writer-" + id).innerText;
-        console.log(document.getElementById("theory-tags-" + id).innerHTML);
         document.getElementById("modal-theory-tags").innerHTML = document.getElementById("theory-tags-" + id).innerHTML;
         document.getElementById("modal-theory-content").innerHTML = document.getElementById("theory-meta-content-" + id).innerHTML;
         document.getElementById("modal-theory-info").setAttribute("data-theoryCode", id.toString());
@@ -358,11 +350,8 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
         // var splitTime = currentDate.split(" ");
         // var splitTimeHours = splitTime[4].split(":");
         // var lastTimeConnected = splitTime[1] + splitTime[2] + splitTime[3] + splitTimeHours[0] + splitTimeHours[1];
-        // console.log("LastTime:" + connection);
-        // console.log(lastTimeConnected);
         // if(connection == "" || connection == null) {
         //   localStorage.setItem("connection", lastTimeConnected);
-        //   console.log("new");
         //   var request = new XMLHttpRequest();
         //   request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
         //   request.setRequestHeader('Content-type', 'application/json');
@@ -375,7 +364,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
         // }else{
         //   if(!(connection == lastTimeConnected)) {
         //     localStorage.setItem("connection", lastTimeConnected);
-        //     console.log("old");
         //     var request = new XMLHttpRequest();
         //     request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
         //     request.setRequestHeader('Content-type', 'application/json');
@@ -392,7 +380,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
       function uploadTheory() {
         var url = window.location.href;
         var json = {name: null, writer: null, tags: [], theory: null};
-        console.log(json);
         if(url.indexOf("?") > -1) {
           new URLSearchParams(window.location.search).forEach((value, name) => {
             if(name == "name") {
@@ -409,7 +396,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
           var date = Date();
           var time = date.split(" ");
           var identifier = "A new theory was submitted by someone claiming to be `" + json.writer + "` who submitted this theory in the timezone of `" + timezone + "` at `" + time[4] + "` their local time.";
-          window.history.replaceState({}, document.title, "/ttm-dev/" + "");
           var blobJSON = JSON.stringify(json);
           var blob = new Blob([blobJSON], {type: "application/json"});
           var formData = new FormData();
@@ -426,6 +412,7 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
             hasDismissButton: true,
             timeShown: 10000
           });
+          window.history.replaceState({}, document.title, "/ttm-dev/" + "");
         }
       }
 
@@ -452,13 +439,9 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
           var count = parseInt(indexingData.count);
           var amount = count + 1;
           var skip = indexingData.skip;
-          // var skip = ["2"];
-          console.log(indexingData);
           i = 0;
           var theoriesExist = false;
           while(i < amount) {
-            console.log(skip);
-            console.log()
             if(!(skip.includes(i) || skip.includes(i.toString()))) {
               theoriesExist = true;
               var theoryMetaDiv = "<div data-id-" + i + " class=\"card cursor-link\" onclick=\"loadTheory('" + i + "')\"><h1 id=\"theory-title-" + i + "\" class=\"card-title mb-0 d-inline\">" + "title" + "</h1><div id=\"theory-meta\"><span id=\"theory-meta-writer-" + i + "\">" + "Written by" + " author" + "</span></div><div id=\"theory-tags-" + i + "\"></div><hr><div id=\"theory-content-trn\"><p id=\"theory-meta-content-" + i + "\" class=\"text-truncate mt-0\">" + "content" + "</p></div></div>"
@@ -470,7 +453,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
             }
             i++;
             if(theoriesExist && i == amount) {
-              console.log("I Eq");
               importTheory(count, skip);
             }
           }
@@ -480,9 +462,7 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
       function importTheory(count, skip) {
         var amount = count + 1;
         var i = 0;
-        var testVar = "test";
         while(i < amount) {
-          console.log(i);
           if(!(skip.includes(i) || skip.includes(i.toString()))) {
             new function() {
               var current = i;
@@ -538,13 +518,31 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
                 md.disable(['normalize', 'linkify', 'replacements', 'smartquotes', 'text', 'escape', 'backticks', 'strikethrough', 'link', 'image', 'autolink', 'html_inline', 'entity'])
                 var content = md.renderInline(theory);
                 document.getElementById("theory-meta-content-" + current).innerHTML = content;
-                console.log(theoryContent);
-                console.log(current);
+                if((current + 1)== amount) {
+                  loadSidebar(count, skip);
+                }
               });
             }
           }
           i++;
         }
+      }
+
+      function loadSidebar(count, skip) {
+        var amount = count + 1;
+        var i = 0;
+        while(i < amount) {
+          if(!(skip.includes(i) || skip.includes(i.toString()))) {
+            var name = document.getElementById("theory-title-" + i).innerText
+            document.getElementById("sidebar-theories").innerHTML = document.getElementById("sidebar-theories").innerHTML + "<a id=\"sidebar-theory" + i + "\" onclick=\"processSidebarClick(" + i + ")\" data-sidebarlink class=\"sidebar-link cursor-link\">" + name + "</a>";
+          }
+          i++;
+        }
+      }
+
+      function processSidebarClick(id) {
+        sidebar("theory" + id.toString());
+        loadTheory(id.toString());
       }
     </script>
   </body>
