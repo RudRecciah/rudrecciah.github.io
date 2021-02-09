@@ -144,91 +144,19 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
               </div>
               <hr>
               <div id="modal-theory-meta">
-                <span>Written by </span>
-                <span id="theory-meta-author">Author Name</span>
+                <span id="modal-theory-meta-writer">Written by Author Name</span>
               </div>
-              <div id="modal-theory-games">
+              <div id="modal-theory-tags">
                 <span class="badge badge-primary">
                   <span class="d-none d-sm-inline-block">
-                    Quintessence: The Blighted Venom
+                    Game Name
                   </span>
                   <span class="d-sm-none">
-                    Quintessence
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    The Mirror Lied
-                  </span>
-                  <span class="d-sm-none">
-                    TML
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    Do You Remember My Lullaby?
-                  </span>
-                  <span class="d-sm-none">
-                    DYRML
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    Quintessence: The Blighted Venom's Lost Chapter
-                  </span>
-                  <span class="d-sm-none">
-                    Lost Chapter
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    To The Moon
-                  </span>
-                  <span class="d-sm-none">
-                    TTM
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    Sigmund Minisode 1
-                  </span>
-                  <span class="d-sm-none">
-                    Minisode 1
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    Sigmund Minisode 2
-                  </span>
-                  <span class="d-sm-none">
-                    Minisode 2
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    A Bird Story
-                  </span>
-                  <span class="d-sm-none">
-                    ABS
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    Finding Paradise
-                  </span>
-                  <span class="d-sm-none">
-                    FP
-                  </span>
-                </span>
-                <span class="badge badge-primary">
-                  <span class="d-none d-sm-inline-block">
-                    Impostor Factory
-                  </span>
-                  <span class="d-sm-none">
-                    IF
+                    Game Name
                   </span>
                 </span>
               </div>
+              <div class="spacer-sm"></div>
               <div id="modal-theory-content">
                 <p>This is a cool theory. It is so amazing and correct and the writer is so smart. Kan Gao lives in fear of this writer and their works daily.</p>
               </div>
@@ -265,7 +193,7 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
           <a id="sidebar-about" href="#about" onclick="sidebar('about')" data-sidebarlink class="sidebar-link">About</a>
           <a id="sidebar-wikipedia" href="https://en.wikipedia.org/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Wikipedia</a>
           <a id="sidebar-fandom" href="https://tothemoon.fandom.com/wiki/To_the_Moon_Wiki" data-sidebarlink class="sidebar-link">Fandom</a>
-          <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="loadTheory()">Add Theory</a>
+          <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="toggleSubmit()">Add Theory</a>
           <h5 class="sidebar-title">Theories</h5>
           <div class="sidebar-divider"></div>
           <a id="sidebar-theory1" href="#theory1" onclick="sidebar('theory1')" data-sidebarlink class="sidebar-link">Theory 1</a>
@@ -302,98 +230,11 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
               <hr>
               <p>Text here</p>
               <div id="theoryList" class="row">
-                <div class="col-lg-6 col-12">
-                  <div class="card cursor-link" onclick="loadTheory()">
-                    <h1 id="theory-title" class="card-title mb-0 d-inline">Theory Title</h1>
-                    <div id="theory-meta">
-                      <span>Written by Author Name</span>
-                    </div>
-                    <div id="theory-games">
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          Quintessence: The Blighted Venom
-                        </span>
-                        <span class="d-sm-none">
-                          Quintessence
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          The Mirror Lied
-                        </span>
-                        <span class="d-sm-none">
-                          TML
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          Do You Remember My Lullaby?
-                        </span>
-                        <span class="d-sm-none">
-                          DYRML
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          Quintessence: The Blighted Venom's Lost Chapter
-                        </span>
-                        <span class="d-sm-none">
-                          Lost Chapter
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          To The Moon
-                        </span>
-                        <span class="d-sm-none">
-                          TTM
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          Sigmund Minisode 1
-                        </span>
-                        <span class="d-sm-none">
-                          Minisode 1
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          Sigmund Minisode 2
-                        </span>
-                        <span class="d-sm-none">
-                          Minisode 2
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          A Bird Story
-                        </span>
-                        <span class="d-sm-none">
-                          ABS
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          Finding Paradise
-                        </span>
-                        <span class="d-sm-none">
-                          FP
-                        </span>
-                      </span>
-                      <span class="badge badge-primary">
-                        <span class="d-none d-sm-inline-block">
-                          Impostor Factory
-                        </span>
-                        <span class="d-sm-none">
-                          IF
-                        </span>
-                      </span>
-                    </div>
-                    <div id="theory-content-trn">
-                      <p class="text-truncate mt-0">This is a cool theory. It is so amazing and correct and the writer is so smart. Kan Gao lives in fear of this writer and their works daily.</p>
-                    </div>
-                  </div>
+                <div id="theoryLeft" class="col-lg-6 col-12">
+                  
+                </div>
+                <div id="theoryRight" class="col-lg-6 col-12">
+                  
                 </div>
               </div>
             </div>
@@ -415,12 +256,16 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
       uploadTheory();
       logConnection();
 
-      window.onload = importTheory();
+      window.onload = prepareTheory();
 
       function sidebar(div) {
         var active = getActive();
         document.getElementById(active).classList.remove("active");
         document.getElementById("sidebar-" + div).classList.add("active");
+      }
+
+      function isOdd(num) {
+        return num % 2;
       }
 
       function getActive() {
@@ -458,7 +303,13 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
         }
       }
 
-      function loadTheory() {
+      function loadTheory(id) {
+        document.getElementById("modal-theory-title").innerText = document.getElementById("theory-title-" + id).innerText;
+        document.getElementById("modal-theory-meta-writer").innerText = document.getElementById("theory-meta-writer-" + id).innerText;
+        console.log(document.getElementById("theory-tags-" + id).innerHTML);
+        document.getElementById("modal-theory-tags").innerHTML = document.getElementById("theory-tags-" + id).innerHTML;
+        document.getElementById("modal-theory-content").innerHTML = document.getElementById("theory-meta-content-" + id).innerHTML;
+        document.getElementById("modal-theory-info").setAttribute("data-theoryCode", id.toString());
         halfmoon.toggleModal("modal-theory");
       }
 
@@ -596,90 +447,104 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
        * i think...
        */
 
+      function prepareTheory() {
+        $.getJSON('https://raw.githubusercontent.com/RudRecciah/ttmtw-data/main/id.json', function(indexingData) {
+          var count = parseInt(indexingData.count);
+          var amount = count + 1;
+          var skip = indexingData.skip;
+          // var skip = ["2"];
+          console.log(indexingData);
+          i = 0;
+          var theoriesExist = false;
+          while(i < amount) {
+            console.log(skip);
+            console.log()
+            if(!(skip.includes(i) || skip.includes(i.toString()))) {
+              theoriesExist = true;
+              var theoryMetaDiv = "<div data-id-" + i + " class=\"card cursor-link\" onclick=\"loadTheory('" + i + "')\"><h1 id=\"theory-title-" + i + "\" class=\"card-title mb-0 d-inline\">" + "title" + "</h1><div id=\"theory-meta\"><span id=\"theory-meta-writer-" + i + "\">" + "Written by" + " author" + "</span></div><div id=\"theory-tags-" + i + "\"></div><hr><div id=\"theory-content-trn\"><p id=\"theory-meta-content-" + i + "\" class=\"text-truncate mt-0\">" + "content" + "</p></div></div>"
+              if(isOdd(i) == 1) {
+                document.getElementById("theoryLeft").innerHTML =  document.getElementById("theoryLeft").innerHTML + theoryMetaDiv;
+              }else{
+                document.getElementById("theoryRight").innerHTML =  document.getElementById("theoryRight").innerHTML + theoryMetaDiv;
+              }
+            }
+            i++;
+            if(theoriesExist && i == amount) {
+              console.log("I Eq");
+              importTheory(count, skip);
+            }
+          }
+        });
+      }
 
-      // function importTheory() {
-      //   console.log("not here");
-      //   $.getJSON('https://raw.githubusercontent.com/RudRecciah/ttmtw-data/main/id.json', function(indexingData) {
-      //     console.log("not here either");
-      //     var countStr = indexingData.count;
-      //     console.log(countStr);
-      //     var count = parseInt(countStr);
-      //     console.log(count);
-      //     var amount = count;
-      //     var skip = indexingData.skip;
-      //     var theoryCounter = {current: "0"};
-      //     var i = 0;
-      //     console.log("not here either either");
-      //     console.log("Amount: " + amount);
-      //     for(i = 0; i < amount; i++) {
-      //       console.log("I: " + i);
-      //       $.getJSON('https://raw.githubusercontent.com/RudRecciah/ttmtw-data/main/' + i + '.json', function(query) {
-      //         var name = query.name;
-      //         var writer = query.writer;
-      //         var tags = query.tags;
-      //         var theory = query.theory;
-
-      //         var md = window.markdownit();
-      //         md.disable(['normalize', 'linkify', 'replacements', 'smartquotes', 'text', 'escape', 'backticks', 'strikethrough', 'link', 'image', 'autolink', 'html_inline', 'entity'])
-      //         var content = md.renderInline(theory);
-
-      //         var tag0 = {long: "Quintessence: The Blighted Venom", short: "Quintessence"}
-      //         var tag1 = {long: "The Mirror Lied", short: "TML"}
-      //         var tag2 = {long: "Do You Remember My Lullaby?", short: "DRYML"}
-      //         var tag3 = {long: "Quintessense: The Blighted Venom's Lost Chapter", short: "Lost Chapter"}
-      //         var tag4 = {long: "To The Moon", short: "TTM"}
-      //         var tag5 = {long: "Sigmund Minisode 1", short: "Minisode 1"}
-      //         var tag6 = {long: "Sigmund Minisode 2", short: "Minisode 2"}
-      //         var tag7 = {long: "A Bird Story", short: "ABS"}
-      //         var tag8 = {long: "Finding Paradise", short: "FP"}
-      //         var tag9 = {long: "Impostor Factory", short: "IF"}
-
-      //         var theoryMetaDiv = "<div class=\"col-lg-6 col-12\"><div class=\"card cursor-link\" onclick=\"loadTheory()\"><h1 id=\"theory-title-" + i + "\" class=\"card-title mb-0 d-inline\">" + "title" + "</h1><div id=\"theory-meta\"><span id=\"theory-meta-writer-" + i + "\">" + "Written by" + " author" + "</span></div><div id=\"theory-tags-" + i + "\"></div><div id=\"theory-content-trn\"><p id=\"theory-meta-content-" + i + "\" class=\"text-truncate mt-0\">" + "content" + "</p></div></div></div>"
-
-      //         document.getElementById("theoryList").innerHTML =  document.getElementById("theoryList").innerHTML + theoryMetaDiv;
-      //         tags.forEach((elementString, index) => {
-      //           var element = parseInt(elementString);
-      //           if(element == 0) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag0.long + "</span><span class=\"d-sm-none\">" + tag0.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 1) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag1.long + "</span><span class=\"d-sm-none\">" + tag1.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 2) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag2.long + "</span><span class=\"d-sm-none\">" + tag2.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 3) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag3.long + "</span><span class=\"d-sm-none\">" + tag3.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 4) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag4.long + "</span><span class=\"d-sm-none\">" + tag4.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 5) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag5.long + "</span><span class=\"d-sm-none\">" + tag5.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 6) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag6.long + "</span><span class=\"d-sm-none\">" + tag6.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 7) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag7.long + "</span><span class=\"d-sm-none\">" + tag7.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 8) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag8.long + "</span><span class=\"d-sm-none\">" + tag8.short + "</span></span></div>"
-      //             document.getElementById("theory-tags-" + i).innerHTML = document.getElementById("theory-tags-" + i).innerHTML + tagHTML;
-      //           }else if(element == 9) {
-      //             var tagHTML = "<div id=\"theory-games\"><span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag9.long + "</span><span class=\"d-sm-none\">" + tag9.short + "</span></span></div>"
-      //           }
-      //         });
-      //         document.getElementById("theory-title-" + i).innerText = name;
-      //         document.getElementById("theory-meta-writer-" + i).innerText = writer;
-      //         document.getElementById("theory-meta-content-" + i).innerText = content;
-      //       });
-      //     }
-      //   });
-      // }
-
-      function debugLS() {
-        localStorage.removeItem("connection");
+      function importTheory(count, skip) {
+        var amount = count + 1;
+        var i = 0;
+        var testVar = "test";
+        while(i < amount) {
+          console.log(i);
+          if(!(skip.includes(i) || skip.includes(i.toString()))) {
+            new function() {
+              var current = i;
+              $.getJSON('https://raw.githubusercontent.com/RudRecciah/ttmtw-data/main/' + i + '.json', function(theoryContent) {
+                document.getElementById("theory-title-" + current).innerText = theoryContent.name;
+                document.getElementById("theory-meta-writer-" + current).innerText = "Written by " + theoryContent.writer;
+                var tags = theoryContent.tags;
+                var tag0 = {long: "Quintessence: The Blighted Venom", short: "Quintessence"}
+                var tag1 = {long: "The Mirror Lied", short: "TML"}
+                var tag2 = {long: "Do You Remember My Lullaby?", short: "DRYML"}
+                var tag3 = {long: "Quintessense: The Blighted Venom's Lost Chapter", short: "Lost Chapter"}
+                var tag4 = {long: "To The Moon", short: "TTM"}
+                var tag5 = {long: "Sigmund Minisode 1", short: "Minisode 1"}
+                var tag6 = {long: "Sigmund Minisode 2", short: "Minisode 2"}
+                var tag7 = {long: "A Bird Story", short: "ABS"}
+                var tag8 = {long: "Finding Paradise", short: "FP"}
+                var tag9 = {long: "Impostor Factory", short: "IF"}
+                tags.forEach((elementString, index) => {
+                  var element = parseInt(elementString);
+                  if(element == 0) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag0.long + "</span><span class=\"d-sm-none\">" + tag0.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 1) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag1.long + "</span><span class=\"d-sm-none\">" + tag1.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 2) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag2.long + "</span><span class=\"d-sm-none\">" + tag2.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 3) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag3.long + "</span><span class=\"d-sm-none\">" + tag3.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 4) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag4.long + "</span><span class=\"d-sm-none\">" + tag4.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 5) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag5.long + "</span><span class=\"d-sm-none\">" + tag5.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 6) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag6.long + "</span><span class=\"d-sm-none\">" + tag6.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 7) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag7.long + "</span><span class=\"d-sm-none\">" + tag7.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 8) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag8.long + "</span><span class=\"d-sm-none\">" + tag8.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 9) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag9.long + "</span><span class=\"d-sm-none\">" + tag9.short + "</span></span>"
+                  }
+                });
+                var theory = theoryContent.theory;
+                var md = window.markdownit();
+                md.disable(['normalize', 'linkify', 'replacements', 'smartquotes', 'text', 'escape', 'backticks', 'strikethrough', 'link', 'image', 'autolink', 'html_inline', 'entity'])
+                var content = md.renderInline(theory);
+                document.getElementById("theory-meta-content-" + current).innerHTML = content;
+                console.log(theoryContent);
+                console.log(current);
+              });
+            }
+          }
+          i++;
+        }
       }
     </script>
   </body>
