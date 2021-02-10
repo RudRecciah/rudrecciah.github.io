@@ -440,15 +440,18 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
           var amount = count + 1;
           var skip = indexingData.skip;
           i = 0;
+          var left = true;
           var theoriesExist = false;
           while(i < amount) {
             if(!(skip.includes(i) || skip.includes(i.toString()))) {
               theoriesExist = true;
               var theoryMetaDiv = "<div data-id-" + i + " class=\"card cursor-link\" onclick=\"loadTheory('" + i + "')\"><h1 id=\"theory-title-" + i + "\" class=\"card-title mb-0 d-inline\">" + "title" + "</h1><div id=\"theory-meta\"><span id=\"theory-meta-writer-" + i + "\">" + "Written by" + " author" + "</span></div><div id=\"theory-tags-" + i + "\"></div><hr><div id=\"theory-content-trn\"><p id=\"theory-meta-content-" + i + "\" class=\"text-truncate mt-0\">" + "content" + "</p></div></div>"
-              if(isOdd(i) == 1) {
+              if(left) {
                 document.getElementById("theoryLeft").innerHTML =  document.getElementById("theoryLeft").innerHTML + theoryMetaDiv;
+                left = false;
               }else{
                 document.getElementById("theoryRight").innerHTML =  document.getElementById("theoryRight").innerHTML + theoryMetaDiv;
+                left = true;
               }
             }
             i++;
