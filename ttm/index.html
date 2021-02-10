@@ -1,13 +1,534 @@
-<html>
+<!DOCTYPE html>
+<!--
+Developer Guidelines
+(the community guidelines v2, only for the 3 people looking through my code)
+
+Any attempt to misuse or repurpose this code in a way which leaves a lasting dentrimental impact to more than soley your browser session and/or computer is not allowed and any and all action possible will be taken to negate and/or prevent a future action from occouring. If you do not know what I am talking about, you probably do not have to worry about this.
+-->
+<html lang="en">
   <head>
-    <title>
-      Indev!
-    </title>
-    <body>
-      <h1>This site is also indev.</h1>
-      <hr>
-      <p>Come back later or contact me on Discord.</p>
-      <p><a href="../">Go Home</a></p>
-    </body>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="rudrecciah, freebird games, rud recciah, rud, recciah, to the moon wiki, to the moon, finding paradise, theory, theory wiki, to the moon theory wiki, ttm theory wiki, ttm wiki" />
+    <meta name="description" content="description here" />
+    <meta name="author" content="RudRecciah" />
+    <!-- Favicon and title -->
+    <link rel="icon" href="./img/icon.ico">
+    <title>To The Moon Theory Wiki</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+    <style id="style">
+      .page-wrapper {
+        overflow-x: hidden;
+      }
+      .w-1000 {
+        max-width: 1000px;
+      }
+    </style>
   </head>
+  <body class=" with-custom-css-scrollbars css-scrollbar-transparent-track dark-mode" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+    <div class="modal ie-scroll-fix modal-full" id="modal-submit" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content minh">
+          <a href="#" class="close" role="button" aria-label="Close" onclick="toggleSubmit()">
+            <span aria-hidden="true" class="lh-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg></span>
+          </a>
+          <div class="container">
+            <div class="spacer-lg"></div>
+            <div class="w-full">
+              <h5 class="modal-title mb-0">Add Theory</h5>
+              <p class="mt-0">By adding a theory, you agree to our Community Guidelines. Your theory will be saved until you either reload the page or submit it.</p>
+              <hr>
+              <form id="form-userTheoryUploader" method="GET" class="mw-full" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="form-name" class="required">Theory Name</label>
+                  <input name="name" type="text" class="form-control" id="form-name" placeholder="Theory Name" required="required">
+                  <div class="form-text">
+                    Title your theory in a short and simple way.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="form-writer" class="required">Your Name</label>
+                  <input name="writer" type="text" class="form-control" id="form-writer" placeholder="Your Name" required="required">
+                  <div class="form-text">
+                    Your name will be used to tell people who wrote your theory.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="form-tags" class="required">Theory Tags</label>
+                  <select name="tags" class="form-control" id="form-tags" multiple size="10" required="required">
+                    <option value="0">Quintessence: The Blighted Venom</option>
+                    <option value="1">The Mirror Lied</option>
+                    <option value="2">Do You Remember My Lullaby?</option>
+                    <option value="3">Quintessence: The Blighted Venom's Lost Chapter</option>
+                    <option value="4">To The Moon</option>
+                    <option value="5">Sigmund Minisode 1</option>
+                    <option value="6">Sigmund Minisode 2</option>
+                    <option value="7">A Bird Story</option>
+                    <option value="8">Finding Paradise</option>
+                    <option value="9">Impostor Factory</option>
+                  </select>
+                  <div class="form-text">
+                    Choose one or more tags for people to search for your theory by.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="form-theory" class="required">Theory Content</label>
+                  <textarea name="theory" id="form-theory" class="form-control" placeholder="Add your theory here." required="required" value=""></textarea>
+                  <div class="form-text">
+                    You can <em>italicize</em>, <strong>bold</strong>, and <em><strong>boldly italicize</strong></em> parts of your theory by wrapping said parts in <kbd>*</kbd>, <kbd>**</kbd>, and <kbd>***</kbd> respectively.
+                  </div>
+                </div>
+                <button id="form-submitButton" type="button" class="btn btn-primary btn-block" onclick="rudprepareFormData()">Submit Theory</button>
+              </form>
+              <div class="spacer-lg"></div>
+              <div class="spacer-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal ie-scroll-fix modal-full" id="modal-guidelines" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content minh">
+          <a href="#" class="close" role="button" aria-label="Close" onclick="halfmoon.toggleModal('modal-guidelines')">
+            <span aria-hidden="true" class="lh-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg></span>
+          </a>
+          <div class="container">
+            <div class="spacer-lg"></div>
+            <div class="w-full">
+              <h5 class="modal-title mb-0">Community Guidelines</h5>
+              <hr>
+              <p>
+                Theories which are soley detrimental contributions are not allowed. Derogatory, inflammatory, or otherwise hateful speech will not be tolerated under any circumstances.
+              </p>
+              <p>
+                Theories with incorrect tags are not allowed. Incorrect tags include tags which have no connection to the theory and/or tags which have more specific alternates.
+              </p>
+              <p>
+                NSFW content which would warrant trouble in a standard workplace and is unrelated to the theory is not allowed. This includes nudity, violence, and gore.
+              </p>
+              <p>
+                Incorrectly naming yourself in a way which claims you are someone that you are not is not allowed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal ie-scroll-fix modal-full" id="modal-theory" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content minh">
+          <a href="#" class="close" role="button" aria-label="Close" onclick="halfmoon.toggleModal('modal-theory')">
+            <span aria-hidden="true" class="lh-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg></span>
+          </a>
+          <div class="container">
+            <div id="modal-theory-info" data-theoryCode="0">
+              <div class="spacer-lg"></div>
+              <div class="w-full d-inline-flex">
+                <h5 id="modal-theory-title" class="modal-title mb-0 flex-grow-1">Theory Title</h5>
+                <span>
+                  <button class="btn btn-primary cursor-link" onclick="reportTheory()">
+                    Report Theory
+                  </button>
+                </span>
+              </div>
+              <hr>
+              <div id="modal-theory-meta">
+                <span id="modal-theory-meta-writer">Written by Author Name</span>
+              </div>
+              <div id="modal-theory-tags">
+                <span class="badge badge-primary">
+                  <span class="d-none d-sm-inline-block">
+                    Game Name
+                  </span>
+                  <span class="d-sm-none">
+                    Game Name
+                  </span>
+                </span>
+              </div>
+              <div class="spacer-sm"></div>
+              <div id="modal-theory-content">
+                <p>This is a cool theory. It is so amazing and correct and the writer is so smart. Kan Gao lives in fear of this writer and their works daily.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="wrapper" class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
+      <!-- Toasts -->
+      <div class="sticky-alerts"></div>
+      <nav class="navbar justify-content-between">
+          <div class="navbar-content">
+            <button class="btn btn-action btn-link" type="button" onclick="halfmoon.toggleSidebar()">
+              <i class="fa fa-bars text-secondary" aria-hidden="true">
+              </i>
+            </button>
+          </div>
+          <a href="./" class="navbar-brand">
+            <img src="./img/brand.png" alt="To The Moon Theory Wiki">
+          </a>
+          <a class="btn btn-link text-secondary" href="../bugs/">Report A Bug</a>
+      </nav>
+      <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <a href="./" class="sidebar-brand">
+            <img src="./img/brand.png" alt="Error">
+          </a>
+          <div class="spacer-md"></div>
+          <h5 class="sidebar-title">Information</h5>
+          <div class="sidebar-divider"></div>
+          <a id="sidebar-home" href="#home" onclick="sidebar('home')" data-sidebarlink class="sidebar-link active">Home</a>
+          <a id="sidebar-about" href="#about" onclick="sidebar('about')" data-sidebarlink class="sidebar-link">About</a>
+          <a id="sidebar-wikipedia" href="https://en.wikipedia.org/wiki/To_the_Moon" data-sidebarlink class="sidebar-link">Wikipedia</a>
+          <a id="sidebar-fandom" href="https://tothemoon.fandom.com/wiki/To_the_Moon_Wiki" data-sidebarlink class="sidebar-link">Fandom</a>
+          <a id="sidebar-submit" data-sidebarlink class="sidebar-link cursor-link" onclick="toggleSubmit()">Add Theory</a>
+          <div class="spacer-md"></div>
+          <h5 class="sidebar-title">Other</h5>
+          <div class="sidebar-divider"></div>
+          <div class="sidebar-content mt-10">
+            <div class="custom-switch">
+              <input type="checkbox" id="raxusMode" value="" onclick="raxusMode()">
+              <label for="raxusMode">Raxus Mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <div class="content">
+            <div id="home" class="card">
+              <h1 class="card-title">Welcome!</h1>
+              <hr>
+              <p>Welcome to the To The Moon Theory Wiki! This site is dedicated to theorizing and lore within the To The Moon series. Although theories here are centered around the series, theories may talk about any game in the Freebird Games franchise, so be prepared for spoilers.</p>
+            </div>
+            <div id="about" class="card">
+              <h1 class="card-title">About</h1>
+              <hr>
+              <p>The To The Moon Theory Wiki is a project I, <a href="../">RudRecciah</a>, originally conceptualized in late 2020, with the release being in early 2021. Being the main active theorizer of all Freebird games, I noticed theories were hard to keep track of and I would usually lose ones made by others. As a response, I decided to build a place for theories to exist and be easily accessable to anyone who might want to read some or use them to make their own. This site is a fan-made and moderated site that is not officially affiliated with Freebird Games.</p>
+            </div>
+            <div class="card">
+              <h1 class="card-title">Theories</h1>
+              <hr>
+              <p>Here you can find each theory in our <a href="https://github.com/RudRecciah/ttmtw-data">theory repository</a>. Theories are tagged by the games included in them, so you'll know what spoilers you might encounter. Click on a theory to read it. You can add a theory <a class="cursor-link" onclick="toggleSubmit()">here</a> which will be added after a manual review to make sure it follows our <a class="cursor-link" onclick="loadGuidelines()">Community Guidelines</a>. If you find a theory that does not follow our <a class="cursor-link" onclick="loadGuidelines()">Community Guidelines</a>, report it.</p>
+              <div id="theoryList" class="row">
+                <div id="theoryLeft" class="col-lg-6 col-12">
+                  
+                </div>
+                <div id="theoryRight" class="col-lg-6 col-12">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-static-bottom">
+          <a href="../" class="navbar-link text-muted m-auto">
+            Made with &hearts; by RudRecciah
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+    <script src="https://kit.fontawesome.com/d1e8146998.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.4/markdown-it.min.js"></script>
+    <script>
+      uploadTheory();
+      logConnection();
+
+      window.onload = prepareTheory();
+
+      function sidebar(div) {
+        var active = getActive();
+        document.getElementById(active).classList.remove("active");
+        document.getElementById("sidebar-" + div).classList.add("active");
+      }
+
+      function isOdd(num) {
+        return num % 2;
+      }
+
+      function getActive() {
+        var elementsByData = document.querySelectorAll("[data-sidebarlink]");
+        var elementsById = [];
+        elementsByData.forEach(element => {
+          elementsById.push(element.getAttribute("id"));
+        });
+        activeLink = [];
+        elementsById.forEach(elementById => {
+          var activeElement;
+          if(document.getElementById(elementById).classList.contains("active")) {
+            activeLink.push(elementById);
+          }
+        });
+        return activeLink.toString();
+      }
+
+      function raxusMode() {
+        if(document.getElementById("raxusMode").checked) {
+          var orig = ".page-wrapper {overflow-x: hidden;}.w-1000 {max-width: 1000px;}";
+          var colors = ":root {--dark-color: coral;--dark-color-light: black;--dark-color-dark: gray;--dm-muted-text-color: green;--blue-color: brown;--blue-color-light: skyblue;--blue-color-very-light: olive;--blue-color-dark: red;--blue-color-very-dark: white;--blue-box-shadow-color: lightsalmon;--blue-box-shadow-color-darker: lime;--dm-base-text-color: seagreen;--dm-base-text-color-light: goldenrod;--dm-navbar-border-color: darkblue;--dm-sidebar-border-color: white;--dm-card-border-color: green;--dm-modal-overlay-bg-color: gray;--yellow-color: brown;--yellow-color-light: coral;--yellow-color-very-light: olive;--yellow-color-dark: lightsalmon;--yellow-color-very-dark: blue;--yellow-box-shadow-color: red;--yellow-box-shadow-color-darker: khaki;}"
+          document.getElementById("style").innerHTML = colors;
+          var alertContent = "This color palette was endorsed by a professional designer at 12 AM on an October night.";
+          halfmoon.initStickyAlert({
+            content: alertContent,
+            title: "Before you go blind",
+            alertType: "",
+            fillType: "",
+            hasDismissButton: true,
+            timeShown: 10000
+          });
+        }else{
+          document.getElementById("style").innerHTML = colors;
+        }
+      }
+
+      function loadTheory(id) {
+        document.getElementById("modal-theory-title").innerText = document.getElementById("theory-title-" + id).innerText;
+        document.getElementById("modal-theory-meta-writer").innerText = document.getElementById("theory-meta-writer-" + id).innerText;
+        document.getElementById("modal-theory-tags").innerHTML = document.getElementById("theory-tags-" + id).innerHTML;
+        document.getElementById("modal-theory-content").innerHTML = document.getElementById("theory-meta-content-" + id).innerHTML;
+        document.getElementById("modal-theory-info").setAttribute("data-theoryCode", id.toString());
+        halfmoon.toggleModal("modal-theory");
+      }
+
+      function loadGuidelines() {
+        if(document.getElementById("modal-theory").classList.contains("show")) {
+          halfmoon.toggleModal("modal-theory");
+        }
+        if(!(document.getElementById("modal-guidelines").classList.contains("show"))) {
+          halfmoon.toggleModal("modal-guidelines");
+        }
+      }
+
+      function toggleSubmit() {
+        halfmoon.toggleModal("modal-submit");
+      }
+
+      function reportTheory() {
+        var code = document.getElementById("modal-theory-info").getAttribute("data-theoryCode");
+        if(!(code == "" || code == null)) {
+          var report = "Theory #" + code + " has been reported. Check this and delete if necessary.";
+          var request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/807073004973981716/5nMdVhXjC4t5YxIolH6RXtRvSWOCGl6CpiajMQZxfbyCyMftjrKflr7XGAVwy_7zGAdK");
+          request.setRequestHeader('Content-type', 'application/json');
+          var params = {
+            username: "New Report",
+            avatar_url: "https://rudrecciah.dev/img/mod.png",
+            content: report
+          }
+          request.send(JSON.stringify(params));
+          var alertContent = "If this theory violates our <a class=\"cursor-link\" onclick=\"loadGuidelines\(\)\">Community Guidelines</a>, our moderation team will remove it.";
+          halfmoon.initStickyAlert({
+            content: alertContent,
+            title: "Theory reported",
+            alertType: "",
+            fillType: "",
+            hasDismissButton: true,
+            timeShown: 10000
+          });
+        }
+      }
+
+      function logConnection() {
+        // console.log("hey, if you see this it means i fucked up, tell me pls thanks");
+        var connection = localStorage.getItem("connection");
+        var currentDate = Date();
+        var splitTime = currentDate.split(" ");
+        var splitTimeHours = splitTime[4].split(":");
+        var lastTimeConnected = splitTime[1] + splitTime[2] + splitTime[3] + splitTimeHours[0] + splitTimeHours[1];
+        if(connection == "" || connection == null) {
+          localStorage.setItem("connection", lastTimeConnected);
+          var request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
+          request.setRequestHeader('Content-type', 'application/json');
+          var params = {
+            username: "New Connection",
+            avatar_url: "https://rudrecciah.dev/img/connect.jpg",
+            content: "Someone connected to the theory wiki"
+          }
+          request.send(JSON.stringify(params));
+        }else{
+          if(!(connection == lastTimeConnected)) {
+            localStorage.setItem("connection", lastTimeConnected);
+            var request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/807114200798724126/2R8Fgiml5pXkR0FHoSjWhilFbpw4Jgg7yNxceJAkIiBFxIsfONVcOFXFuq4Q8KWFblOp");
+            request.setRequestHeader('Content-type', 'application/json');
+            var params = {
+              username: "New Connection",
+              avatar_url: "https://rudrecciah.dev/img/connect.jpg",
+              content: "Someone connected to the theory wiki"
+            }
+            request.send(JSON.stringify(params));
+          }
+        }
+      }
+
+      function rudprepareFormData() {
+        var name = document.getElementById("form-name").value.toString();
+        var writer = document.getElementById("form-writer").value.toString();
+        var theory = document.getElementById("form-theory").value.toString();
+        document.getElementById("form-name").value = "lsName";
+        document.getElementById("form-writer").value = "lsWriter";
+        document.getElementById("form-theory").value = "lsTheory";
+        localStorage.setItem("theoryName", name);
+        localStorage.setItem("theoryWriter", writer);
+        localStorage.setItem("theoryContent", theory);
+        document.getElementById("form-userTheoryUploader").submit();
+      }
+
+      function uploadTheory() {
+        var url = window.location.href;
+        var json = {name: null, writer: null, tags: [], theory: null};
+        if(url.indexOf("?") > -1) {
+          new URLSearchParams(window.location.search).forEach((value, name) => {
+            if(name == "name") {
+              json.name = localStorage.getItem("theoryName");
+              localStorage.removeItem("theoryName");
+            }else if(name == "writer") {
+              json.writer = localStorage.getItem("theoryWriter");
+              localStorage.removeItem("theoryWriter");
+            }else if(name == "tags") {
+              json.tags.push(value);
+            }else if(name == "theory") {
+              json.theory = localStorage.getItem("theoryContent");
+              localStorage.removeItem("theoryContent");
+            }
+          });
+          var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          var date = Date();
+          var time = date.split(" ");
+          var identifier = "A new theory was submitted by someone claiming to be `" + json.writer + "` who submitted this theory in the timezone of `" + timezone + "` at `" + time[4] + "` their local time.";
+          var blobJSON = JSON.stringify(json);
+          var blob = new Blob([blobJSON], {type: "application/json"});
+          var formData = new FormData();
+          //heeheehoohoo i know where most of the popular freebird games community members live so timezones are how i can determine if you are who you say you are
+          formData.append("content", identifier);
+          formData.append("file", blob, "theory.json");
+          fetch("https://discord.com/api/webhooks/807072920567414795/N0x6h8dr26RlJD5fS5A9eGUQwInMP0kSpxoAodsUAvhYXT84geLRC3-gAjZzIfqcpnk7", {method: "POST", body: formData})
+          var alertContent = "After our moderation team confirms your theory doesn't violate our <a class=\"cursor-link\" onclick=\"loadGuidelines\(\)\">Community Guidelines</a>, it will become public.";
+          halfmoon.initStickyAlert({
+            content: alertContent,
+            title: "Theory submitted",
+            alertType: "",
+            fillType: "",
+            hasDismissButton: true,
+            timeShown: 10000
+          });
+          window.history.replaceState({}, document.title, "/ttm/" + "");
+        }
+      }
+
+      function prepareTheory() {
+        $.getJSON('https://raw.githubusercontent.com/RudRecciah/ttmtw-data/main/id.json', function(indexingData) {
+          var count = parseInt(indexingData.count);
+          var amount = count + 1;
+          var skip = indexingData.skip;
+          i = 0;
+          var theoriesExist = false;
+          while(i < amount) {
+            if(!(skip.includes(i) || skip.includes(i.toString()))) {
+              theoriesExist = true;
+              var theoryMetaDiv = "<div data-id-" + i + " class=\"card cursor-link\" onclick=\"loadTheory('" + i + "')\"><h1 id=\"theory-title-" + i + "\" class=\"card-title mb-0 d-inline\">" + "title" + "</h1><div id=\"theory-meta\"><span id=\"theory-meta-writer-" + i + "\">" + "Written by" + " author" + "</span></div><div id=\"theory-tags-" + i + "\"></div><hr><div id=\"theory-content-trn\"><p id=\"theory-meta-content-" + i + "\" class=\"text-truncate mt-0\">" + "content" + "</p></div></div>"
+              if(isOdd(i) == 1) {
+                document.getElementById("theoryLeft").innerHTML =  document.getElementById("theoryLeft").innerHTML + theoryMetaDiv;
+              }else{
+                document.getElementById("theoryRight").innerHTML =  document.getElementById("theoryRight").innerHTML + theoryMetaDiv;
+              }
+            }
+            i++;
+            if(theoriesExist && i == amount) {
+              importTheory(count, skip);
+            }
+          }
+        });
+      }
+
+      function importTheory(count, skip) {
+        var amount = count + 1;
+        var i = 0;
+        while(i < amount) {
+          if(!(skip.includes(i) || skip.includes(i.toString()))) {
+            new function() {
+              var current = i;
+              $.getJSON('https://raw.githubusercontent.com/RudRecciah/ttmtw-data/main/' + i + '.json', function(theoryContent) {
+                document.getElementById("theory-title-" + current).innerText = theoryContent.name;
+                document.getElementById("theory-meta-writer-" + current).innerText = "Written by " + theoryContent.writer;
+                var tags = theoryContent.tags;
+                var tag0 = {long: "Quintessence: The Blighted Venom", short: "Quintessence"}
+                var tag1 = {long: "The Mirror Lied", short: "TML"}
+                var tag2 = {long: "Do You Remember My Lullaby?", short: "DRYML"}
+                var tag3 = {long: "Quintessense: The Blighted Venom's Lost Chapter", short: "Lost Chapter"}
+                var tag4 = {long: "To The Moon", short: "TTM"}
+                var tag5 = {long: "Sigmund Minisode 1", short: "Minisode 1"}
+                var tag6 = {long: "Sigmund Minisode 2", short: "Minisode 2"}
+                var tag7 = {long: "A Bird Story", short: "ABS"}
+                var tag8 = {long: "Finding Paradise", short: "FP"}
+                var tag9 = {long: "Impostor Factory", short: "IF"}
+                tags.forEach((elementString, index) => {
+                  var element = parseInt(elementString);
+                  if(element == 0) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag0.long + "</span><span class=\"d-sm-none\">" + tag0.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 1) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag1.long + "</span><span class=\"d-sm-none\">" + tag1.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 2) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag2.long + "</span><span class=\"d-sm-none\">" + tag2.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 3) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag3.long + "</span><span class=\"d-sm-none\">" + tag3.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 4) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag4.long + "</span><span class=\"d-sm-none\">" + tag4.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 5) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag5.long + "</span><span class=\"d-sm-none\">" + tag5.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 6) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag6.long + "</span><span class=\"d-sm-none\">" + tag6.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 7) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag7.long + "</span><span class=\"d-sm-none\">" + tag7.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 8) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag8.long + "</span><span class=\"d-sm-none\">" + tag8.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
+                  }else if(element == 9) {
+                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag9.long + "</span><span class=\"d-sm-none\">" + tag9.short + "</span></span>"
+                  }
+                });
+                var theory = theoryContent.theory;
+                var md = window.markdownit();
+                md.disable(['normalize', 'linkify', 'replacements', 'smartquotes', 'text', 'escape', 'backticks', 'strikethrough', 'link', 'image', 'autolink', 'html_inline', 'entity'])
+                var content = md.renderInline(theory);
+                document.getElementById("theory-meta-content-" + current).innerHTML = content;
+                if((current + 1)== amount) {
+                }
+              });
+            }
+          }
+          i++;
+        }
+      }
+
+      function processSidebarClick(id) {
+        sidebar("theory" + id.toString());
+        loadTheory(id.toString());
+      }
+    </script>
+  </body>
 </html>
