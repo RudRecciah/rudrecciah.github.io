@@ -257,10 +257,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
         document.getElementById("sidebar-" + div).classList.add("active");
       }
 
-      function isOdd(num) {
-        return num % 2;
-      }
-
       function getActive() {
         var elementsByData = document.querySelectorAll("[data-sidebarlink]");
         var elementsById = [];
@@ -529,11 +525,6 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
           }
           i++;
         }
-      }
-
-      function processSidebarClick(id) {
-        sidebar("theory" + id.toString());
-        loadTheory(id.toString());
       }
     </script>
   </body>
