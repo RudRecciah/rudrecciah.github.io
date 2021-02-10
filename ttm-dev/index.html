@@ -44,7 +44,7 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
               <h5 class="modal-title mb-0">Add Theory</h5>
               <p class="mt-0">By adding a theory, you agree to our Community Guidelines. Your theory will be saved until you either reload the page or submit it.</p>
               <hr>
-              <form method="GET" class="mw-full" enctype="multipart/form-data">
+              <form id="form-userTheoryUploader" method="GET" class="mw-full" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="form-name" class="required">Theory Name</label>
                   <input name="name" type="text" class="form-control" id="form-name" placeholder="Theory Name" required="required">
@@ -79,12 +79,12 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
                 </div>
                 <div class="form-group">
                   <label for="form-theory" class="required">Theory Content</label>
-                  <textarea name="theory" class="form-control" placeholder="Add your theory here." required="required"></textarea>
+                  <textarea name="theory" id="form-theory" class="form-control" placeholder="Add your theory here." required="required" value=""></textarea>
                   <div class="form-text">
                     You can <em>italicize</em>, <strong>bold</strong>, and <em><strong>boldly italicize</strong></em> parts of your theory by wrapping said parts in <kbd>*</kbd>, <kbd>**</kbd>, and <kbd>***</kbd> respectively.
                   </div>
                 </div>
-                <input class="btn btn-primary btn-block" type="submit" value="Submit Theory">
+                <button id="form-submitButton" type="button" class="btn btn-primary btn-block" onclick="rudprepareFormData()">Submit Theory</button>
               </form>
               <div class="spacer-lg"></div>
               <div class="spacer-lg"></div>
@@ -377,19 +377,35 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
         // }
       }
 
+      function rudprepareFormData() {
+        var name = document.getElementById("form-name").value.toString();
+        var writer = document.getElementById("form-writer").value.toString();
+        var theory = document.getElementById("form-theory").value.toString();
+        document.getElementById("form-name").value = "lsName";
+        document.getElementById("form-writer").value = "lsWriter";
+        document.getElementById("form-theory").value = "lsTheory";
+        localStorage.setItem("theoryName", name);
+        localStorage.setItem("theoryWriter", writer);
+        localStorage.setItem("theoryContent", theory);
+        document.getElementById("form-userTheoryUploader").submit();
+      }
+
       function uploadTheory() {
         var url = window.location.href;
         var json = {name: null, writer: null, tags: [], theory: null};
         if(url.indexOf("?") > -1) {
           new URLSearchParams(window.location.search).forEach((value, name) => {
             if(name == "name") {
-              json.name = value;
+              json.name = localStorage.getItem("theoryName");
+              localStorage.removeItem("theoryName");
             }else if(name == "writer") {
-              json.writer = value;
+              json.writer = localStorage.getItem("theoryWriter");
+              localStorage.removeItem("theoryWriter");
             }else if(name == "tags") {
               json.tags.push(value);
             }else if(name == "theory") {
-              json.theory = value;
+              json.theory = localStorage.getItem("theoryContent");
+              localStorage.removeItem("theoryContent");
             }
           });
           var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -519,22 +535,9 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
                 var content = md.renderInline(theory);
                 document.getElementById("theory-meta-content-" + current).innerHTML = content;
                 if((current + 1)== amount) {
-                  loadSidebar(count, skip);
                 }
               });
             }
-          }
-          i++;
-        }
-      }
-
-      function loadSidebar(count, skip) {
-        var amount = count + 1;
-        var i = 0;
-        while(i < amount) {
-          if(!(skip.includes(i) || skip.includes(i.toString()))) {
-            var name = document.getElementById("theory-title-" + i).innerText
-            document.getElementById("sidebar-theories").innerHTML = document.getElementById("sidebar-theories").innerHTML + "<a id=\"sidebar-theory" + i + "\" onclick=\"processSidebarClick(" + i + ")\" data-sidebarlink class=\"sidebar-link cursor-link\">" + name + "</a>";
           }
           i++;
         }
