@@ -300,7 +300,9 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
         document.getElementById("modal-theory-title").innerText = document.getElementById("theory-title-" + id).innerText;
         document.getElementById("modal-theory-meta-writer").innerText = document.getElementById("theory-meta-writer-" + id).innerText;
         document.getElementById("modal-theory-tags").innerHTML = document.getElementById("theory-tags-" + id).innerHTML;
-        document.getElementById("modal-theory-content").innerHTML = document.getElementById("theory-meta-content-" + id).innerHTML;
+        var modalTheoryContent = document.getElementById("theory-meta-content-" + id).innerHTML;
+        var newContent = modalTheoryContent.replace(/\n/g, "<br>");
+        document.getElementById("modal-theory-content").innerHTML = newContent;
         document.getElementById("modal-theory-info").setAttribute("data-theoryCode", id.toString());
         halfmoon.toggleModal("modal-theory");
       }
@@ -513,8 +515,9 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
                 });
                 var theory = theoryContent.theory;
                 var md = window.markdownit();
-                md.disable(['normalize', 'linkify', 'replacements', 'smartquotes', 'text', 'escape', 'backticks', 'strikethrough', 'link', 'image', 'autolink', 'html_inline', 'entity'])
+                md.disable(['normalize', 'linkify', 'replacements', 'smartquotes', 'text', 'escape', 'backticks', 'strikethrough', 'link', 'image', 'autolink', 'html_inline', 'entity', 'newline']);
                 var content = md.renderInline(theory);
+                // var newContent = content.replace(/\n/g, "<br>");
                 document.getElementById("theory-meta-content-" + current).innerHTML = content;
                 if((current + 1)== amount) {
                 }
