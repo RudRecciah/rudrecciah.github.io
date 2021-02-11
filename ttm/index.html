@@ -471,6 +471,7 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
               $.getJSON('https://raw.githubusercontent.com/RudRecciah/ttmtw-data/main/' + i + '.json', function(theoryContent) {
                 document.getElementById("theory-title-" + current).innerText = theoryContent.name;
                 document.getElementById("theory-meta-writer-" + current).innerText = "Written by " + theoryContent.writer;
+                console.log(theoryContent.tags);
                 var tags = theoryContent.tags;
                 var tag0 = {long: "Quintessence: The Blighted Venom", short: "Quintessence"}
                 var tag1 = {long: "The Mirror Lied", short: "TML"}
@@ -485,34 +486,35 @@ Any attempt to misuse or repurpose this code in a way which leaves a lasting den
                 tags.forEach((elementString, index) => {
                   var element = parseInt(elementString);
                   if(element == 0) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag0.long + "</span><span class=\"d-sm-none\">" + tag0.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag0.long + "</span><span class=\"d-sm-none\">" + tag0.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 1) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag1.long + "</span><span class=\"d-sm-none\">" + tag1.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag1.long + "</span><span class=\"d-sm-none\">" + tag1.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 2) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag2.long + "</span><span class=\"d-sm-none\">" + tag2.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag2.long + "</span><span class=\"d-sm-none\">" + tag2.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 3) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag3.long + "</span><span class=\"d-sm-none\">" + tag3.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag3.long + "</span><span class=\"d-sm-none\">" + tag3.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 4) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag4.long + "</span><span class=\"d-sm-none\">" + tag4.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag4.long + "</span><span class=\"d-sm-none\">" + tag4.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 5) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag5.long + "</span><span class=\"d-sm-none\">" + tag5.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag5.long + "</span><span class=\"d-sm-none\">" + tag5.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 6) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag6.long + "</span><span class=\"d-sm-none\">" + tag6.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag6.long + "</span><span class=\"d-sm-none\">" + tag6.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 7) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag7.long + "</span><span class=\"d-sm-none\">" + tag7.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag7.long + "</span><span class=\"d-sm-none\">" + tag7.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 8) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag8.long + "</span><span class=\"d-sm-none\">" + tag8.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag8.long + "</span><span class=\"d-sm-none\">" + tag8.short + "</span></span>"
                     document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }else if(element == 9) {
-                    var tagHTML = "<span class=\"badge badge-primary\"><span class=\"d-none d-sm-inline-block\">" + tag9.long + "</span><span class=\"d-sm-none\">" + tag9.short + "</span></span>"
+                    var tagHTML = "<span class=\"badge badge-primary mr-1\"><span class=\"d-none d-sm-inline-block\">" + tag9.long + "</span><span class=\"d-sm-none\">" + tag9.short + "</span></span>"
+                    document.getElementById("theory-tags-" + current).innerHTML = document.getElementById("theory-tags-" + current).innerHTML + tagHTML;
                   }
                 });
                 var theory = theoryContent.theory;
