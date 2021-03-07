@@ -248,11 +248,11 @@
       });
 
       function animate() {
-        var elements = [document.getElementById("about-title"), document.getElementById("about"), document.getElementById("project-title"), document.getElementById("project"), document.getElementById("projects"), document.getElementById("proj1-button"), document.getElementById("proj2-button"), document.getElementById("proj3-button"), document.getElementById("project-more"), document.getElementById("project-more-button"), document.getElementById("contact-title"), document.getElementById("contact"), document.getElementById("account-title"), document.getElementById("account"), document.getElementById("account-links"), document.getElementById("footer")];
+        const elements = [document.getElementById("about-title"), document.getElementById("about"), document.getElementById("project-title"), document.getElementById("project"), document.getElementById("projects"), document.getElementById("proj1-button"), document.getElementById("proj2-button"), document.getElementById("proj3-button"), document.getElementById("project-more"), document.getElementById("project-more-button"), document.getElementById("contact-title"), document.getElementById("contact"), document.getElementById("account-title"), document.getElementById("account"), document.getElementById("account-links"), document.getElementById("footer")];
         elements.forEach(element => {
-          var distance = element.getBoundingClientRect();
+          const distance = element.getBoundingClientRect();
           if(distance.top <= (window.innerHeight || document.documentElement.clientHeight)) {
-            if(element.getAttribute("id") == "projects") {
+            if(element.getAttribute("id") === "projects") {
               if(!(document.getElementById("proj1").classList.contains("xyz-in"))) {
                 document.getElementById("proj1").classList.add("xyz-in");
               }
@@ -282,7 +282,7 @@
       function copyright() {
         var time = Date();
         var year = time.split(" ")[3];
-        if(!(year == "2021")) {
+        if(!(year === "2021")) {
           document.getElementById("footer").innerText = document.getElementById("footer").innerText + " 2021-" + year + ", RudRecciah";
         }else{
           document.getElementById("footer").innerText = document.getElementById("footer").innerText + " 2021, RudRecciah";

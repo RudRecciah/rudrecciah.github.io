@@ -10,5 +10,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="halfmoon" level="application" />
     <orderEntry type="library" name="@animxyz/core" level="application" />
+    <orderEntry type="library" name="d1e8146998" level="application" />
   </component>
 </module>
