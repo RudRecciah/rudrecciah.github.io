@@ -26,6 +26,7 @@
     --lm-button-link-box-shadow-focus: #D061C7;
     --lm-button-link-border-color-focus: rgba(0, 0, 0, 0);
     --link-color: var(--indigo-color);
+    --lm-navbar-border-color: transparent;
 }
 .page-wrapper {
     font-family: 'Poppins', sans-serif;
@@ -48,4 +49,57 @@
 }
 .text-pink {
     color: #D061C7;
+}
+.h-100vh {
+    height: 100vh;
+}
+.content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.vert-align-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ec-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("bg.png");
+}
+.h-lg-full {
+    height: auto;
+}
+@media (min-width: 993px) {
+    .h-lg-full {
+        height: 100vh;
+    }
+}
+.rud-spacer-sm-mdh {
+    width: 100%;
+    height: 20px;
+}
+@media (min-height: 760px) {
+    .rud-spacer-sm-mdh {
+        width: 100%;
+        height: 0px;
+    }
+}
+.rud-spacer-sm-lmdh {
+    width: 100%;
+    height: 5px;
+}
+@media (min-height: 760px) {
+    .rud-spacer-sm-lmdh {
+        width: 100%;
+        height: 20px;
+    }
+}
+.nav-bg {
+    border: none;
+    background-color: transparent;
 }

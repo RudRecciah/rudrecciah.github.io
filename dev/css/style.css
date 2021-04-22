@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+  font-family: 'prod';
+  src: url('../font/product_sans_regular-webfont.woff2') format('woff2'),
+  url('../font/product_sans_regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'prod-bold';
+  src: url('../font/product-sans-bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-custom {
+  font-family: 'prod', sans-serif;
+  font-size: 16px;
+}
+
+.font-custom-bold {
+  font-family: 'prod-bold', sans-serif;
+}
+
+.cml-5 {
+  margin-left: 5px;
+}
+
+.cml-10 {
+  margin-left: 10px;
+}
+
+.cml-15 {
+  margin-left: 15px;
+}
+
+.cml-20 {
+  margin-left: 20px;
+}
+
+.cmr-5 {
+  margin-right: 5px;
+}
+
+.cmr-10 {
+  margin-right: 10px;
+}
+
+.cmr-15 {
+  margin-right: 15px;
+}
+
+.cmr-20 {
+  margin-right: 20px;
+}
+
+.spacer-sm {
+  width: 100%;
+  height: 10px;
+}
+
+.spacer-md {
+  width: 100%;
+  height: 20px;
+}
+
+.spacer-lg {
+  width: 100%;
+  height: 50px;
+}
+
+.z-index-20 {
+  z-index: 20;
+}
+
+@media(min-width: 992px) {
+  .shadow-lg-4 {
+    box-shadow:0 2px 4px 0 rgba(0,0,0,.14),0 4px 5px 0 rgba(0,0,0,.12),0 1px 10px 0 rgba(0,0,0,.2) !important;
+  }
+  
+  body {
+    height: 100vh;
+    background-image: url("../img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+.h-13 {
+  height: 13px;
+}
