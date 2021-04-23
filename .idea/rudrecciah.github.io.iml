@@ -11,5 +11,7 @@
     <orderEntry type="library" name="halfmoon" level="application" />
     <orderEntry type="library" name="@animxyz/core" level="application" />
     <orderEntry type="library" name="d1e8146998" level="application" />
+    <orderEntry type="library" name="simplebar" level="application" />
+    <orderEntry type="library" name="overlayscrollbars" level="application" />
   </component>
 </module>
