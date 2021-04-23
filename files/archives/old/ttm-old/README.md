@@ -1,0 +1,2 @@
+# TTM Theory Wiki
+This is a wiki for my site on theories for *To The Moon*, *Sigmund Minisode 1*, *Sigmund Minisode 2*, *Sigmund Minisode 3, *A Bird Story*, *Finding Paradise*, and *Impostor Factory*. This site was made on and off over the course of 2 months, and as a result of that timeframe became a clusterfuck of HTMl and CSS. Have fun going through Windows Kernel V2: Web Edition.
