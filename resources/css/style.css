@@ -2,15 +2,14 @@
 
 @font-face {
   font-family: 'prod';
-  src: url('../font/product_sans_regular-webfont.woff2') format('woff2'),
-  url('../font/product_sans_regular-webfont.woff2') format('woff2');
+  src: url('../font/font.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'prod-bold';
-  src: url('../font/product-sans-bold.woff2') format('woff2');
+  src: url('../font/font-bold.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
