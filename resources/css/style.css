@@ -79,6 +79,10 @@
   height: 20px;
 }
 
+.h-fluid {
+  height: 100px;
+}
+
 @media (min-width: 992px) {
   .spacer-md-lg {
     height: 0px;
@@ -86,6 +90,17 @@
   
   .ch-100 {
     height: 100%;
+  }
+  
+  .vert-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .vert-col {
+    flex: 1;
   }
 }
 
