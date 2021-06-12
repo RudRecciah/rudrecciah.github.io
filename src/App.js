@@ -6,6 +6,7 @@ import "./assets/styles/vendor/css/argon-design-system-react.css";
 import Main from "./components/main.jsx";
 
 function App() {
+  
   return (
     <div className="App">
       <Main/>
