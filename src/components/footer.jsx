@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class footer extends Component {
+export default class Footer extends Component {
   state = {};
   
   render() {

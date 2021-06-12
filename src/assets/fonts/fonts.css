@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Parkway Lush";
+    src: url("./splash.woff2") format("woff2");
+}
+
+.font-parkway {
+    font-family: "Parkway Lush", sans-serif;
+}
+
+.font-size-splash {
+    font-size: 96px;
+}
+
+@media screen and (min-width: 420px) {
+    .font-size-splash {
+        font-size: 128px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .font-size-splash {
+        font-size: 191px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .font-size-splash {
+        font-size: 256px;
+    }
+}

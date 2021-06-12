@@ -1,0 +1,15 @@
+.bg-black {
+    background-color: black;
+}
+
+.bg-frosted {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.content-frosted {
+}
+
+.h-test {
+    height: 2000px;
+}
