@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import Splash from "../../assets/svg/splash.png";
 
 export default class Home extends Component {
   state = {};
@@ -7,7 +6,9 @@ export default class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="font-size-splash text-white font-parkway text-center">Squawk</h1>
+        <section className="h-100 flex-1 d-flex flex-column align-content-center justify-content-center">
+          <h1 className="font-size-splash text-white font-parkway text-center">Squawk</h1>
+        </section>
       </React.Fragment>
     );
   }

@@ -13,3 +13,7 @@
 .h-test {
     height: 2000px;
 }
+
+.flex-1 {
+    flex: 1;
+}

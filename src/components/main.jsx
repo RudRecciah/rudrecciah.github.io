@@ -10,7 +10,7 @@ export default class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="min-vh-100 h-test bg-black">
+        <div className="min-vh-100 d-flex flex-column bg-black">
           <BrowserRouter>
             <Header/>
             <Switch>
