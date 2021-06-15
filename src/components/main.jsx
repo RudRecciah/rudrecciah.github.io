@@ -3,6 +3,9 @@ import Header from "./header.jsx";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./home/home.jsx";
 import Footer from "./footer.jsx";
+import Admincore from "./admincore/admincore.jsx";
+import Gallery from "./gallery/gallery.jsx";
+import Code from "./code/code.jsx";
 
 export default class Main extends Component {
   state = {};
@@ -10,11 +13,14 @@ export default class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="min-vh-100 d-flex flex-column bg-black">
+        <div className="min-vh-100 bg-black">
           <BrowserRouter>
             <Header/>
             <Switch>
               <Route path="/" exact component={Home}/>
+              <Route path="/code" exact component={Code}/>
+              <Route path="/admincore" exact component={Admincore}/>
+              <Route path="/gallery" exact component={Gallery}/>
             </Switch>
             <Footer/>
           </BrowserRouter>

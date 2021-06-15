@@ -9,18 +9,15 @@ export default class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        <header>
-          <Navbar className="navbar-horizontal bg-frosted border-bottom border-dark sticky-top" expand="lg">
+        <header className="sticky-top">
+          <Navbar className="navbar-horizontal bg-frosted border-bottom border-dark" expand="lg">
             <Container fluid={true}>
               <NavbarBrand>
                 <Link to="/" className="btn btn-link text-white"><img src={Logo} alt="Home"/></Link>
               </NavbarBrand>
               <Nav>
                 <NavItem>
-                  <Link to="/about" className="btn btn-link text-white">About</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="/core" className="btn btn-link text-white">Core</Link>
+                  <Link to="/code" className="btn btn-link text-white">Code</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/gallery" className="btn btn-link text-white">Gallery</Link>
@@ -29,7 +26,10 @@ export default class Header extends Component {
                   <a target="_blank" href="./ttm" className="btn btn-link text-white">TTM</a>
                 </NavItem>
                 <NavItem>
-                  <Link to="/contact" className="btn btn-white text-dark">Contact</Link>
+                  <Link to="/core" className="btn btn-link text-white">Admincore</Link>
+                </NavItem>
+                <NavItem>
+                  <a target="_blank" href="https://discord.rudrecciah.dev/" className="btn btn-white text-dark">Contact</a>
                 </NavItem>
               </Nav>
             </Container>
