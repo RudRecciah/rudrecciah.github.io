@@ -8,8 +8,10 @@ import Gallery from "./gallery/gallery.jsx";
 import Code from "./code/code.jsx";
 
 export default class Main extends Component {
-  state = {};
-  
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     return (
       <React.Fragment>

@@ -1,25 +1,18 @@
 import React, {Component} from "react";
-import {Col, Container, Navbar, Row} from "reactstrap";
-import {ExpandMoreOutlined} from "@material-ui/icons";
+import Splash from "./splash.jsx";
+import Xp from "./xp.jsx";
 
 export default class Home extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   
   render() {
     return (
       <React.Fragment>
-        <Container fluid={true}>
-          <section className="h-80vh d-flex flex-column align-content-center justify-content-center">
-            <h1 className="font-size-splash text-white font-parkway text-center">Squawk</h1>
-          </section>
-          <section>
-            <Navbar className="navbar-horizontal fixed-bottom">
-              <Container fluid={true}>
-                <p className="text-center text-white d-block w-100"><ExpandMoreOutlined/></p>
-              </Container>
-            </Navbar>
-          </section>
-        </Container>
+        <Splash/>
+        <Xp/>
       </React.Fragment>
     );
   }

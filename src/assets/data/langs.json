@@ -1,0 +1,21 @@
+{
+  "extremely": [
+    "HTML",
+    "JS",
+    "Java"
+  ],
+  "highly": [
+    "JSX",
+    "CSS"
+  ],
+  "moderately": [
+    "Python",
+    "Shell"
+  ],
+  "somewhat": [
+    "Svelte",
+    "C#",
+    "Dockerfile",
+    "PHP"
+  ]
+}

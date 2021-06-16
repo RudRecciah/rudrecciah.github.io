@@ -4,12 +4,15 @@ import {Navbar, Container, NavbarBrand, NavItem, Nav} from "reactstrap";
 import Logo from "../assets/svg/angle.svg";
 
 export default class Header extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   
   render() {
     return (
       <React.Fragment>
-        <header className="sticky-top">
+        <nav className="sticky-top">
           <Navbar className="navbar-horizontal bg-frosted border-bottom border-dark" expand="lg">
             <Container fluid={true}>
               <NavbarBrand>
@@ -34,7 +37,7 @@ export default class Header extends Component {
               </Nav>
             </Container>
           </Navbar>
-        </header>
+        </nav>
       </React.Fragment>
     );
   }

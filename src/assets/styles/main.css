@@ -7,9 +7,6 @@
     backdrop-filter: blur(5px);
 }
 
-.content-frosted {
-}
-
 .flex-1 {
     flex: 1;
 }
@@ -22,11 +19,30 @@
     height: 80vh;
 }
 
-.text-gray {
-    color: #888888;
+.h-80 {
+    height: 80%;
+}
+
+.border-rounded {
+    border-radius: 10px;
+}
+
+.box {
+    backdrop-filter: blur(5px);
+    border: 1px solid hsla(0,0%,100%,0.1);
+    border-radius: 10px;
 }
 
 .w-100 {
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+
+.position-absolute {
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.mt-100vh {
+    margin-top: 100vh;
 }

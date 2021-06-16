@@ -17,8 +17,16 @@ h1, h2, h3, h4, h5, h6, .font-header {
     font-family: "Poppins", sans-serif;
 }
 
-h2 {
-    font-size: 48px;
+h2, .font-size-h2 {
+    font-size: 54px;
+}
+
+p, .font-size-p {
+    font-size: 20px;
+}
+
+.c-text-gray {
+    color: #999999;
 }
 
 @media screen and (min-width: 420px) {
