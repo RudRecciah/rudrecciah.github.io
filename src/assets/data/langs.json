@@ -1,21 +1,36 @@
 {
-  "extremely": [
-    "HTML",
-    "JS",
-    "Java"
-  ],
-  "highly": [
-    "JSX",
-    "CSS"
-  ],
-  "moderately": [
-    "Python",
-    "Shell"
-  ],
-  "somewhat": [
-    "Svelte",
-    "C#",
-    "Dockerfile",
-    "PHP"
+  "names": {
+    "extremely": [
+      "HTML",
+      "JS",
+      "Java"
+    ],
+    "highly": [
+      "JSX",
+      "CSS"
+    ],
+    "moderately": [
+      "Python",
+      "Shell"
+    ],
+    "somewhat": [
+      "Svelte",
+      "C#",
+      "Dockerfile",
+      "PHP"
+    ]
+  },
+  "files": [
+    "index.html",
+    "Main.js",
+    "Main.java",
+    "App.jsx",
+    "style.css",
+    "Main.py",
+    "run.sh",
+    "index.svelte",
+    "Main.cs",
+    "container.dockerfile",
+    "Main.php"
   ]
 }

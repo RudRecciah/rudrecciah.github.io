@@ -1,13 +1,26 @@
 import React, {Component} from "react";
 import {Col, Container, Row, Table} from "reactstrap";
 import langs from "../../assets/data/langs.json";
+import circle from "../../assets/svg/circle.svg";
 
 export default class Xp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      "langs": langs
+      langs: langs.names,
+      files: langs.files,
+      currentFile: "index.html"
     };
+  }
+  
+  componentDidMount() {
+    setInterval(() => {
+      if(this.state.files[this.state.files.indexOf(this.state.currentFile) + 1] === undefined) {
+        this.setState({currentFile: this.state.files[this.state.files.indexOf(this.state.currentFile) + 2]});
+      }else{
+        this.setState({currentFile: this.state.files[this.state.files.indexOf(this.state.currentFile) + 1]});
+      }
+    }, 2000);
   }
   
   render() {
@@ -18,8 +31,27 @@ export default class Xp extends Component {
             <section>
               <Row className="flex-column-reverse flex-lg-row">
                 <Col xs="12" lg="6" className="d-flex flex-column align-content-center justify-content-center">
-                  <div className="box h-80">
-                  
+                  <div className="box">
+                    <div className="flex-column">
+                      <div className="border-bottom-box box-top">
+                        <span className="h-100 d-flex flex-column justify-content-center align-content-center w-100 text-center c-text-gray">
+                          <span><img src={circle} alt="" height="10" width="10" className="mr-2 align-baseline"/>{this.state.currentFile}</span>
+                        </span>
+                      </div>
+                      <div className="d-flex flex-column align-content-center justify-content-center">
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content text-gray text-center">&#8197;</div>
+                        <div className="fake-content fake-content-last text-gray text-center">&#8197;</div>
+                      </div>
+                    </div>
                   </div>
                 </Col>
                 <Col xs="12" lg="6" className="text-lg-right text-center">
