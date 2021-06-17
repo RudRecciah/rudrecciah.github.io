@@ -14,13 +14,7 @@ export default class Xp extends Component {
   }
   
   componentDidMount() {
-    setInterval(() => {
-      if(this.state.files[this.state.files.indexOf(this.state.currentFile) + 1] === undefined) {
-        this.setState({currentFile: this.state.files[this.state.files.indexOf(this.state.currentFile) + 2]});
-      }else{
-        this.setState({currentFile: this.state.files[this.state.files.indexOf(this.state.currentFile) + 1]});
-      }
-    }, 2000);
+    this.setState({currentFile: this.state.files[Math.floor(Math.random() * this.state.files.length)]});
   }
   
   render() {
