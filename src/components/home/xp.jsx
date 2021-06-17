@@ -48,12 +48,12 @@ export default class Xp extends Component {
                     </div>
                   </div>
                 </Col>
-                <Col xs="12" lg="6" className="text-lg-right text-center">
-                  <h2 className="font-header text-white font-size-h2">Hey, I'm Rud.</h2>
-                  <p className="text-right font-size-p c-text-gray">
+                <Col xs="12" lg="6">
+                  <h2 className="font-header text-center text-lg-right text-white font-size-h2">Hey, I'm Rud.</h2>
+                  <p className="text-center text-lg-right font-size-p c-text-gray">
                     I'm a pink parrot with development skills. I've been developing for the past three years, working on various projects mostly in Java.
                   </p>
-                  <Table borderless className="text-right">
+                  <Table borderless className="text-center text-lg-right">
                     <thead className="text-white border-bottom border-dark">
                       <tr>
                         <th>Languages</th>
@@ -62,36 +62,36 @@ export default class Xp extends Component {
                     </thead>
                     <tbody className="c-text-gray">
                       <tr>
-                        <th key="ExtremeLangs">
+                        <td key="ExtremeLangs">
                           {this.state.langs.extremely.map(lang =>
                             <span key={lang}>{lang}{lang !== this.state.langs.extremely[this.state.langs.extremely.length - 1] && ", "}</span>
                           )}
-                        </th>
-                        <th>Extremely Experienced</th>
+                        </td>
+                        <td>Extremely Experienced</td>
                       </tr>
                       <tr>
-                        <th key="ExtremeLangs">
+                        <td key="ExtremeLangs">
                           {this.state.langs.highly.map(lang =>
                             <span key={lang}>{lang}{lang !== this.state.langs.highly[this.state.langs.highly.length - 1] && ", "}</span>
                           )}
-                        </th>
-                        <th>Highly Experienced</th>
+                        </td>
+                        <td>Highly Experienced</td>
                       </tr>
                       <tr>
-                        <th key="ExtremeLangs">
+                        <td key="ExtremeLangs">
                           {this.state.langs.moderately.map(lang =>
                             <span key={lang}>{lang}{lang !== this.state.langs.moderately[this.state.langs.moderately.length - 1] && ", "}</span>
                           )}
-                        </th>
-                        <th>Moderately Experienced</th>
+                        </td>
+                        <td>Moderately Experienced</td>
                       </tr>
                       <tr>
-                        <th key="ExtremeLangs">
+                        <td key="ExtremeLangs">
                           {this.state.langs.somewhat.map(lang =>
                             <span key={lang}>{lang}{lang !== this.state.langs.somewhat[this.state.langs.somewhat.length - 1] && ", "}</span>
                           )}
-                        </th>
-                        <th>Somewhat Experienced</th>
+                        </td>
+                        <td>Somewhat Experienced</td>
                       </tr>
                     </tbody>
                   </Table>

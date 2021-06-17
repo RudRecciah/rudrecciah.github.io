@@ -62,8 +62,12 @@
     background-color: #999999;
 }
 
+.fake-content-row {
+    margin-right: 0;
+}
+
 .fake-content-last {
-    margin: 2% 2% 2% 2%;
+    margin-bottom: 2%;
 }
 
 .m-1p {
@@ -72,4 +76,44 @@
 
 .box-top {
     line-height: 50px;
+}
+
+.spacer-xs {
+    background-color: transparent;
+    width: 100%;
+    height: 10px !important;
+    margin: 0 !important;
+}
+
+.spacer-sm {
+    background-color: transparent;
+    width: 100%;
+    height: 20px !important;
+    margin: 0 !important;
+}
+.spacer-md {
+    background-color: transparent;
+    width: 100%;
+    height: 50px !important;
+    margin: 0 !important;
+}
+.spacer-lg {
+    background-color: transparent;
+    width: 100%;
+    height: 100px !important;
+    margin: 0 !important;
+}
+.spacer-xl {
+    background-color: transparent;
+    width: 100%;
+    height: 200px !important;
+    margin: 0 !important;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-13-5 {
+    width: 13.5%;
 }

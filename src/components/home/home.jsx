@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import Splash from "./splash.jsx";
 import Xp from "./xp.jsx";
-import Spacer from "../utils/spacer.jsx";
+import Admincore from "./admincore.jsx";
+import SpacerLg from "../utils/spacerLg.jsx";
+import SpacerXl from "../utils/spacerXl.jsx";
 
 export default class Home extends Component {
   constructor(props) {
@@ -13,9 +15,11 @@ export default class Home extends Component {
     return (
       <React.Fragment>
         <Splash/>
-        <Spacer/>
+        <SpacerLg/>
         <Xp/>
-        <Spacer/>
+        <SpacerXl/>
+        <Admincore/>
+        <SpacerXl/>
       </React.Fragment>
     );
   }
