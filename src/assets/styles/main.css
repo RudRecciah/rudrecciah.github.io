@@ -117,3 +117,25 @@
 .w-13-5 {
     width: 13.5%;
 }
+
+.w-61-5 {
+    width: 61.5%;
+}
+
+@media screen and (min-width: 992px) {
+    .d-1070-pre {
+        display: none;
+    }
+    .d-1070-post {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1070px) {
+    .d-1070-pre {
+        display: block;
+    }
+    .d-1070-post {
+        display: none;
+    }
+}
