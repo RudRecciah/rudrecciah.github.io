@@ -51,7 +51,7 @@ export default class Xp extends Component {
                 <Col xs="12" lg="6">
                   <h2 className="font-header text-center text-lg-right text-white font-size-h2">Hey, I'm Rud.</h2>
                   <p className="text-center text-lg-right font-size-p c-text-gray">
-                    I'm a pink parrot with development skills. I've been developing for the past three years, working on various projects mostly in Java.
+                    I'm a pink parrot who likes code. I've been developing for the past three years, working on various projects mostly in Java.
                   </p>
                   <Table borderless className="text-center text-lg-right">
                     <thead className="text-white border-bottom border-dark">
