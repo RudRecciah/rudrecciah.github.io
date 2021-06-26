@@ -90,6 +90,24 @@ export default class Admincore extends Component {
                       </div>
                     </Col>
                   </Row>
+                  <Row className="d-lg-none">
+                    <Col>
+                      <div className="box">
+                        <div className="border-bottom-box box-top">
+                          <span className="h-100 d-flex flex-column justify-content-center align-content-center w-100 text-center c-text-gray">
+                            <span>
+                              Report Player
+                            </span>
+                          </span>
+                        </div>
+                        <div className="d-flex flex-row">
+                          <div className="fake-content fake-content-row fake-content-last text-gray text-center w-25">&#8197;</div>
+                          <div className="fake-content fake-content-last text-gray text-center w-75">&#8197;</div>
+                        </div>
+                      </div>
+                    </Col>
+                    <SpacerSm/>
+                  </Row>
                 </Col>
                 <Col xs="12" lg="6">
                   <Row>
@@ -158,6 +176,23 @@ export default class Admincore extends Component {
                         <div className="d-flex flex-row">
                           <div className="fake-content fake-content-row fake-content-last text-gray text-center w-50">&#8197;</div>
                           <div className="fake-content fake-content-last text-gray text-center w-50">&#8197;</div>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row className="d-lg-none">
+                    <Col>
+                      <div className="box">
+                        <div className="border-bottom-box box-top">
+                          <span className="h-100 d-flex flex-column justify-content-center align-content-center w-100 text-center c-text-gray">
+                            <span>
+                              config.yml
+                            </span>
+                          </span>
+                        </div>
+                        <div className="d-flex flex-row">
+                          <div className="fake-content fake-content-row fake-content-last text-gray text-center w-25">&#8197;</div>
+                          <div className="fake-content fake-content-last text-gray text-center w-75">&#8197;</div>
                         </div>
                       </div>
                     </Col>

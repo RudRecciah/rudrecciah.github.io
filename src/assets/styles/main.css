@@ -122,6 +122,10 @@
     width: 61.5%;
 }
 
+.d-1070-post {
+    display: none;
+}
+
 @media screen and (min-width: 992px) {
     .d-1070-pre {
         display: none;
