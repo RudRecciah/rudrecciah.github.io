@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Col, Container, Row} from "reactstrap";
 import SpacerSm from "../utils/spacerSm.jsx";
 import SpacerMd from "../utils/spacerMd.jsx";
+import {Link} from "@material-ui/core";
 
 export default class Admincore extends Component {
   constructor(props) {
@@ -204,8 +205,16 @@ export default class Admincore extends Component {
                 <Col/>
                 <Col className="text-center">
                   <a href="./admincore" className="btn btn-white text-center">Learn More</a>
+                  <Link to="/projects" className="btn btn-link text-center text-white">All Projects</Link>
                 </Col>
                 <Col/>
+              </Row>
+            </section>
+            <section>
+              <Row>
+                <Col>
+
+                </Col>
               </Row>
             </section>
           </Container>

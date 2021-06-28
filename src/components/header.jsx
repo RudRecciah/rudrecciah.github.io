@@ -20,13 +20,13 @@ export default class Header extends Component {
               </NavbarBrand>
               <Nav>
                 <NavItem>
-                  <Link to="/hub" className="btn btn-link text-white">Hub</Link>
+                  <Link to="/hub" className="btn btn-link text-white">Projects</Link>
                 </NavItem>
                 <NavItem>
-                  <a href="./ttm" className="btn btn-link text-white">TTM</a>
+                  <Link to="/creativecorner" className="btn btn-link text-white">Creative Corner</Link>
                 </NavItem>
                 <NavItem>
-                  <a href="./core" className="btn btn-link text-white">Admincore</a>
+                  <Link to="/blog" className="btn btn-link text-white">Blog</Link>
                 </NavItem>
                 <NavItem>
                   <a target="_blank" href="https://discord.rudrecciah.dev/" className="btn btn-white text-dark">Contact</a>
