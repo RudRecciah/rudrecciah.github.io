@@ -4,6 +4,7 @@ import Xp from "./xp.jsx";
 import Admincore from "./admincore.jsx";
 import SpacerLg from "../utils/spacerLg.jsx";
 import SpacerXl from "../utils/spacerXl.jsx";
+import Creative from "./creative.jsx";
 
 export default class Home extends Component {
   constructor(props) {
@@ -19,6 +20,8 @@ export default class Home extends Component {
         <Xp/>
         <SpacerXl/>
         <Admincore/>
+        <SpacerXl/>
+        <Creative/>
         <SpacerXl/>
       </React.Fragment>
     );

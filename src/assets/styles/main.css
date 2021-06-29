@@ -78,6 +78,18 @@
     line-height: 50px;
 }
 
+.progress-bar {
+    background-color: #999999 !important;
+}
+
+.progress {
+    background-color: var(--dark) !important;
+}
+
+.w-90 {
+    width: 90%;
+}
+
 .spacer-xs {
     background-color: transparent;
     width: 100%;
@@ -126,6 +138,10 @@
     display: none;
 }
 
+.h-70px {
+    height: 70px !important;
+}
+
 @media screen and (min-width: 992px) {
     .d-1070-pre {
         display: none;
@@ -140,6 +156,12 @@
         display: block;
     }
     .d-1070-post {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .d-vxl-flex {
         display: none;
     }
 }

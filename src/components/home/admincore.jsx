@@ -202,18 +202,9 @@ export default class Admincore extends Component {
                 <SpacerMd/>
               </Row>
               <Row>
-                <Col/>
                 <Col className="text-center">
                   <a href="./admincore" className="btn btn-white text-center">Learn More</a>
                   <Link to="/projects" className="btn btn-link text-center text-white">All Projects</Link>
-                </Col>
-                <Col/>
-              </Row>
-            </section>
-            <section>
-              <Row>
-                <Col>
-
                 </Col>
               </Row>
             </section>
