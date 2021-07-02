@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*.h-100vh {*/
+/*    height: 100vh !important;*/
+/*}*/
+
+/*.w-100vh {*/
+/*    width: 100vh !important;*/
+/*}*/
+
+/*.h-50px {*/
+/*    height: 50px !important;*/
+/*}*/
+
+/*.text-white {*/
+/*    color: white !important;*/
+/*}*/
+
+/*.bg-white {*/
+/*    background-color: white !important;*/
+/*}*/
