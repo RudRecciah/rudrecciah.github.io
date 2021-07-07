@@ -11,8 +11,7 @@ export default class Splash extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className={"flex-grow-1"}/>
+      <motion.div animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0, delay: 1}}>
         <div className="px-3">
           <motion.h1 className={"font-hero"}>Hey</motion.h1>
           <Spacer y={"50px"}/>
@@ -32,7 +31,7 @@ export default class Splash extends Component {
           </Row>
           <Spacer y={"100px"}/>
         </div>
-      </React.Fragment>
+      </motion.div>
     );
   }
 }

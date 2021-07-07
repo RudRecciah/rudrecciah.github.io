@@ -207,83 +207,83 @@ h1, h2, h3, h4, h5, h6, .font-header, .font-hero, .font-nav, .font-btn {
 }
 
 .font-size-12 {
-    max-font-size: 12px;
+    font-size: 12px;
 }
 
 .font-size-14 {
-    max-font-size: 14px;
+    font-size: 14px;
 }
 
 .font-size-16 {
-    max-font-size: 16px;
+    font-size: 16px;
 }
 
 .font-size-20 {
-    max-font-size: 20px;
+    font-size: 20px;
 }
 
 .font-size-24 {
-    max-font-size: 24px;
+    font-size: 24px;
 }
 
 .font-size-28 {
-    max-font-size: 28px;
+    font-size: 28px;
 }
 
 .font-size-32 {
-    max-font-size: 32px;
+    font-size: 32px;
 }
 
 .font-size-36 {
-    max-font-size: 36px;
+    font-size: 36px;
 }
 
 .font-size-48 {
-    max-font-size: 48px;
+    font-size: 48px;
 }
 
 .font-size-64 {
-    max-font-size: 64px;
+    font-size: 64px;
 }
 
 .font-size-72 {
-    max-font-size: 72px;
+    font-size: 72px;
 }
 
 .font-size-76 {
-    max-font-size: 76px;
+    font-size: 76px;
 }
 
 .font-size-88 {
-    max-font-size: 88px;
+    font-size: 88px;
 }
 
 .font-size-100 {
-    max-font-size: 100px;
+    font-size: 100px;
 }
 
 .font-size-120 {
-    max-font-size: 120px;
+    font-size: 120px;
 }
 
 .font-size-160 {
-    max-font-size: 160px;
+    font-size: 160px;
 }
 
 .font-size-200 {
-    max-font-size: 200px;
+    font-size: 200px;
 }
 
 .font-size-300 {
-    max-font-size: 300px;
+    font-size: 300px;
 }
 
 .font-size-400 {
-    max-font-size: 400px;
+    font-size: 400px;
 }
 
 .font-size-500 {
-    max-font-size: 500px;
+    font-size: 500px;
 }
 
 .h-10px {

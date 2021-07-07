@@ -13,7 +13,7 @@ export default class Projects extends Component {
 
   render() {
     return (
-      <motion.div initial={{y: -(this.state.vh)}} animate={{y: 0}} exit={{y: -(this.state.vh)}} transition={{type: "spring", duration: 0.80, bounce: 0, damping: 20}} className={"bg-primary text-white h-100vh position-absolute top-0 left-0 w-100"}>
+      <motion.div initial={{y: -(this.state.vh)}} animate={{y: 0}} exit={{y: -(this.state.vh)}} transition={{type: "spring", damping: 20}} className={"bg-primary text-white h-100vh position-absolute top-0 left-0 w-100"}>
         <Spacer y={"100px"}/>
         <Container>
           <Row>
