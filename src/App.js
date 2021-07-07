@@ -1,5 +1,4 @@
-import './App.css';
-import 'antd/dist/antd.css';
+import "./App.css";
 import Main from "./components/main.jsx";
 
 function App() {

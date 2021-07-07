@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import {BrowserRouter, Switch as BrowserSwitch, Route as BrowserRoute} from "react-router-dom";
 import Home from "./home/home.jsx";
-import {Grommet} from "grommet";
+import {Container} from "reactstrap";
 
 export default class Main extends Component {
   constructor(props) {
@@ -11,15 +10,9 @@ export default class Main extends Component {
 
   render() {
     return (
-      <Grommet plain>
-        <BrowserRouter>
-          <BrowserSwitch>
-            <BrowserRoute>
-              <Home/>
-            </BrowserRoute>
-          </BrowserSwitch>
-        </BrowserRouter>
-      </Grommet>
+      <Container fluid={true} className={"p-0"}>
+        <Home/>
+      </Container>
     );
   }
 }
