@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@tom-ricci/react-spacer": "^1.1.2",
     "bootstrap": "^5.0.2",
+    "devicon": "^2.12.0",
     "framer-motion": "^4.1.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

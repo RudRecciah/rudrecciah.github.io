@@ -10,6 +10,10 @@ h1, h2, h3, h4, h5, h6, .font-header, .font-hero, .font-nav, .font-btn {
     top: 0;
 }
 
+.w-90 {
+    width: 90%;
+}
+
 .cursor-auto {
     cursor: auto;
 }
