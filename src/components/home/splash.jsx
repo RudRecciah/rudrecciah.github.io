@@ -16,15 +16,15 @@ export default class Splash extends Component {
           <motion.h1 className={"font-hero"}>Hey</motion.h1>
           <Spacer y={"50px"}/>
           <p>&#8198;&#8198;&#8198;&#8198;&#8198;&#8198;I'm a pink parrot who likes code. I've been programming for the past three years, mostly in Java and JS.</p>
-          <Spacer y={"50px"}/>
+          <Spacer y={"40px"}/>
           <Row className={"w-50 mx-2"}>
             <Col xs={8} className={"p-0"}>
-              <Button className={"btn-rounded min-w-200px"} onClick={this.props.xp}>
+              <Button className={"btn btn-secondary btn-rounded min-w-150px font-size-16 font-nav p-2"} onClick={this.props.xp}>
                 Experience
               </Button>
             </Col>
             <Col xs={4} className={"p-0"}>
-              <Button className={"btn-rounded min-w-200px"} onClick={this.props.projects}>
+              <Button className={"btn btn-secondary btn-rounded min-w-150px font-size-16 font-nav p-2"} onClick={this.props.projects}>
                 Projects
               </Button>
             </Col>

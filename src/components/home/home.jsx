@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import Navi from "./navi.jsx";
 import Splash from "./splash.jsx";
-import Xp from "./modals/xp.jsx";
+import Xp from "./pages/xp.jsx";
 import {AnimatePresence} from "framer-motion";
-import Projects from "./modals/projects.jsx";
+import Projects from "./pages/projects.jsx";
 import { v4 as uuidv4 } from "uuid";
-import Contact from "./modals/contact.jsx";
+import Contact from "./pages/contact.jsx";
 
 export default class Home extends Component {
   constructor(props) {
