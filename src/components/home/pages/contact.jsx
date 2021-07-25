@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import {Col, Container, Row} from "reactstrap";
 import {AnimatePresence, motion} from "framer-motion";
 import Spacer from "@tom-ricci/react-spacer/dist/spacer.js";
+import {FaStar, FaSteam, FaTwitch, SiYoutube, VscGithubInverted, VscTwitter} from "react-icons/all.js";
+import StyleVars from "../../../styles/vars.json";
 
 export default class Contact extends Component {
   constructor(props) {
@@ -34,7 +36,71 @@ export default class Contact extends Component {
             </Row>
             <Spacer y={"50px"}/>
             {this.state.content && <div>
-
+              <Row>
+                <Col>
+                  <Row>
+                    <Col>
+                      <h2>Join my Discord server.</h2>
+                      <p>It's the easiest way to find me.</p>
+                    </Col>
+                    <Col>
+                      <div className={"d-flex flex-column justify-content-center align-items-end h-100"}>
+                        <a href={"https://discord.rudrecciah.dev/"} className={"btn btn-secondary btn-rounded font-nav font-size-16 p-2 min-w-150px"}>Join Now</a>
+                      </div>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <Spacer y={"50px"}/>
+              <Row>
+                <Col>
+                  <Row>
+                    <Col>
+                      <h2>Want something else?</h2>
+                      <p>You can also contact me via my socials.</p>
+                    </Col>
+                    <Col>
+                      <Row className={"h-100"}>
+                        <Col>
+                          <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
+                            <a href={"https://twitter.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
+                              <VscTwitter size={"50px"} className={"socials"}/>
+                            </a>
+                          </div>
+                        </Col>
+                        <Col>
+                          <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
+                            <a href={"https://twitch.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
+                              <FaTwitch size={"50px"} className={"socials"}/>
+                            </a>
+                          </div>
+                        </Col>
+                        <Col>
+                          <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
+                            <a href={"https://youtube.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
+                              <SiYoutube size={"50px"} className={"socials"}/>
+                            </a>
+                          </div>
+                        </Col>
+                        <Col>
+                          <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
+                            <a href={"https://github.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
+                              <VscGithubInverted size={"50px"} className={"socials"}/>
+                            </a>
+                          </div>
+                        </Col>
+                        <Col>
+                          <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
+                            <a href={"https://steam.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
+                              <FaSteam size={"50px"} className={"socials"}/>
+                            </a>
+                          </div>
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
             </div>}
           </Container>
         </motion.div>

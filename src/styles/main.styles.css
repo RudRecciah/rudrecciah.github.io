@@ -5,9 +5,11 @@
     word-spacing: 0;
 }
 
-/*.bg-splash {*/
-/*    background-image: url("../assets/splash.svg");*/
-/*    background-repeat: no-repeat;*/
-/*    background-position-x: right;*/
-/*    background-position-y: 44px;*/
-/*}*/
+.socials {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.socials:hover {
+    color: #85ffbc;
+    border-color: #7dffb8;
+}
