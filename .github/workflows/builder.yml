@@ -27,7 +27,7 @@ jobs:
     - run: npm run build
     - run: rm ./docs -r
     - run: mkdir ./docs
-    - run: cp ./build ./docs
+    - run: cp ./build ./docs -r
     - run: echo "www.rudrecciah.dev" > ./docs/CNAME
     - run: git commit -m "Built App"
     - run: git push
