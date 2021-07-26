@@ -33,6 +33,7 @@ jobs:
     # move build to root
     - run: ls
     - run: cd ./build
+    - run: ls
     - run: cp ./ ../ -r
     - run: ls
     - run: cd ../
