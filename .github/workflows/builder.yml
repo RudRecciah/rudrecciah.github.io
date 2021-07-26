@@ -32,7 +32,8 @@ jobs:
     - run: find ./ -mindepth 1 ! -regex '^./build\(/.*\)?' -delete
     # move build to root
     - run: ls
-    - run: cp ./build ./ -r
+    - run: cd ./build
+    - run: cp ./ ../ -r
     - run: ls
     # commit and push to main to be deployed with pages
     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
