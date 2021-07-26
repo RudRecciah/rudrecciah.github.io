@@ -29,6 +29,8 @@ jobs:
     - run: mkdir ./docs
     - run: cp ./build ./docs -r
     - run: echo "www.rudrecciah.dev" > ./docs/CNAME
+    - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    - run: git config --local user.name "github-actions[bot]"
     - run: git commit -m "Built App"
     - run: git push
     
