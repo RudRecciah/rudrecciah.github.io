@@ -28,21 +28,14 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: echo "www.rudrecciah.dev" > ./build/CNAME
-    # remove source files
+    # clean up build
     - run: find ./ -mindepth 1 ! -regex '^./build\(/.*\)?' -delete
-    # move build to root
-    - run: ls
-    - run: cd ./build
-    - run: ls
-    - run: cp ./ ../ -r
-    - run: ls
-    - run: cd ../
-    - run: ls
-    - run: rm ./build
+    - run: mv ./build ./docs -f -r
+    - run: rm ./build -r
     # commit and push to main to be deployed with pages
     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: git config --local user.name "github-actions[bot]"
-    - run: git add .
+    - run: git add ./
     - run: git commit -m "Built App"
     - run: git push
     
