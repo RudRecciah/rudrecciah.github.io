@@ -29,7 +29,7 @@ jobs:
     - run: echo "www.rudrecciah.dev" > ./build/CNAME
     # clean up build
     - run: mkdir ./.build/
-    - run: mv ./build ./.build -f
+    - run: mv ./build/* ./.build -f
     - run: shopt -u dotglob
     - run: rm * -r
     - run: mv ./.build/* . -f
