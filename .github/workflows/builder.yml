@@ -31,8 +31,9 @@ jobs:
     # remove source files
     - run: find ./ -mindepth 1 ! -regex '^./build\(/.*\)?' -delete
     # move build to root
-    - run: lsof
-    - run: mv build/* build/.* .
+    - run: ls
+    - run: cp ./build ./
+    - run: ls
     # commit and push to main to be deployed with pages
     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: git config --local user.name "github-actions[bot]"
