@@ -32,7 +32,7 @@ jobs:
     - run: mv ./build ./.build -f
     - run: shopt -u dotglob
     - run: rm * -r
-    - run: mv ./build . -f
+    - run: mv ./.build . -f
     # commit and push to main to be deployed with pages
     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: git config --local user.name "github-actions[bot]"
