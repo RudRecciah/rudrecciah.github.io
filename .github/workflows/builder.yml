@@ -24,8 +24,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     # build app
-    - run: npm ci
-    - run: npm run build
     - run: echo "www.rudrecciah.dev" > ./build/CNAME
     # clean up build
     - run: mkdir ./.build/
