@@ -4,7 +4,9 @@
 name: Builder
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -14,7 +16,6 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v2
@@ -23,15 +24,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    # build app
     - run: npm ci
     - run: npm run build
-    - run: rm ./docs -r
-    - run: mkdir ./docs
-    - run: cp ./build ./docs -r
-    - run: echo "www.rudrecciah.dev" > ./docs/CNAME
+    - run: echo "www.rudrecciah.dev" > ./build/CNAME
+    # remove source files
+    - run: find ./ -mindepth 1 ! -regex '^./build\(/.*\)?' -delete
+    # move build to root
+    - run: mv build/* build/.* .
+    # commit and push to main to be deployed with pages
     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: git config --local user.name "github-actions[bot]"
-    - run: git add ./docs
+    - run: git add .
     - run: git commit -m "Built App"
     - run: git push
     
