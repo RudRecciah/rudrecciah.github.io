@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.59277908.chunk.css",
+    "main.js": "/static/js/main.4ac1eb2a.chunk.js",
+    "main.js.map": "/static/js/main.4ac1eb2a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b360ad39.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b360ad39.js.map",
+    "static/css/2.d45d6843.chunk.css": "/static/css/2.d45d6843.chunk.css",
+    "static/js/2.38364290.chunk.js": "/static/js/2.38364290.chunk.js",
+    "static/js/2.38364290.chunk.js.map": "/static/js/2.38364290.chunk.js.map",
+    "static/js/3.9c1c936b.chunk.js": "/static/js/3.9c1c936b.chunk.js",
+    "static/js/3.9c1c936b.chunk.js.map": "/static/js/3.9c1c936b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.d45d6843.chunk.css.map": "/static/css/2.d45d6843.chunk.css.map",
+    "static/css/main.59277908.chunk.css.map": "/static/css/main.59277908.chunk.css.map",
+    "static/js/2.38364290.chunk.js.LICENSE.txt": "/static/js/2.38364290.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/splash.b270ff15.svg",
+    "static/media/bash-original.svg": "/static/media/bash-original.e22f4751.svg",
+    "static/media/bootstrap-plain.svg": "/static/media/bootstrap-plain.51ee03f3.svg",
+    "static/media/csharp-original.svg": "/static/media/csharp-original.4b8080ff.svg",
+    "static/media/css3-original.svg": "/static/media/css3-original.39769a8b.svg",
+    "static/media/docker-original.svg": "/static/media/docker-original.1d41320c.svg",
+    "static/media/express-original.svg": "/static/media/express-original.4925c012.svg",
+    "static/media/html5-original.svg": "/static/media/html5-original.8664168d.svg",
+    "static/media/java-plain-wordmark.svg": "/static/media/java-plain-wordmark.f898d895.svg",
+    "static/media/javascript-original.svg": "/static/media/javascript-original.4c1b5332.svg",
+    "static/media/nodejs-original.svg": "/static/media/nodejs-original.10c9e2aa.svg",
+    "static/media/npm-original-wordmark.svg": "/static/media/npm-original-wordmark.87689eab.svg",
+    "static/media/php-original.svg": "/static/media/php-original.1e73afc4.svg",
+    "static/media/python-original.svg": "/static/media/python-original.849d0b2b.svg",
+    "static/media/react-original.svg": "/static/media/react-original.4e0c9700.svg",
+    "static/media/sass-original.svg": "/static/media/sass-original.fb123914.svg",
+    "static/media/ssh-original.svg": "/static/media/ssh-original.6177f261.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b360ad39.js",
+    "static/css/2.d45d6843.chunk.css",
+    "static/js/2.38364290.chunk.js",
+    "static/css/main.59277908.chunk.css",
+    "static/js/main.4ac1eb2a.chunk.js"
+  ]
+}
