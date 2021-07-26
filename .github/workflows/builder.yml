@@ -35,6 +35,9 @@ jobs:
     - run: cd ./build
     - run: cp ./ ../ -r
     - run: ls
+    - run: cd ../
+    - run: ls
+    - run: rm ./build
     # commit and push to main to be deployed with pages
     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: git config --local user.name "github-actions[bot]"
