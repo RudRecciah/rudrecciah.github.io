@@ -20,6 +20,18 @@ h1, h2, h3, h4, h5, h6, .font-header, .font-hero, .font-nav, .font-btn {
     }
 }
 
+@media screen and (min-width: 992px) {
+    .w-lg-50 {
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .justify-content-md-space-between {
+        justify-content: space-between !important;
+    }
+}
+
 .cursor-auto {
     cursor: auto;
 }

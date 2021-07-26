@@ -48,7 +48,7 @@ export default class Home extends Component {
           <Navi home={this.disableAll} xp={this.toggleXp} projects={this.toggleProjects} contact={this.toggleContact}/>
           <div className={"flex-grow-1"}/>
           <AnimatePresence>
-            {this.toggleSplash() && <Splash xp={this.toggleXp} projects={this.toggleProjects}/>}
+            {this.toggleSplash() && <Splash xp={this.toggleXp} projects={this.toggleProjects} contact={this.toggleContact}/>}
           </AnimatePresence>
         </div>
         <AnimatePresence>

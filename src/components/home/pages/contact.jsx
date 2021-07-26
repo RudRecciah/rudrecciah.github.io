@@ -21,7 +21,7 @@ export default class Contact extends Component {
   render() {
     return (
       <React.Fragment>
-        <motion.div initial={{y: -(this.state.vh)}} animate={{y: 0}} exit={{y: -(this.state.vh)}} onAnimationStart={() => this.toggleContent()} transition={{type: "spring", damping: 20}} className={"bg-primary text-white h-100vh position-absolute top-0 left-0 w-100"}>
+        <motion.div initial={{y: -(this.state.vh)}} animate={{y: 0}} exit={{y: -(this.state.vh)}} onAnimationStart={() => this.toggleContent()} transition={{type: "spring", damping: 20}} className={"bg-primary text-white min-h-100vh position-absolute top-0 left-0 w-100"}>
           <Spacer y={"100px"}/>
           <Container>
             <Row>
@@ -40,8 +40,8 @@ export default class Contact extends Component {
                 <Col>
                   <Row>
                     <Col xs={12} lg={6}>
-                      <h2 className={"text-center text-lg-right"}>Join my Discord server.</h2>
-                      <p className={"text-center text-lg-right"}>It's the easiest way to find me.</p>
+                      <h2 className={"text-center text-lg-start"}>Join my Discord server.</h2>
+                      <p className={"text-center text-lg-start"}>It's the easiest way to find me.</p>
                     </Col>
                     <Col xs={12} lg={6}>
                       <div className={"d-flex flex-column justify-content-center align-items-center align-items-lg-end h-100"}>
@@ -56,8 +56,8 @@ export default class Contact extends Component {
                 <Col>
                   <Row>
                     <Col xs={12} lg={6} className={"mb-2 mb-lg-0"}>
-                      <h2 className={"text-center text-lg-right"}>Want something else?</h2>
-                      <p className={"text-center text-lg-right"}>You can also contact me via my socials.</p>
+                      <h2 className={"text-center text-lg-start"}>Want something else?</h2>
+                      <p className={"text-center text-lg-start"}>You can also contact me via my socials.</p>
                     </Col>
                     <Col xs={12} lg={6}>
                       <Row className={"h-100 w-100 w-md-80 mx-auto"}>
@@ -102,6 +102,7 @@ export default class Contact extends Component {
                 </Col>
               </Row>
             </div>}
+            <Spacer y={"50px"}/>
           </Container>
         </motion.div>
       </React.Fragment>

@@ -17,7 +17,7 @@
     }
 }
 
-@media screen and (min-height: 680px) {
+@media screen and (min-height: 680px) and (min-width: 768px) {
     .bg-splash {
         background-image: url("../assets/splash.svg");
         background-repeat: no-repeat;

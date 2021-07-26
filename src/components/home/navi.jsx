@@ -20,24 +20,22 @@ export default class Navi extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar color={"primary"} className={"px-4 font-size-16 z-l"}>
-          <NavbarBrand className={"font-size-16"}>
-            <NavLink onClick={this.props.home} className={"text-white font-nav cursor-pointer"}>
-              &#60;/rudrecciah.dev&#62;
-            </NavLink>
-          </NavbarBrand>
+        <Navbar color={"primary"} className={"px-4 font-size-16 z-l justify-content-center justify-content-md-space-between"}>
+          <NavLink onClick={this.props.home} className={"text-white font-nav cursor-pointer"}>
+            &#60;/rudrecciah.dev&#62;
+          </NavLink>
           <Nav>
-            <NavItem>
+            <NavItem className={"d-none d-md-flex"}>
               <NavLink onClick={this.props.xp} className={"text-white font-nav cursor-pointer"}>
                 Experience
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className={"d-none d-md-flex"}>
               <NavLink onClick={this.props.projects} className={"text-white font-nav cursor-pointer"}>
                 Projects
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className={"d-none d-md-flex"}>
               <Button onClick={this.props.contact} className={"font-nav btn-rounded btn-secondary font-size-16 min-w-150px p-2"}>
                 Contact
               </Button>
