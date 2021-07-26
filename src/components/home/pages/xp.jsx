@@ -43,69 +43,69 @@ export default class Xp extends Component {
             </Col>
           </Row>
           <Spacer y={"50px"}/>
+          <Row>
+            <Col>
+              <p className={"text-center"}>With 3 years of experience, I have a few technologies under my belt.</p>
+            </Col>
+          </Row>
+          <Spacer y={"50px"}/>
           {this.state.content && <div>
-            <Row>
-              <Col>
-                <p className={"text-center"}>With 3 years of experience, I have a few technologies under my belt.</p>
-              </Col>
-            </Row>
-            <Spacer y={"50px"}/>
-            <Row className={"text-center w-75 mx-auto"}>
+            <Row className={"text-center w-75 mx-auto xp-md-list-container"}>
               <Col/>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={HTMLIcon} alt={"HTML"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={JSIcon} alt={"JavaScript"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={JavaIcon} alt={"Java"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={ReactIcon} alt={"React"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={CSSIcon} alt={"CSS"} className={"img-fluid h-150px"}/>
               </Col>
               <Col/>
             </Row>
-            <Row className={"text-center w-90 mx-auto"}>
+            <Row className={"text-center w-90 mx-auto xp-md-list-container"}>
               <Col/>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={BootstrapIcon} alt={"Bootstrap"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={PyIcon} alt={"Python"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={BashIcon} alt={"Shell"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={CSharpIcon} alt={"C#"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={DockerIcon} alt={"Docker"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={PhpIcon} alt={"PHP"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={SshIcon} alt={"SSH"} className={"img-fluid h-150px"}/>
               </Col>
               <Col/>
             </Row>
-            <Row className={"text-center w-75 mx-auto"}>
+            <Row className={"text-center w-75 mx-auto xp-md-list-container"}>
               <Col/>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={NodeJSIcon} alt={"Node"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={npmIcon} alt={"npm"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={ExpressIcon} alt={"Express"} className={"img-fluid h-150px"}/>
               </Col>
-              <Col>
+              <Col className={"xp-md-list"}>
                 <img src={SassIcon} alt={"Sass"} className={"img-fluid h-150px"}/>
               </Col>
               <Col/>

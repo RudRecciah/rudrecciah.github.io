@@ -39,12 +39,12 @@ export default class Contact extends Component {
               <Row>
                 <Col>
                   <Row>
-                    <Col>
-                      <h2>Join my Discord server.</h2>
-                      <p>It's the easiest way to find me.</p>
+                    <Col xs={12} lg={6}>
+                      <h2 className={"text-center text-lg-right"}>Join my Discord server.</h2>
+                      <p className={"text-center text-lg-right"}>It's the easiest way to find me.</p>
                     </Col>
-                    <Col>
-                      <div className={"d-flex flex-column justify-content-center align-items-end h-100"}>
+                    <Col xs={12} lg={6}>
+                      <div className={"d-flex flex-column justify-content-center align-items-center align-items-lg-end h-100"}>
                         <a href={"https://discord.rudrecciah.dev/"} className={"btn btn-secondary btn-rounded font-nav font-size-16 p-2 min-w-150px"}>Join Now</a>
                       </div>
                     </Col>
@@ -55,44 +55,44 @@ export default class Contact extends Component {
               <Row>
                 <Col>
                   <Row>
-                    <Col>
-                      <h2>Want something else?</h2>
-                      <p>You can also contact me via my socials.</p>
+                    <Col xs={12} lg={6} className={"mb-2 mb-lg-0"}>
+                      <h2 className={"text-center text-lg-right"}>Want something else?</h2>
+                      <p className={"text-center text-lg-right"}>You can also contact me via my socials.</p>
                     </Col>
-                    <Col>
-                      <Row className={"h-100"}>
+                    <Col xs={12} lg={6}>
+                      <Row className={"h-100 w-100 w-md-80 mx-auto"}>
                         <Col>
                           <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
                             <a href={"https://twitter.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
-                              <VscTwitter size={"50px"} className={"socials"}/>
+                              <VscTwitter size={"80%"} className={"socials"}/>
                             </a>
                           </div>
                         </Col>
                         <Col>
                           <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
                             <a href={"https://twitch.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
-                              <FaTwitch size={"50px"} className={"socials"}/>
+                              <FaTwitch size={"80%"} className={"socials"}/>
                             </a>
                           </div>
                         </Col>
                         <Col>
                           <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
                             <a href={"https://youtube.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
-                              <SiYoutube size={"50px"} className={"socials"}/>
+                              <SiYoutube size={"80%"} className={"socials"}/>
                             </a>
                           </div>
                         </Col>
                         <Col>
                           <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
                             <a href={"https://github.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
-                              <VscGithubInverted size={"50px"} className={"socials"}/>
+                              <VscGithubInverted size={"80%"} className={"socials"}/>
                             </a>
                           </div>
                         </Col>
                         <Col>
                           <div className={"d-flex flex-column justify-content-center align-items-center h-100"}>
                             <a href={"https://steam.rudrecciah.dev/"} style={{color: StyleVars.colors.secondary}}>
-                              <FaSteam size={"50px"} className={"socials"}/>
+                              <FaSteam size={"80%"} className={"socials"}/>
                             </a>
                           </div>
                         </Col>

@@ -1,8 +1,41 @@
 .font-hero {
-    font-size: 300px;
+    font-size: 100px;
     margin-bottom: 0;
     letter-spacing: 0;
     word-spacing: 0;
+}
+
+@media screen and (min-width: 576px) {
+    .font-hero {
+        font-size: 200px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .font-hero {
+        font-size: 300px;
+    }
+}
+
+@media screen and (min-height: 680px) {
+    .bg-splash {
+        background-image: url("../assets/splash.svg");
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-position-y: 44px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .xp-md-list {
+        width: 100%;
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .xp-md-list-container {
+        display: block;
+    }
 }
 
 .socials {
