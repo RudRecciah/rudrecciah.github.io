@@ -1,0 +1,27 @@
+$theme-colors: (
+    "primary": #7D4CDB,
+    "secondary": #6FFFB0,
+    "success": #00C781,
+    "info": #007bff,
+    "warning": #FFCA58,
+    "danger": #FF4040,
+    "light": #f8f9fa,
+    "dark": #343a40,
+    "white": #fff,
+    "teal": #81FCED,
+    "indigo": #3D138D,
+    "pink": #FD6FFF,
+    "orange": #FFAA15,
+    "brown": #A2423D,
+    "green": #00873D,
+    "cyan": #00739D,
+    "gray": #6c757d,
+);
+
+$font-family-sans-serif: "Segoe UI", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$font-family-monospace: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-size-base: 2rem * 0.75;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
