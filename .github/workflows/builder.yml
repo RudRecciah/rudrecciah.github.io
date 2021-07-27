@@ -69,10 +69,13 @@ jobs:
         from_branch: main
         target_branch: dev
         github_token: ${{ github.token }}
+    - name: Checkout to dev
+      uses: actions/checkout@v2.3.4
+      with:
+        ref: "dev"
     - name: Cleanup dev
       run: |
         rm -rf ./build
-        git checkout dev
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add ./
