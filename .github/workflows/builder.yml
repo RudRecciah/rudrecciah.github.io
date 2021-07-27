@@ -47,6 +47,7 @@ jobs:
         cp ./build/* ./temp -r
     - name: Deploy Production
       run: |
+        ls
         cd ./temp && git add .
         cd ./temp && git commit -m "Deployed App"
         cd ./temp && git push
