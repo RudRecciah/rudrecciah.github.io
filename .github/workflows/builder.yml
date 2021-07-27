@@ -37,6 +37,7 @@ jobs:
         mkdir ./temp
         cp ./build/* ./temp -r
         mkdir -p ./plugins
+        echo "yeetimaplugin" > ./plugins/p.txt
         rsync -a ./plugins/ ./temp/
     # deploy app
     - name: Deploy
