@@ -41,7 +41,6 @@ jobs:
         mkdir ./temp
         cd ./temp
         eval "$(ssh-agent -s)"
-        Agent pid 59566
         ssh-add ${{ secrets.SSH_PRIV_KEY }}
         git clone -b gh-pages git@github.com:RudRecciah/rudrecciah.github.io.git
         cd ./temp && shopt -u dotglob
