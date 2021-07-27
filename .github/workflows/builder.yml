@@ -44,9 +44,10 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source-directory: './temp'
-        destination-github-username: 'github-actions[bot]'
-        destination-repository-name: 'RudRecciah/rudrecciah.github.io'
+        destination-github-username: 'RudRecciah'
+        destination-repository-name: 'rudrecciah.github.io'
         user-email: "41898282+github-actions[bot]@users.noreply.github.com"
+        user-name: "github-actions[bot]"
         commit-message: "Deployed App"
         target-branch: "gh-pages"
     # commit and push to main to be deployed with pages
