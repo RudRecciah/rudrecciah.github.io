@@ -1,4 +1,8 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code, and clean the repository leaving only the build
+# This workflow will:
+#   Installs dependencies
+#   Builds app
+#   Deploys app
+#   Cleans working directory and pushes build to main
 
 name: Builder
 
@@ -6,22 +10,17 @@ on:
   push:
     branches:
       - main
-
+      
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    steps:
-    - run: git fetch
-    - run: git checkout dev
-    
+
   build:
-
+  
     runs-on: ubuntu-latest
-
+    
     strategy:
       matrix:
         node-version: [14.x]
-
+        
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -29,19 +28,37 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    # build app
-    - run: npm ci
-    - run: npm 
-    - run: echo "www.rudrecciah.dev" > ./build/CNAME
-    # clean up build
-    - run: mkdir ./.build/
-    - run: mv ./build/* ./.build -f
-    - run: shopt -u dotglob
-    - run: rm * -r
-    - run: mv ./.build/* . -f
+    - name: Build
+      run: |
+        npm ci
+        npm run build
+        echo "www.rudrecciah.dev" > ./build/CNAME
+        rm -rf ./temp
+        mkdir ./temp
+        cp ./build/* ./temp -r
+        mkdir -p ./plugins
+        echo "yeetimaplugin" > ./plugins/p.txt
+        rsync -a ./plugins/ ./temp/
+    # deploy app
+    - name: Deploy
+      id: push_directory
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: './temp'
+        destination-github-username: 'RudRecciah'
+        destination-repository-name: 'rudrecciah.github.io'
+        user-email: "41898282+github-actions[bot]@users.noreply.github.com"
+        user-name: "github-actions[bot]"
+        commit-message: "Deployed App"
+        target-branch: "gh-pages"
     # commit and push to main to be deployed with pages
-    - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-    - run: git config --local user.name "github-actions[bot]"
-    - run: git add ./
-    - run: git commit -m "Built App"
-    - run: git push main
+    - name: Cleanup
+      run: |
+        rm ./temp -r
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add ./
+        git commit -m "Built App"
+        git push
