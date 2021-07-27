@@ -1,0 +1,2 @@
+# Building Guide
+Builds are completed via GitHub Actions, so no local building is necessary. When you have a stable build, make a PR `origin/dev` -> `origin/main` and merge. The source will be built and deployed within a few minutes. Following deployment, `origin/dev` will be synced with `origin/main` and the build will be removed from `origin/dev`. Once complete, just pull `origin/dev` and continue working.

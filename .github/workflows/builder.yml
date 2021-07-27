@@ -2,7 +2,8 @@
 #  - Installs dependencies
 #  - Builds app
 #  - Deploys app
-#  - Cleans working directory and pushes build to main
+#  - Pushes build to main
+#  - Checks out to dev and prepares it for more development
 
 name: Builder
 
@@ -39,7 +40,6 @@ jobs:
         cp ./build/* ./temp -r
         mkdir -p ./plugins
         rsync -a ./plugins/ ./temp/
-    # deploy app
     - name: Deploy app to gh-pages
       id: push_directory
       uses: cpina/github-action-push-to-another-repository@main
@@ -48,12 +48,11 @@ jobs:
       with:
         source-directory: './temp'
         destination-github-username: 'RudRecciah'
-        destination-repository-name: 'rudrecciah.github.io'
+        destination-repository-name: 'portfolio'
         user-email: "41898282+github-actions[bot]@users.noreply.github.com"
         user-name: "github-actions[bot]"
         commit-message: "Deployed App"
         target-branch: "gh-pages"
-    # commit and push to main to be deployed with pages
     - name: Push build to main
       run: |
         rm -rf ./temp
