@@ -24,6 +24,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     # build app
+    - run: git fetch
+    - run: git checkout dev
+    - run: npm ci
+    - run: npm 
     - run: echo "www.rudrecciah.dev" > ./build/CNAME
     # clean up build
     - run: mkdir ./.build/
@@ -36,5 +40,4 @@ jobs:
     - run: git config --local user.name "github-actions[bot]"
     - run: git add ./
     - run: git commit -m "Built App"
-    - run: git push
-    
+    - run: git push main
