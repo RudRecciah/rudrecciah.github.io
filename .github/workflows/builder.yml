@@ -1,8 +1,8 @@
-# This workflow will:
-#   Installs dependencies
-#   Builds app
-#   Deploys app
-#   Cleans working directory and pushes build to main
+# This workflow:
+#  - Installs dependencies
+#  - Builds app
+#  - Deploys app
+#  - Cleans working directory and pushes build to main
 
 name: Builder
 
@@ -10,6 +10,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
       
 jobs:
 
