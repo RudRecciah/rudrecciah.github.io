@@ -41,7 +41,8 @@ jobs:
         mkdir ./temp
         git clone -b gh-pages https://github.com/RudRecciah/rudrecciah.github.io.git ./temp
         cd ./temp && shopt -u dotglob
-        cd ./temp && rm * -r
+        cd ./temp && rm *
+        ls
         cp ./build/* ./temp -r
     - name: Deploy Production
       run: |
