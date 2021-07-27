@@ -20,7 +20,7 @@ export default class Navi extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar color={"primary"} className={"px-4 font-size-16 z-l justify-content-center justify-content-md-space-between"}>
+        <Navbar color={"primary"} className={"px-4 font-size-16 z-l justify-content-center justify-content-md-space-between pt-3 pb-3"}>
           <NavLink onClick={this.props.home} className={"text-white font-nav cursor-pointer"}>
             &#60;/rudrecciah.dev&#62;
           </NavLink>
