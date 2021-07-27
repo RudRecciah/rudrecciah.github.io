@@ -11,22 +11,17 @@ on:
   push:
     branches:
       - main
-
+      
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    steps:
-    - run: git fetch
-    - run: git checkout dev
-    
+
   build:
-
+  
     runs-on: ubuntu-latest
-
+    
     strategy:
       matrix:
         node-version: [14.x]
-
+        
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
