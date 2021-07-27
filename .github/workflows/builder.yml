@@ -39,7 +39,7 @@ jobs:
       run: |
         rm -rf ./temp
         mkdir ./temp
-        git clone -b gh-pages https://github.com/RudRecciah/rudrecciah.github.io.git ./temp
+        git clone -b gh-pages git@github.com:RudRecciah/rudrecciah.github.io.git ./temp
         cd ./temp && shopt -u dotglob
         cd ./temp && rm *
         cd ../
