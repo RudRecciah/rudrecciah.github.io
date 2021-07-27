@@ -1,4 +1,9 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code, and clean the repository leaving only the build
+# This workflow will:
+#   Clean install of node dependencies
+#   Cache/restore them
+#   Build the source code
+#   Deploy the source code
+#   Clean the repository leaving only the build
 
 name: Builder
 
@@ -29,19 +34,31 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    # build app
-    - run: npm ci
-    - run: npm 
-    - run: echo "www.rudrecciah.dev" > ./build/CNAME
-    # clean up build
-    - run: mkdir ./.build/
-    - run: mv ./build/* ./.build -f
-    - run: shopt -u dotglob
-    - run: rm * -r
-    - run: mv ./.build/* . -f
+    - name: Create Build
+    - run: |
+        npm ci
+        npm run build
+        echo "www.rudrecciah.dev" > ./build/CNAME
+    # deploy app
+    - name: Create Production
+    - run: |
+        rm -rf ./temp
+        mkdir ./temp
+        git clone -b gh-pages https://github.com/RudRecciah/rudrecciah.github.io.git ./temp
+        cd ./temp && shopt -u dotglob
+        cd ./temp && rm * -r
+        cp ./build/* ./temp -r
+    - name: Deploy Production
+    - run: |
+        cd ./temp && git add .
+        cd ./temp && git commit -m "Deployed App"
+        cd ./temp && git push
+        rm ./temp -r
     # commit and push to main to be deployed with pages
-    - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-    - run: git config --local user.name "github-actions[bot]"
-    - run: git add ./
-    - run: git commit -m "Built App"
-    - run: git push main
+    - name: Deploy Build
+    - run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add ./
+        git commit -m "Built App"
+        git push gh-pages
