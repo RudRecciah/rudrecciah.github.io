@@ -8,6 +8,12 @@ on:
       - main
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+    - run: git fetch
+    - run: git checkout dev
+    
   build:
 
     runs-on: ubuntu-latest
@@ -24,8 +30,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     # build app
-    - run: git fetch
-    - run: git checkout dev
     - run: npm ci
     - run: npm 
     - run: echo "www.rudrecciah.dev" > ./build/CNAME
