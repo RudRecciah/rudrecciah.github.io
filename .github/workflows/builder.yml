@@ -58,4 +58,4 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add ./
         git commit -m "Built App"
-        git push gh-pages
+        git push
