@@ -6,6 +6,6 @@ My portfolio.
 * Sass
 * [and more...](https://github.com/RudRecciah/portfolio/network/dependencies)
 ### Development:
-Check out [CONTRIBUTING.md](https://github.com/RudRecciah/portfolio/blob/main/CONTRIBUTING.md)
+Check out [CONTRIBUTING.md](./CONTRIBUTING.md)
 ### Building:
-Check out [BUILDING.md](https://github.com/RudRecciah/portfolio/blob/main/BUILDING.md)
+Check out [BUILDING.md](./BUILDING.md)
