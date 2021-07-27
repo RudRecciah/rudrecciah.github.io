@@ -1,0 +1,2 @@
+# Contributing Guide
+To begin work, pull `origin/dev` and `npm install` to create your development environment. While most directories are self-explanatory, `./plugins/` contains code to be bundled with the build in the deployment. To preview your code, use `npm start`. Once you're done, check out [BUILDING.md](./BUILDING.md)
