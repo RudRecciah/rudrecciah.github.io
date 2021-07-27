@@ -1,9 +1,8 @@
 # This workflow will:
-#   Clean install of node dependencies
-#   Cache/restore them
-#   Build the source code
-#   Deploy the source code
-#   Clean the repository leaving only the build
+#   Installs dependencies
+#   Builds app
+#   Deploys app
+#   Cleans working directory and pushes build to main
 
 name: Builder
 
@@ -29,38 +28,31 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Create Build
+    - name: Build
       run: |
         npm ci
         npm run build
         echo "www.rudrecciah.dev" > ./build/CNAME
-    # deploy app
-    - name: Create Production
-      run: |
         rm -rf ./temp
         mkdir ./temp
-        cd ./temp
-        eval "$(ssh-agent -s)"
-        ssh-add ${{ secrets.SSH_PRIV_KEY }}
-        git clone -b gh-pages git@github.com:RudRecciah/rudrecciah.github.io.git
-        cd ./temp && shopt -u dotglob
-        cd ./temp && rm *
-        cd ../
-        ls
         cp ./build/* ./temp -r
-    - name: Deploy Production
-      run: |
-        cd ./temp
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add .
-        git commit -m "Deployed App"
-        git push
-        cd ../
-        rm ./temp -r
+    # deploy app
+    - name: Deploy
+      id: push_directory
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: './temp'
+        destination-github-username: 'github-actions[bot]'
+        destination-repository-name: 'RudRecciah/rudrecciah.github.io'
+        user-email: "41898282+github-actions[bot]@users.noreply.github.com"
+        commit-message: "Deployed App"
+        target-branch: "gh-pages"
     # commit and push to main to be deployed with pages
-    - name: Deploy Build
+    - name: Cleanup
       run: |
+        rm ./temp -r
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add ./
