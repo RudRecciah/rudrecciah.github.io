@@ -56,7 +56,7 @@ jobs:
     # commit and push to main to be deployed with pages
     - name: Push build to main
       run: |
-        rm ./temp -r
+        rm -rf ./temp
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add ./
@@ -69,3 +69,11 @@ jobs:
         from_branch: main
         target_branch: dev
         github_token: ${{ github.token }}
+    - name: Cleanup dev
+      run: |
+        rm -rf ./build
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add ./
+        git commit -m "Cleaned up dev" --allow-empty
+        git push
