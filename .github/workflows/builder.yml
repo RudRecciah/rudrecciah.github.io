@@ -29,7 +29,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Build
+    - name: Build app
       run: |
         npm ci
         npm run build
@@ -40,7 +40,7 @@ jobs:
         mkdir -p ./plugins
         rsync -a ./plugins/ ./temp/
     # deploy app
-    - name: Deploy
+    - name: Deploy app to gh-pages
       id: push_directory
       uses: cpina/github-action-push-to-another-repository@main
       env:
@@ -54,7 +54,7 @@ jobs:
         commit-message: "Deployed App"
         target-branch: "gh-pages"
     # commit and push to main to be deployed with pages
-    - name: Cleanup
+    - name: Push build to main
       run: |
         rm ./temp -r
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -62,3 +62,10 @@ jobs:
         git add ./
         git commit -m "Built App" --allow-empty
         git push
+    - name: Sync main with dev
+      uses: devmasx/merge-branch@v1.3.1
+      with:
+        type: now
+        from_branch: main
+        target_branch: dev
+        github_token: ${{ github.token }}
