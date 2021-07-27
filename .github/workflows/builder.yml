@@ -35,13 +35,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Create Build
-    - run: |
+      run: |
         npm ci
         npm run build
         echo "www.rudrecciah.dev" > ./build/CNAME
     # deploy app
     - name: Create Production
-    - run: |
+      run: |
         rm -rf ./temp
         mkdir ./temp
         git clone -b gh-pages https://github.com/RudRecciah/rudrecciah.github.io.git ./temp
@@ -49,14 +49,14 @@ jobs:
         cd ./temp && rm * -r
         cp ./build/* ./temp -r
     - name: Deploy Production
-    - run: |
+      run: |
         cd ./temp && git add .
         cd ./temp && git commit -m "Deployed App"
         cd ./temp && git push
         rm ./temp -r
     # commit and push to main to be deployed with pages
     - name: Deploy Build
-    - run: |
+      run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add ./
