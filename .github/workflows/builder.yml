@@ -30,10 +30,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Build app
+    - name: Build and bundle plugins
       run: |
-        echo "www.rudrecciah.dev" > ./build/CNAME
+        rm -rf ./build
         rm -rf ./temp
+        npm ci
+        npm run build
+        echo "www.rudrecciah.dev" > ./build/CNAME
         mkdir ./temp
         cp ./build/* ./temp -r
         mkdir -p ./plugins
