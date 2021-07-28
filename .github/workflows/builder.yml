@@ -32,8 +32,6 @@ jobs:
         cache: 'npm'
     - name: Build app
       run: |
-        npm ci
-        npm run build
         echo "www.rudrecciah.dev" > ./build/CNAME
         rm -rf ./temp
         mkdir ./temp
