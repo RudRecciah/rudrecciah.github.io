@@ -14,33 +14,19 @@ html {
     color: #00a3ff;
     font-size: 128px;
     font-family: "Arvo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-bottom: 0;
 }
 
 .text-body {
     color: #334A51;
     font-size: 72px;
     font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    margin-bottom: 0;
-}
-
-.text-link {
-    color: #334A51;
-    font-size: 32px;
-    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    border-radius: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    text-decoration: none;
-    background-color: #aacee3;
-    transition: background-color 0.25s;
+    margin-top: 75px;
+    margin-bottom: 30px;
 }
 
 .hidden {
     display: none;
-}
-
-.text-link:hover, .text-link:active, .text-link:focus {
-    background-color: #80c2e7;
 }
 
 @media screen and (min-width: 350px) {

@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta tags -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <meta name="keywords" content="rudrecciah, endcraft, freebird games, rud recciah, rud, recciah" />
-    <meta name="description" content="Home of the squacky boi." />
-    <meta name="author" content="RudRecciah" />
-    <!-- Favicon and title -->
-    <link rel="icon" href="favicon.png">
-    <title>RudRecciah - Report A Bug</title>
-    <!-- CSS -->
-    <link href="./style.css" rel="stylesheet" />
+    <meta charset="utf-8"/>
+    <link rel="icon" href="favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#89BEE2"/>
+    <meta name="description" content="404 Not Found"/>
+    <meta name="robots" content="noindex"/>
+    <meta name="language" content="English"/>
+    <meta name="author" content="RudRecciah"/>
+    <meta name="creator" content="RudRecciah"/>
+    <meta name="publisher" content="RudRecciah"/>
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <title>RudRecciah - Bugs</title>
+    <link href="./style.css" rel="stylesheet"/>
   </head>
   <body>
-    <h1>
-      Report A Bug
-    </h1>
-    <p>
-      Notice a bug with one of my projects or think something might be an error? <a href="https://github.com/rudrecciah">Try making an issue in the git repository hosting the problematic code.</a> If you can't, report it here.
-    </p>
-    <input type="text" id="bug" onkeyup="sendBug(event)" placeholder="Press enter to submit." title="Report A Bug">
-    <br><br>
-    <hr>
-    <br>
-    <a href="../">Home</a>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <p>haha brutalist bug page go brrrrrrrr</p>
+    <div class="container">
+      <h1 class="text-title">
+        Bugs
+      </h1>
+      <input type="text" id="bug" onkeyup="sendBug(event)" placeholder="Report bug" title="Report A Bug" class="input">
+      <p class="text-body">
+        Notice a bug with one of my projects or think something might be an error? <a href="https://github.com/rudrecciah">Try making an issue in the GitHub repository hosting the problematic code</a>. If you can't, report it here.
+      </p>
+    </div>
     <script>
       function sendBug(e) {
         var key = e.keyCode;
@@ -47,6 +44,7 @@
               content: feedback
             };
             request.send(JSON.stringify(params));
+            alert("Bug reported.")
           }
         }
       }
