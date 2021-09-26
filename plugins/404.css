@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Poppins&display=swap');
+
+html {
+    background-color: #FFFFFF;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.text-title {
+    color: #00a3ff;
+    font-size: 128px;
+    font-family: "Arvo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-bottom: 0;
+}
+
+.text-body {
+    color: #334A51;
+    font-size: 72px;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-top: 75px;
+    margin-bottom: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 350px) {
+    .container {
+        text-align: left;
+    }
+
+    .hidden {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        width: 80%;
+        text-align: left;
+    }
+
+    .text-title {
+        font-size: 164px;
+    }
+
+    .text-body {
+        font-size: 96px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .text-title {
+        font-size: 172px;
+    }
+
+    .text-body {
+        font-size: 128px;
+    }
+}
