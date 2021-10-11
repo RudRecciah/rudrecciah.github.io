@@ -13,11 +13,11 @@ import BashIcon from "devicon/icons/bash/bash-original.svg";
 import CSharpIcon from "devicon/icons/csharp/csharp-original.svg";
 import DockerIcon from "devicon/icons/docker/docker-original.svg";
 import PhpIcon from "devicon/icons/php/php-original.svg";
-import SshIcon from "devicon/icons/ssh/ssh-original.svg";
 import NodeJSIcon from "devicon/icons/nodejs/nodejs-original.svg";
 import npmIcon from "devicon/icons/npm/npm-original-wordmark.svg";
 import ExpressIcon from "devicon/icons/express/express-original.svg";
 import SassIcon from "devicon/icons/sass/sass-original.svg";
+import TypescriptIcon from "devicon/icons/typescript/typescript-original.svg";
 
 export default class Xp extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ export default class Xp extends Component {
                 <img src={JavaIcon} alt={"Java"} className={"img-fluid h-150px"}/>
               </Col>
               <Col className={"xp-md-list"}>
-                <img src={ReactIcon} alt={"React"} className={"img-fluid h-150px"}/>
+                <img src={TypescriptIcon} alt={"React"} className={"img-fluid h-150px"}/>
               </Col>
               <Col className={"xp-md-list"}>
                 <img src={CSSIcon} alt={"CSS"} className={"img-fluid h-150px"}/>
@@ -72,7 +72,7 @@ export default class Xp extends Component {
             <Row className={"text-center w-90 mx-auto xp-md-list-container"}>
               <Col/>
               <Col className={"xp-md-list"}>
-                <img src={BootstrapIcon} alt={"Bootstrap"} className={"img-fluid h-150px"}/>
+                <img src={ReactIcon} alt={"Bootstrap"} className={"img-fluid h-150px"}/>
               </Col>
               <Col className={"xp-md-list"}>
                 <img src={PyIcon} alt={"Python"} className={"img-fluid h-150px"}/>
@@ -90,7 +90,7 @@ export default class Xp extends Component {
                 <img src={PhpIcon} alt={"PHP"} className={"img-fluid h-150px"}/>
               </Col>
               <Col className={"xp-md-list"}>
-                <img src={SshIcon} alt={"SSH"} className={"img-fluid h-150px"}/>
+                <img src={BootstrapIcon} alt={"SSH"} className={"img-fluid h-150px"}/>
               </Col>
               <Col/>
             </Row>
